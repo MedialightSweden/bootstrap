@@ -1,6 +1,6 @@
 /*!
   * Bootstrap v4.0.0 (https://getbootstrap.com)
-  * Copyright 2011-2018 The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors)
+  * Copyright 2011-2019 The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors)
   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
   */
 (function (global, factory) {
@@ -1456,13 +1456,15 @@ var Dropdown = function ($$$1) {
     offset: 0,
     flip: true,
     boundary: 'scrollParent',
-    reference: 'toggle'
+    reference: 'toggle',
+    display: 'dynamic'
   };
   var DefaultType = {
     offset: '(number|string|function)',
     flip: 'boolean',
     boundary: '(string|element)',
-    reference: '(string|element)'
+    reference: '(string|element)',
+    display: 'string'
     /**
      * ------------------------------------------------------------------------
      * Class Definition
@@ -1659,8 +1661,16 @@ var Dropdown = function ($$$1) {
           preventOverflow: {
             boundariesElement: this._config.boundary
           }
-        }
+        } // Disable Popper.js if we have a static display
+
       };
+
+      if (this._config.display === 'static') {
+        popperConfig.modifiers.applyStyle = {
+          enabled: false
+        };
+      }
+
       return popperConfig;
     }; // Static
 
