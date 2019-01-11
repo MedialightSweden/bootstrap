@@ -15,7 +15,7 @@
     height: $sliderHeight;
     padding: 0 $sliderHeight 0 0;
     width: 100%;
-    background: lighten(desaturate($primary, 100%), 50%);
+    background: lighten(desaturate($primary, 100%), 15%);
     border-radius: ($sliderHeight/2);
 
     .slider-limit {
