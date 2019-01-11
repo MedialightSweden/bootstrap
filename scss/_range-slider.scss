@@ -37,7 +37,7 @@
         position: absolute;
         top: (($knobHeight - $sliderHeight)/-2);
         transform: translateX(-50%);
-        min-width: $knobHeight * 1.5;
+        min-width: $knobHeight * 1.25;
         padding: 0 ($knobHeight/2);
         height: $knobHeight;
         font-size: $fontSize;
