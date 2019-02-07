@@ -1,8 +1,8 @@
 .range-slider {
-  $knobHeight: 30px;
+  $fontSize: 0.8rem;
+  $knobHeight: $fontSize*2;
   $rangeHeight: $knobHeight;
-  $sliderHeight: 6px;
-  $fontSize: 16px;
+  $sliderHeight: $fontSize/2;
   $fontColor: $white;
 
   position: relative;
