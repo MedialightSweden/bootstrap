@@ -1,11 +1,20 @@
 .range-slider {
   $font-color: $white;
   $font-size: 0.8rem;
-  $knob-height: $font-size * 2;
-  $range-height: $knob-height;
-  $slider-height: $font-size / 2;
   $transition: 0.125s ease;
   $knob-transitions: margin $transition, height $transition, padding $transition, border-radius $transition;
+  $knob-height: $font-size * 2.5;
+  $knob-expanded-height: $knob-height * 2;
+  $knob-minimum-width: $knob-height;
+  $range-height: $knob-height;
+  $slider-height: $font-size / 1.5;
+
+  $font-lg-size: 0.8rem;
+  $knob-lg-height: $font-lg-size * 2;
+  $knob-lg-expanded-height: $knob-lg-height * 2.5;
+  $knob-lg-minimum-width: $knob-lg-height;
+  $range-lg-height: $knob-lg-height;
+  $slider-lg-height: $font-lg-size / 2;
 
   align-items: center;
   display: flex;
@@ -14,38 +23,56 @@
 
   &.active-dragging .slider .slider-limit {
     .knob {
-      border-radius: $knob-height $knob-height ($knob-height * 2) ($knob-height * 2);
-      height: $knob-height * 2;
-      margin-top: $knob-height * -1;
-      padding-bottom: $knob-height;
+      border-radius: $knob-height $knob-height $knob-expanded-height $knob-expanded-height;
+      height: $knob-expanded-height;
+      margin-top: $knob-height - $knob-expanded-height;
+      padding-bottom: $knob-expanded-height - $knob-height;
+      @include media-breakpoint-up(lg) {
+        border-radius: $knob-lg-height $knob-lg-height $knob-lg-expanded-height $knob-lg-expanded-height;
+        height: $knob-lg-expanded-height;
+        margin-top: $knob-lg-height - $knob-lg-expanded-height;
+        padding-bottom: $knob-lg-expanded-height - $knob-lg-height;
+      }
     }
   }
 
   .slider {
     background: lighten(desaturate($primary, 100%), 15%);
-    border-radius: ($slider-height/2);
+    border-radius: ($slider-height / 2);
     height: $slider-height;
     padding: 0 $slider-height 0 0;
     position: relative;
     width: 100%;
+    @include media-breakpoint-up(lg) {
+      border-radius: ($slider-lg-height / 2);
+      height: $slider-lg-height;
+      padding: 0 $slider-lg-height 0 0;
+    }
 
     .slider-limit {
       height: $slider-height;
       position: relative;
+      @include media-breakpoint-up(lg) {
+        height: $slider-lg-height;
+      }
 
       .filled-up {
         background: lighten($primary, 7.5%);
-        border-radius: ($slider-height/2);
+        border-radius: ($slider-height / 2);
         height: $slider-height;
         left: 0;
         position: absolute;
         top: 0;
         width: 0;
+        @include media-breakpoint-up(lg) {
+          border-radius: ($slider-lg-height / 2);
+          height: $slider-lg-height;
+        }
       }
 
       .knob {
-        @include transition(join($btn-transition, ($knob-transitions)));
         @extend .btn;
+        @include transition(join($btn-transition, ($knob-transitions)));
         background-color: $primary;
         border: 0;
         border-radius: ($knob-height / 2);
@@ -53,13 +80,21 @@
         cursor: pointer;
         font-size: $font-size;
         height: $knob-height;
-        min-width: $knob-height * 1.25;
+        min-width: $knob-minimum-width;
         outline: 0;
         overflow: visible;
         padding: 0 ($knob-height / 2);
         position: absolute;
-        top: (($knob-height - $slider-height)/-2);
+        top: (($knob-height - $slider-height) / -2);
         transform: translateX(-50%);
+        @include media-breakpoint-up(lg) {
+          border-radius: ($knob-lg-height / 2);
+          font-size: $font-lg-size;
+          height: $knob-lg-height;
+          min-width: $knob-lg-minimum-width;
+          padding: 0 ($knob-lg-height / 2);
+          top: (($knob-lg-height - $slider-lg-height) / -2);
+        }
         &:hover {
           background-color: darken($primary, 10%);
           color: $font-color;
