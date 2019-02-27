@@ -39,6 +39,7 @@
   .slider {
     background: lighten(desaturate($primary, 100%), 15%);
     border-radius: ($slider-height / 2);
+    cursor: pointer;
     height: $slider-height;
     padding: 0 $slider-height 0 0;
     position: relative;
@@ -79,6 +80,7 @@
         color: $font-color;
         cursor: pointer;
         font-size: $font-size;
+        line-height: $font-size;
         height: $knob-height;
         min-width: $knob-minimum-width;
         outline: 0;
@@ -90,6 +92,7 @@
         @include media-breakpoint-up(lg) {
           border-radius: ($knob-lg-height / 2);
           font-size: $font-lg-size;
+          line-height: $font-lg-size;
           height: $knob-lg-height;
           min-width: $knob-lg-minimum-width;
           padding: 0 ($knob-lg-height / 2);
