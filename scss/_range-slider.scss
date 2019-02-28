@@ -16,6 +16,9 @@
   $range-lg-height: $knob-lg-height;
   $slider-lg-height: $font-lg-size / 2;
 
+  width: 100%;
+  padding-right: $grid-gutter-width / 2;
+  padding-left: $grid-gutter-width / 2;
   align-items: center;
   display: flex;
   height: $range-height;
