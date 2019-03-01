@@ -1,4 +1,5 @@
-/* stylelint-disable font-weight-notation */
+/* stylelint-disable property-blacklist */
+/* stylelint-disable scss/dollar-variable-default */
 .frankly-form {
   position: relative;
   .screen {
@@ -25,40 +26,96 @@
     }
   }
 }
-.indicator {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(2);
+// Define vars we'll be using
+$brand-success: #5cb85c;
+$loader-size: 8em !default;
+$check-height: $loader-size / 2;
+$check-width: $check-height / 2;
+$check-left: ($loader-size / 6 + $loader-size / 12);
+$error-left: $loader-size / 4;
+$check-thickness: 2px;
+$check-color: $brand-success;
+
+.circle-loader {
+  position: relative;
+  box-sizing: content-box;
+  display: inline-block;
+  margin: 0 0 30px 10px;
+  vertical-align: top;
+  border: $check-thickness solid rgba(0, 0, 0, .2);
+  border-left-color: $check-color;
+  animation-name: loader-spin;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
 }
-.indicator svg polyline {
-  fill: none;
-  stroke-width: 2;
-  stroke-linecap: round;
-  stroke-linejoin: round;
+
+.circle-loader,
+.circle-loader::after {
+  width: $loader-size;
+  height: $loader-size;
+  border-radius: 50%;
 }
-.indicator .back {
-  stroke: rgba(59, 211, 171, .3);
+
+.load-complete {
+  border-color: $check-color;
+  transition: border 500ms ease-out;
+  animation: none;
 }
-.indicator .front {
-  animation: dash 1s linear infinite;
-  stroke: #3bd3ab;
-  stroke-dasharray: 12, 36;
-  stroke-dashoffset: 48;
+.load-error {
+  border-color: $error-color;
+  transition: border 500ms ease-out;
+  animation: none;
 }
-.cta {
-  position: fixed;
-  right: 30px;
-  bottom: 20px;
-  font-weight: bold;
-  color: #222;
-}
-@keyframes dash {
-  62.5% {
-    opacity: 0;
+
+.checkmark {
+  box-sizing: content-box;
+  display: none;
+  &.draw::after {
+    position: absolute;
+    top: $check-height;
+    left: $check-left;
+    width: $check-width;
+    height: $check-height;
+    content: "";
+    border-top: $check-thickness solid $check-color;
+    border-right: $check-thickness solid $check-color;
+    opacity: 1;
+    transform: scaleX(-1) rotate(135deg);
+    transform-origin: left top;
+    animation-name: checkmark;
+    animation-duration: 1.2s;
+    animation-timing-function: ease;
   }
-  to {
-    stroke-dashoffset: 0;
+}
+@keyframes loader-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes checkmark {
+  0% {
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+  20% {
+    width: $check-width;
+    height: 0;
+    opacity: 1;
+  }
+  40% {
+    width: $check-width;
+    height: $check-height;
+    opacity: 1;
+  }
+  100% {
+    width: $check-width;
+    height: $check-height;
+    opacity: 1;
   }
 }
 /* stylelint-enable */
