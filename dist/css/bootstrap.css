@@ -6285,7 +6285,6 @@ a.text-dark:hover, a.text-dark:focus {
   position: absolute;
   top: 50%;
   display: block;
-  transition: top .25s ease 0s;
 }
 
 .frankly-form.loading .content {
