@@ -17,6 +17,10 @@ $border: $dimension / 5 !default;
     padding: 0 ($grid-gutter-width / 2);
     margin: 0 ($grid-gutter-width / -2);
     background-color: rgba(0, 0, 0, .5);
+    .modal-dialog{
+      position: absolute;
+      display: none;
+    }
   }
   &.loading,
   &.done {
@@ -31,6 +35,18 @@ $border: $dimension / 5 !default;
       position: absolute;
       top: 50%;
       display: block;
+    }
+  }
+  &.error {
+    .screen {
+      display: flex;
+      &.fade {
+        opacity: 0;
+        transition: opacity .5s ease 0s;
+      }
+      .modal-dialog{
+        display: block;
+      }
     }
   }
   &.loading {
