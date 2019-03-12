@@ -122,13 +122,13 @@ sup {
 }
 
 a {
-  color: #fe6658;
+  color: #00a99d;
   text-decoration: none;
   background-color: transparent;
 }
 
 a:hover {
-  color: #fe200c;
+  color: #005d56;
   text-decoration: underline;
 }
 
