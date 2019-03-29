@@ -6409,6 +6409,7 @@ a.text-dark:hover, a.text-dark:focus {
 /* stylelint-disable property-blacklist */
 .frankly-form {
   position: relative;
+  /* <= IE10 */
 }
 
 .frankly-form .screen {
@@ -6441,10 +6442,21 @@ a.text-dark:hover, a.text-dark:focus {
   transition: opacity .5s ease 0s;
 }
 
-.frankly-form.loading .content, .frankly-form.done .content {
+.frankly-form.loading .box, .frankly-form.done .box {
   position: absolute;
   top: 50%;
   display: block;
+  width: 75px;
+  height: 75px;
+}
+
+.frankly-form.loading .box .content, .frankly-form.done .box .content {
+  position: relative;
+  margin: auto;
+}
+
+.frankly-form.loading .modal-dialog, .frankly-form.done .modal-dialog {
+  display: none;
 }
 
 .frankly-form.error .screen {
@@ -6456,11 +6468,15 @@ a.text-dark:hover, a.text-dark:focus {
   transition: opacity .5s ease 0s;
 }
 
+.frankly-form.error .screen .box {
+  display: none;
+}
+
 .frankly-form.error .screen .modal-dialog {
   display: block;
 }
 
-.frankly-form.loading .content {
+.frankly-form.loading .box .content {
   width: 75px;
   height: 75px;
   border: 15px solid rgba(255, 255, 255, 0.5);
@@ -6492,7 +6508,7 @@ a.text-dark:hover, a.text-dark:focus {
   }
 }
 
-.frankly-form.done .content {
+.frankly-form.done .box .content {
   width: 45px;
   height: 75px;
   border: 0 solid rgba(255, 255, 255, 0);
@@ -6560,6 +6576,18 @@ a.text-dark:hover, a.text-dark:focus {
     border-radius: 0;
     -webkit-transform: rotate(410deg);
     transform: rotate(410deg);
+  }
+}
+
+@media all and (-ms-high-contrast: none) {
+  .frankly-form.loading .box, .frankly-form.done .box {
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+  }
+  .frankly-form.error .screen .modal-dialog {
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
   }
 }
 
