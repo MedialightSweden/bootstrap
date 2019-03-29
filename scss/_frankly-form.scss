@@ -17,7 +17,7 @@ $border: $dimension / 5 !default;
     padding: 0 ($grid-gutter-width / 2);
     margin: 0 ($grid-gutter-width / -2);
     background-color: rgba(0, 0, 0, .5);
-    .modal-dialog{
+    .modal-dialog {
       position: absolute;
       display: none;
     }
@@ -31,10 +31,19 @@ $border: $dimension / 5 !default;
         transition: opacity .5s ease 0s;
       }
     }
-    .content {
+    .box {
       position: absolute;
       top: 50%;
       display: block;
+      width: $dimension;
+      height: $dimension;
+      .content {
+        position: relative;
+        margin: auto;
+      }
+    }
+    .modal-dialog {
+      display: none;
     }
   }
   &.error {
@@ -44,64 +53,89 @@ $border: $dimension / 5 !default;
         opacity: 0;
         transition: opacity .5s ease 0s;
       }
-      .modal-dialog{
+      .box {
+        display: none;
+      }
+      .modal-dialog {
         display: block;
       }
     }
   }
   &.loading {
-    .content {
-      width: $dimension;
-      height: $dimension;
-      border: $border solid rgba(255, 255, 255, .5);
-      border-bottom: $border solid #fff;
-      border-radius: 50%;
-      animation: spin .5s linear infinite;
-    }
-    @keyframes spin {
-      0% {
-        transform: rotate(0deg);
+    .box {
+      .content {
+        width: $dimension;
+        height: $dimension;
+        border: $border solid rgba(255, 255, 255, .5);
+        border-bottom: $border solid #fff;
+        border-radius: 50%;
+        animation: spin .5s linear infinite;
       }
-      100% {
-        transform: rotate(360deg);
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
       }
     }
   }
   &.done {
-    .content {
-      width: $dimension * .6;
-      height: $dimension;
-      border: 0 solid rgba(255, 255, 255, 0);
-      border-right: $border solid #fff;
-      border-bottom: $border solid #fff;
-      border-radius: 0;
-      transform: rotate(410deg);
-      animation: done .5s ease-out 1;
-    }
-    @keyframes done {
-      0% {
-        width: $dimension;
-        height: $dimension;
-        border: $border solid rgba(255, 255, 255, .5);
-        border-right: $border solid #fff;
-        border-radius: 50%;
-        transform: rotate(0deg);
-      }
-      50% {
-        width: $dimension;
-        height: $dimension;
-        border: $border solid rgba(255, 255, 255, 0);
-        border-right: $border solid #fff;
-        border-bottom: $border solid #fff;
-        border-radius: 50%;
-      }
-      100% {
+    .box {
+      .content {
         width: $dimension * .6;
         height: $dimension;
+        border: 0 solid rgba(255, 255, 255, 0);
         border-right: $border solid #fff;
         border-bottom: $border solid #fff;
         border-radius: 0;
         transform: rotate(410deg);
+        animation: done .5s ease-out 1;
+      }
+      @keyframes done {
+        0% {
+          width: $dimension;
+          height: $dimension;
+          border: $border solid rgba(255, 255, 255, .5);
+          border-right: $border solid #fff;
+          border-radius: 50%;
+          transform: rotate(0deg);
+        }
+        50% {
+          width: $dimension;
+          height: $dimension;
+          border: $border solid rgba(255, 255, 255, 0);
+          border-right: $border solid #fff;
+          border-bottom: $border solid #fff;
+          border-radius: 50%;
+        }
+        100% {
+          width: $dimension * .6;
+          height: $dimension;
+          border-right: $border solid #fff;
+          border-bottom: $border solid #fff;
+          border-radius: 0;
+          transform: rotate(410deg);
+        }
+      }
+    }
+  }
+
+  /* <= IE10 */
+  @media all and (-ms-high-contrast: none) {
+    &.loading,
+    &.done {
+      .box {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+    &.error {
+      .screen {
+        .modal-dialog {
+          transform: translateX(-50%);
+        }
       }
     }
   }
