@@ -1,0 +1,128 @@
+@import "variables";
+
+.jb-light-bg,
+.jb-body-bg {
+  background-color: $jobs-body;
+}
+
+.jb-dark-bg,
+.jb-footer-bg {
+  background-color: $jobs-footer;
+}
+
+.jb-first-bg,
+.jb-primary-bg {
+  background-color: $jobs-primary;
+}
+
+.jb-second-bg,
+.jb-secondary-bg {
+  background-color: $jobs-secondary;
+}
+
+.jb-wrap {
+  word-wrap: break-word;
+}
+
+.jb-pill {
+  display: inline-block;
+  width: auto;
+  min-height: 2rem;
+  padding: .5rem 1rem;
+  font-size: 1rem;
+  font-weight: 100;
+  line-height: 1.25rem;
+  word-break: break-word;
+  word-wrap: break-word;
+  border-radius: .25rem;
+  outline-offset: -.25rem;
+}
+
+@each $color, $value in $theme-colors {
+  .jb-pill-#{$color} {
+    color: color-yiq($value);
+    background-color: $value;
+    border-bottom: 1px solid darken($value, 15%);
+    outline: 1px dashed color-yiq($value);
+    &:focus,
+    &:hover,
+    &:active {
+      color: color-yiq($value);
+    }
+  }
+}
+
+.jb-pill-color-white {
+  color: #fff;
+  outline-color: #fff;
+  &:focus,
+  &:hover,
+  &:active {
+    color: #fff;
+  }
+}
+
+.jb-pill-no-shadow {
+  border-bottom: 0;
+}
+
+.jb-nav-tabs {
+  border-bottom: 4px solid $jobs-primary;
+
+  .nav-item {
+    margin-right: 2px;
+    margin-bottom: -4px;
+  }
+
+  .nav-link {
+    padding: .5rem 1.5rem;
+    color: #fff;
+    background-color: $jobs-secondary;
+    border: 0;
+    border-bottom: 4px solid $jobs-primary;
+    @include border-top-radius(0);
+
+    @include hover-focus {
+      border-color: $jobs-primary;
+    }
+
+    &.disabled {
+      color: #fff;
+      background-color: lighten($jobs-secondary, 30%);
+      border-color: $jobs-primary;
+    }
+  }
+
+  .nav-link.active,
+  .nav-item.show .nav-link {
+    color: $nav-tabs-link-active-color;
+    background-color: $nav-tabs-link-active-bg;
+    border-color: $nav-tabs-link-active-border-color;
+  }
+}
+
+.jb-section-border {
+  margin-top: .5rem;
+  border-top: 1px solid #ced4da;
+}
+
+.jb-search-field {
+  width: 100%;
+
+  .hint {
+    color: $input-placeholder-color;
+  }
+}
+
+.dropdown-item em {
+  border-radius: .125rem;
+}
+
+.dropdown-item em,
+.dropdown-item.active
+ {
+  $highlight: rgba($jobs-primary, .25);
+  font-style: normal;
+  color: $input-color;
+  background-color: $highlight;
+}

@@ -46,24 +46,30 @@ $teal:           #20c997 !default;
 $cyan:           #17a2b8 !default;
 $jobs-primary:   #00a99d !default;
 $jobs-secondary: #676565 !default;
+$jobs-body:      #eeeff1 !default;
+$jobs-footer:    #212529 !default;
 
 $colors: () !default;
 // stylelint-disable-next-line scss/dollar-variable-default
 $colors: map-merge(
   (
-    "blue":       $blue,
-    "indigo":     $indigo,
-    "purple":     $purple,
-    "pink":       $pink,
-    "red":        $red,
-    "orange":     $orange,
-    "yellow":     $yellow,
-    "green":      $green,
-    "teal":       $teal,
-    "cyan":       $cyan,
-    "white":      $white,
-    "gray":       $gray-600,
-    "gray-dark":  $gray-800
+    "blue":           $blue,
+    "indigo":         $indigo,
+    "purple":         $purple,
+    "pink":           $pink,
+    "red":            $red,
+    "orange":         $orange,
+    "yellow":         $yellow,
+    "green":          $green,
+    "teal":           $teal,
+    "cyan":           $cyan,
+    "white":          $white,
+    "gray":           $gray-600,
+    "gray-dark":      $gray-800,
+    "jobs-primary":   $jobs-primary,
+    "jobs-secondary": $jobs-secondary,
+    "jobs-body":      $jobs-body,
+    "jobs-footer":    $jobs-footer
   ),
   $colors
 );
@@ -81,14 +87,17 @@ $theme-colors: () !default;
 // stylelint-disable-next-line scss/dollar-variable-default
 $theme-colors: map-merge(
   (
-    "primary":    $primary,
-    "secondary":  $secondary,
-    "success":    $success,
-    "info":       $info,
-    "warning":    $warning,
-    "danger":     $danger,
-    "light":      $light,
-    "dark":       $dark
+    "primary":        $primary,
+    "secondary":      $secondary,
+    "success":        $success,
+    "info":           $info,
+    "warning":        $warning,
+    "danger":         $danger,
+    "light":          $light,
+    "dark":           $dark,
+    "jobs-primary":   $jobs-primary,
+    "jobs-secondary": $jobs-secondary,
+    "jobs-gray":      lighten($jobs-secondary, 25%)
   ),
   $theme-colors
 );
@@ -174,7 +183,7 @@ $body-color:                $gray-900 !default;
 $link-color:                              theme-color("primary") !default;
 $link-decoration:                         none !default;
 $link-hover-color:                        darken($link-color, 15%) !default;
-$link-hover-decoration:                   underline !default;
+$link-hover-decoration:                   none !default;
 // Darken percentage for links with `.text-*` class (e.g. `.text-success`)
 $emphasized-link-hover-darken-percentage: 15% !default;
 
@@ -272,7 +281,7 @@ $embed-responsive-aspect-ratios: join(
 // Font, line-height, and color for body text, headings, and more.
 
 // stylelint-disable value-keyword-case
-$font-family-sans-serif:      -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+$font-family-sans-serif:      Lato, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
 $font-family-monospace:       SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
 $font-family-base:            $font-family-sans-serif !default;
 // stylelint-enable value-keyword-case
