@@ -28,14 +28,14 @@
   display: inline-block;
   width: auto;
   min-height: 2rem;
-  padding: .5rem 1rem;
+  padding: 0.5rem 1rem;
   font-size: 1rem;
   font-weight: 100;
   line-height: 1.25rem;
   word-break: break-word;
   word-wrap: break-word;
-  border-radius: .25rem;
-  outline-offset: -.25rem;
+  border-radius: 0.25rem;
+  outline-offset: -0.25rem;
 }
 
 @each $color, $value in $theme-colors {
@@ -75,7 +75,7 @@
   }
 
   .nav-link {
-    padding: .5rem 1.5rem;
+    padding: 0.5rem 1.5rem;
     color: #fff;
     background-color: $jobs-secondary;
     border: 0;
@@ -102,7 +102,7 @@
 }
 
 .jb-section-border {
-  margin-top: .5rem;
+  margin-top: 0.5rem;
   border-top: 1px solid #ced4da;
 }
 
@@ -115,14 +115,53 @@
 }
 
 .dropdown-item em {
-  border-radius: .125rem;
+  border-radius: 0.125rem;
 }
 
 .dropdown-item em,
-.dropdown-item.active
- {
-  $highlight: rgba($jobs-primary, .25);
+.dropdown-item.active {
+  $highlight: rgba($jobs-primary, 0.25);
   font-style: normal;
   color: $input-color;
   background-color: $highlight;
+}
+
+@mixin jb-smooth-apply($bgcolor, $color) {
+  $darkcolor: scale-color($bgcolor, $lightness: -20%);
+  $lightcolor: scale-color($bgcolor, $lightness: 20%);
+  &::after {
+    background-color: $bgcolor;
+    color: $color;
+    border-bottom: 1px solid $darkcolor;
+    outline: 1px dashed $color;
+    text-shadow: -1px -1px $darkcolor, 1px 1px $lightcolor;
+  }
+}
+
+.jb-sa {
+  position: relative;
+  overflow: hidden;
+  h5 {
+    display: block !important;
+    padding-right: 40px;
+  }
+  &::after {
+    content: "Smidig ansökan";
+    width: 200px;
+    height: 30px;
+    position: absolute;
+    top: 30px;
+    right: -52px;
+    transform: rotateZ(45deg);
+    text-align: center;
+    line-height: 30px;
+    outline-offset: -3px;
+    font-size: 14px;
+    font-weight: lighter;
+  }
+  @include jb-smooth-apply(#7f7f7f, #fff);
+
+  &.jb-sa-orange {
+    @include jb-smooth-apply(#e82, #fff);
+  }
 }
