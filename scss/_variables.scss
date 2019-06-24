@@ -48,6 +48,8 @@ $jobs-primary:   #00a99d !default;
 $jobs-secondary: #676565 !default;
 $jobs-body:      #eeeff1 !default;
 $jobs-footer:    #212529 !default;
+$light-green:    #daf3f1 !default;
+$dark-green:     #026e66 !default;
 
 $colors: () !default;
 // stylelint-disable-next-line scss/dollar-variable-default
@@ -69,7 +71,9 @@ $colors: map-merge(
     "jobs-primary":   $jobs-primary,
     "jobs-secondary": $jobs-secondary,
     "jobs-body":      $jobs-body,
-    "jobs-footer":    $jobs-footer
+    "jobs-footer":    $jobs-footer,
+    "light-green":    $light-green,
+    "dark-green":     $dark-green
   ),
   $colors
 );

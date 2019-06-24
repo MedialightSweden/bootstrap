@@ -1,167 +1,638 @@
 @import "variables";
+@import "custom-variables";
 
 .jb-light-bg,
 .jb-body-bg {
-  background-color: $jobs-body;
+	background-color: $jobs-body;
 }
 
 .jb-dark-bg,
 .jb-footer-bg {
-  background-color: $jobs-footer;
+	background-color: $jobs-footer;
 }
 
 .jb-first-bg,
 .jb-primary-bg {
-  background-color: $jobs-primary;
+	background-color: $jobs-primary;
 }
 
 .jb-second-bg,
 .jb-secondary-bg {
-  background-color: $jobs-secondary;
+	background-color: $jobs-secondary;
 }
 
 .jb-wrap {
-  word-wrap: break-word;
+	word-wrap: break-word;
 }
 
 .jb-pill {
-  display: inline-block;
-  width: auto;
-  min-height: 2rem;
-  padding: 0.5rem 1rem;
-  font-size: 1rem;
-  font-weight: 100;
-  line-height: 1.25rem;
-  word-break: break-word;
-  word-wrap: break-word;
-  border-radius: 0.25rem;
-  outline-offset: -0.25rem;
+	display: inline-block;
+	width: auto;
+	min-height: 2rem;
+	padding: 0.5rem 1rem;
+	font-size: 1rem;
+	font-weight: 100;
+	line-height: 1.25rem;
+	word-break: break-word;
+	word-wrap: break-word;
+	border-radius: 0.25rem;
+	outline-offset: -0.25rem;
 }
 
 @each $color, $value in $theme-colors {
-  .jb-pill-#{$color} {
-    color: color-yiq($value);
-    background-color: $value;
-    border-bottom: 1px solid darken($value, 15%);
-    outline: 1px dashed color-yiq($value);
-    &:focus,
-    &:hover,
-    &:active {
-      color: color-yiq($value);
-    }
-  }
+	.jb-pill-#{$color} {
+		color: color-yiq($value);
+		background-color: $value;
+		border-bottom: 1px solid darken($value, 15%);
+		outline: 1px dashed color-yiq($value);
+		&:focus,
+		&:hover,
+		&:active {
+			color: color-yiq($value);
+		}
+	}
 }
 
 .jb-pill-color-white {
-  color: #fff;
-  outline-color: #fff;
-  &:focus,
-  &:hover,
-  &:active {
-    color: #fff;
-  }
+	color: #fff;
+	outline-color: #fff;
+	&:focus,
+	&:hover,
+	&:active {
+		color: #fff;
+	}
 }
 
 .jb-pill-no-shadow {
-  border-bottom: 0;
+	border-bottom: 0;
 }
 
 .jb-nav-tabs {
-  border-bottom: 4px solid $jobs-primary;
+	border-bottom: 4px solid $jobs-primary;
 
-  .nav-item {
-    margin-right: 2px;
-    margin-bottom: -4px;
-  }
+	.nav-item {
+		margin-right: 2px;
+		margin-bottom: -4px;
+	}
 
-  .nav-link {
-    padding: 0.5rem 1.5rem;
-    color: #fff;
-    background-color: $jobs-secondary;
-    border: 0;
-    border-bottom: 4px solid $jobs-primary;
-    @include border-top-radius(0);
+	.nav-link {
+		padding: 0.5rem 1.5rem;
+		color: #fff;
+		background-color: $jobs-secondary;
+		border: 0;
+		border-bottom: 4px solid $jobs-primary;
+		@include border-top-radius(0);
 
-    @include hover-focus {
-      border-color: $jobs-primary;
-    }
+		@include hover-focus {
+			border-color: $jobs-primary;
+		}
 
-    &.disabled {
-      color: #fff;
-      background-color: lighten($jobs-secondary, 30%);
-      border-color: $jobs-primary;
-    }
-  }
+		&.disabled {
+			color: #fff;
+			background-color: lighten($jobs-secondary, 30%);
+			border-color: $jobs-primary;
+		}
+	}
 
-  .nav-link.active,
-  .nav-item.show .nav-link {
-    color: $nav-tabs-link-active-color;
-    background-color: $nav-tabs-link-active-bg;
-    border-color: $nav-tabs-link-active-border-color;
-  }
+	.nav-link.active,
+	.nav-item.show .nav-link {
+		color: $nav-tabs-link-active-color;
+		background-color: $nav-tabs-link-active-bg;
+		border-color: $nav-tabs-link-active-border-color;
+	}
 }
 
 .jb-section-border {
-  margin-top: 0.5rem;
-  border-top: 1px solid #ced4da;
+	margin-top: 0.5rem;
+	border-top: 1px solid #ced4da;
 }
 
 .jb-search-field {
-  width: 100%;
+	width: 100%;
 
-  .hint {
-    color: $input-placeholder-color;
-  }
+	.hint {
+		color: $input-placeholder-color;
+	}
 }
 
 .dropdown-item em {
-  border-radius: 0.125rem;
+	border-radius: 0.125rem;
 }
 
 .dropdown-item em,
 .dropdown-item.active {
-  $highlight: rgba($jobs-primary, 0.25);
-  font-style: normal;
-  color: $input-color;
-  background-color: $highlight;
+	$highlight: rgba($jobs-primary, 0.25);
+	font-style: normal;
+	color: $input-color;
+	background-color: $highlight;
 }
 
 @mixin jb-smooth-apply($bgcolor, $color) {
-  $darkcolor: scale-color($bgcolor, $lightness: -20%);
-  $lightcolor: scale-color($bgcolor, $lightness: 20%);
-  &::after {
-    background-color: $bgcolor;
-    color: $color;
-    border-bottom: 1px solid $darkcolor;
-    outline: 1px dashed $color;
-    text-shadow: -1px -1px $darkcolor, 1px 1px $lightcolor;
-  }
+	$darkcolor: scale-color($bgcolor, $lightness: -20%);
+	$lightcolor: scale-color($bgcolor, $lightness: 20%);
+	&::after {
+		background-color: $bgcolor;
+		color: $color;
+		border-bottom: 1px solid $darkcolor;
+		outline: 1px dashed $color;
+		text-shadow: -1px -1px $darkcolor, 1px 1px $lightcolor;
+	}
 }
 
 .jb-sa {
-  position: relative;
-  overflow: hidden;
-  h5 {
-    display: block !important;
-    padding-right: 40px;
-  }
-  &::after {
-    content: "Smidig ansökan";
-    width: 200px;
-    height: 30px;
-    position: absolute;
-    top: 30px;
-    right: -52px;
-    transform: rotateZ(45deg);
-    text-align: center;
-    line-height: 30px;
-    outline-offset: -3px;
-    font-size: 14px;
-    font-weight: lighter;
-  }
-  @include jb-smooth-apply(#7f7f7f, #fff);
+	position: relative;
+	overflow: hidden;
+	h5 {
+		display: block !important;
+		padding-right: 40px;
+	}
+	&::after {
+		content: "Smidig ansökan";
+		width: 200px;
+		height: 30px;
+		position: absolute;
+		top: 30px;
+		right: -52px;
+		transform: rotateZ(45deg);
+		text-align: center;
+		line-height: 30px;
+		outline-offset: -3px;
+		font-size: 14px;
+		font-weight: lighter;
+	}
+	@include jb-smooth-apply(#7f7f7f, #fff);
 
-  &.jb-sa-orange {
-    @include jb-smooth-apply(#e82, #fff);
-  }
+	&.jb-sa-orange {
+		@include jb-smooth-apply(#e82, #fff);
+	}
+}
+
+.search-for-jobs-by-category {
+	img {
+		width: 165px;
+		height: 110px;
+		object-fit: cover;
+	}
+
+	&.city_in_focus .btn {
+		border-top-left-radius: 0;
+		border-top-right-radius: 0;
+	}
+}
+
+.business-in-focus {
+	.home_company {
+		height: 140px;
+		object-fit: contain;
+	}
+}
+
+.job-search-tips {
+	.tips_card {
+		max-width: 361px;
+		margin: auto;
+
+		.bg-white {
+			@extend .transition-03s-linear;
+			.link {
+				@extend .font-size-20;
+				@extend .text-green;
+				@extend .text-decoration-none;
+				@extend .font-weight-400;
+				@extend .transition-03s-linear;
+				&:hover {
+					@extend .text-decoration-none;
+				}
+			}
+			&:hover {
+				@extend .bg-dark-green;
+				p {
+					@extend .text-white;
+				}
+			}
+		}
+	}
+}
+
+.search-for-jobs {
+	/* Job Ad */
+	div.row.border-top {
+		&:first-child {
+			border-top: unset !important;
+		}
+	}
+}
+
+.outline-none {
+	outline: none !important;
+}
+
+.nav.navbar-nav.ml-auto {
+	.nav-item {
+		font-weight: 700 !important;
+	}
+}
+
+.nav-animate-color.bg-white .text-white {
+	color: #000;
+}
+/*
+.navbar-dark {
+	.navbar-collapse,
+	.navbar-collapse.collapsing,
+	.navbar-collapse.show {
+		&::after {
+			content: "";
+			z-index: -1;
+			position: absolute;
+			top: 51px;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.1) 5px, rgba(0, 0, 0, 0.6) 40px);
+		}
+	}
+
+	.navbar-collapse.collapsing {
+		position: unset !important;
+	}
+}
+*/
+.header {
+	h1,
+	.h1 {
+		font-weight: 700 !important;
+	}
+
+	h2,
+	.h2 {
+		font-weight: 700 !important;
+	}
+}
+
+h1,
+.h1 {
+	font-size: 40px;
+
+	@media screen and (max-width: 576px) {
+		font-size: 30px;
+	}
+}
+
+h2,
+.h2 {
+	font-size: 30px;
+
+	@media screen and (max-width: 576px) {
+		font-size: 25px;
+	}
+}
+
+html {
+	@media screen and (max-width: 576px) {
+		h3 {
+			font-size: 20px !important;
+		}
+		h4 {
+			font-size: 18px !important;
+		}
+		p {
+			font-size: 15px !important;
+		}
+	}
+}
+
+.container.h-100 {
+	h2,
+	.h2 {
+		&::after {
+			content: unset;
+		}
+	}
+}
+
+.header-in-pages {
+	@extend .text-white;
+	padding: 80px 0;
+	position: relative !important;
+
+	h2,
+	.h2 {
+		&::after {
+			content: unset;
+		}
+	}
+}
+
+.navigation-icon-list {
+	@extend .list-unstyled;
+	li {
+		@extend .position-relative;
+		&:before {
+			@extend .position-absolute;
+			left: -24px;
+			top: 0;
+			font-family: "Material Design Icons";
+			content: "\f390";
+			transform: rotate(90deg);
+			color: #026e66;
+		}
+	}
+}
+
+.content {
+	h2,
+	.h2 {
+		font-weight: 500 !important;
+	}
+	h3 {
+		font-size: 22px;
+	}
+	h4 {
+		font-size: 20px;
+		color: #00a99d;
+		font-weight: 700 !important;
+	}
+}
+
+.copyright-txt {
+	@extend .font-size-13;
+	@extend .mb-0;
+	@extend .text-white;
+}
+
+.overlay {
+	@extend .position-absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	background-color: rgba(46, 46, 46, 0.4);
+}
+
+/* The Modal (background) */
+.modal {
+	display: none;
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	z-index: 10000;
+	height: 100%;
+	overflow: auto;
+	@extend .transition-03s-linear;
+	background-color: rgba(45, 70, 84, 0.69);
+	.mySlides {
+		padding-top: 100px;
+		.modal-content {
+			@extend .max-width-default;
+		}
+	}
+}
+
+.modal-content {
+	margin: 0 auto;
+	display: block;
+	@extend .bg-transparent;
+	@extend .border-0;
+}
+.mySlides {
+	.modal-content {
+		max-width: 800px !important;
+		@extend .border-bottom-radius-0;
+		@extend .border-top-radius-0;
+	}
+}
+.guide-in-modal {
+	@extend .bg-primary;
+	@extend .position-relative;
+	@extend .p-3;
+	max-width: 800px;
+	@extend .mx-auto;
+	@extend .text-white;
+	@extend .clearfix;
+	.btn {
+		@extend .py-2;
+	}
+	.btn.bg-white {
+		@extend .font-size-12;
+		@extend .d-none;
+	}
+}
+@media screen and (max-width: 576px) {
+	.guide-in-modal {
+		.btn {
+			display: block;
+			float: none !important;
+			margin: 1rem 0;
+		}
+	}
+}
+.prev,
+.next {
+	cursor: pointer;
+	position: absolute !important;
+	top: 800px;
+	width: auto;
+	padding: 16px;
+	margin-top: -50px;
+	font-weight: bold;
+	font-size: 50px;
+	transition: 0.6s ease;
+	border-radius: 0 3px 3px 0;
+	user-select: none;
+	-webkit-user-select: none;
+	z-index: 500000 !important;
+	@extend .text-white;
+	@extend .opacity-1;
+}
+
+/* Position the "next button" to the right */
+.next {
+	right: 25%;
+	border-radius: 0 3px 3px 0;
+}
+.prev {
+	left: 25%;
+	border-radius: 3px 0 0 3px;
+}
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+	background-color: rgba(0, 0, 0, 0.8);
+}
+@media screen and (max-width: 2000px) {
+	.next {
+		right: 20%;
+	}
+	.prev {
+		left: 20%;
+	}
+}
+@media screen and (max-width: 1700px) {
+	.next {
+		right: 15%;
+	}
+	.prev {
+		left: 15%;
+	}
+}
+@media screen and (max-width: 1400px) {
+	.next {
+		right: 10%;
+	}
+	.prev {
+		left: 10%;
+	}
+}
+@media screen and (max-width: 1200px) {
+	.next {
+		right: 5%;
+	}
+	.prev {
+		left: 5%;
+	}
+}
+@media screen and (max-width: 1100px) {
+	.next {
+		right: 3%;
+	}
+	.prev {
+		left: 3%;
+	}
+}
+
+@media screen and (max-width: 1000px) {
+	.next {
+		right: 35%;
+		top: 7%;
+	}
+	.prev {
+		left: 35%;
+		top: 7%;
+	}
+}
+@keyframes zoom {
+	from {
+		transform: scale(0);
+	}
+	to {
+		transform: scale(1);
+	}
+}
+/* The Close Button */
+.close {
+	position: absolute;
+	top: 15px;
+	right: 35px;
+	color: #ffffff !important;
+	font-size: 40px;
+	font-weight: bold;
+	transition: 0.3s;
+}
+
+.close {
+	&:hover {
+		color: #bbb;
+		text-decoration: none;
+		cursor: pointer;
+	}
+	&:focus {
+		color: #bbb;
+		text-decoration: none;
+		cursor: pointer;
+	}
+}
+.content-holder.max-width-bigger {
+	max-width: 400px !important;
+}
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px) {
+	.modal-content {
+		width: 100%;
+	}
+}
+/**************** Template img ************************/
+.content-holder.w-100 {
+	width: 100%;
+	max-width: none;
+}
+.content-holder {
+	@extend .position-relative;
+	@extend .max-width-default;
+	figure {
+		@extend .mb-0;
+		.overlay-img {
+			@extend .position-absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			opacity: 0;
+			@extend .transition-03s-linear;
+			@extend .cursor-pointer;
+			background-color: rgba(0, 198, 210, 0.8);
+			@extend .opacity-0;
+			&:hover {
+				@extend .opacity-1;
+				.icon-modal {
+					@extend .text-white;
+				}
+			}
+			.icon-modal {
+				color: rgba(255, 255, 255, 1) !important;
+				font-size: 80px;
+				@extend .position-absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				-ms-transform: translate(-50%, -50%);
+				@extend .text-center;
+				@extend .transition-03s-linear;
+			}
+		}
+	}
+}
+@media screen and (max-width: 991px) {
+	.icon-modal {
+		color: rgba(0, 0, 0, 0.11) !important;
+		font-size: 50px !important;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		-ms-transform: translate(-50%, -50%);
+		text-align: center;
+	}
+}
+@media screen and (max-width: 576px) {
+	html {
+		.header-one {
+			font-size: 30px !important;
+		}
+		.header-two,
+		h2 {
+			font-size: 25px !important;
+		}
+		h3 {
+			font-size: 20px !important;
+		}
+		h4 {
+			font-size: 18px !important;
+		}
+		p {
+			font-size: 15px !important;
+		}
+	}
+	.btn-primary,
+	.btn-info {
+		padding-right: 1rem !important;
+		padding-left: 1rem !important;
+	}
+}
+
+@media only screen and (max-width: 768px) {
+	#device-detect {
+		display: none;
+	}
 }

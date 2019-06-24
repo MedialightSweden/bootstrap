@@ -68,6 +68,38 @@ fieldset:disabled a.btn {
   }
 }
 
+@each $color, $value in $colors {
+  .btn-c-#{$color} {
+    @include button-variant($value, $value);
+  }
+}
+
+@each $color, $value in $colors {
+  .btn-hover-transition-#{$color} {
+    @include transition(.3s all linear, .3s all linear);
+
+    &:hover {
+      @include button-variant($value, $value);
+    }
+
+    @each $color, $value in $colors {
+      &.to-c-#{$color} {
+        &:hover {
+          // stylelint-disable declaration-no-important
+          color: $value !important;
+          // stylelint-enable declaration-no-important
+
+          * {
+            // stylelint-disable declaration-no-important
+            color: $value !important;
+            // stylelint-enable declaration-no-important
+          }
+        }
+      }
+    }
+  }
+}
+
 
 //
 // Link buttons

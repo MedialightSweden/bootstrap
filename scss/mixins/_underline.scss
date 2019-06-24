@@ -1,0 +1,17 @@
+@mixin Underline() {
+  // stylelint-disable declaration-no-important
+  position: relative !important;
+  display: inline-block !important;
+  // stylelint-enable declaration-no-important
+
+  &::after {
+    position: absolute;
+    top: 101%;
+    right: 0;
+    left: 0;
+    width: auto;
+    height: 2px;
+    content: "";
+    background: $jobs-primary;
+  }
+}

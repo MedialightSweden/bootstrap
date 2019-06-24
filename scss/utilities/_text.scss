@@ -66,3 +66,16 @@
 // Reset
 
 .text-reset { color: inherit !important; }
+
+
+@each $color, $value in $colors {
+  @include text-emphasis-variant(".tc-#{$color}", $value);
+}
+
+@for $i from 10 through 30
+{
+  .ts-#{$i} {
+    font-size: $i + px;
+  }
+}
+
