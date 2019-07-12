@@ -29,9 +29,10 @@ const plugins = [
 ]
 const bsPlugins = {
   Data: path.resolve(__dirname, '../js/src/dom/data.js'),
-  EventHandler: path.resolve(__dirname, '../js/src/dom/eventHandler.js'),
+  EventHandler: path.resolve(__dirname, '../js/src/dom/event-handler.js'),
   Manipulator: path.resolve(__dirname, '../js/src/dom/manipulator.js'),
-  SelectorEngine: path.resolve(__dirname, '../js/src/dom/selectorEngine.js'),
+  Polyfill: path.resolve(__dirname, '../js/src/dom/polyfill.js'),
+  SelectorEngine: path.resolve(__dirname, '../js/src/dom/selector-engine.js'),
   Alert: path.resolve(__dirname, '../js/src/alert.js'),
   Button: path.resolve(__dirname, '../js/src/button.js'),
   Carousel: path.resolve(__dirname, '../js/src/carousel.js'),
@@ -69,13 +70,16 @@ function getConfigByPluginKey(pluginKey) {
     pluginKey === 'Data' ||
     pluginKey === 'Manipulator' ||
     pluginKey === 'EventHandler' ||
+    pluginKey === 'Polyfill' ||
     pluginKey === 'SelectorEngine' ||
     pluginKey === 'Util' ||
     pluginKey === 'Sanitizer'
   ) {
     return {
-      external: [],
-      globals: {}
+      external: [bsPlugins.Polyfill],
+      globals: {
+        [bsPlugins.Polyfill]: 'Polyfill'
+      }
     }
   }
 
@@ -135,23 +139,25 @@ function getConfigByPluginKey(pluginKey) {
   }
 }
 
+const utilObjects = [
+  'Util',
+  'Sanitizer'
+]
+
+const domObjects = [
+  'Data',
+  'EventHandler',
+  'Manipulator',
+  'Polyfill',
+  'SelectorEngine'
+]
+
 function build(plugin) {
   console.log(`Building ${plugin} plugin...`)
 
   const { external, globals } = getConfigByPluginKey(plugin)
+  const pluginFilename = path.basename(bsPlugins[plugin])
   let pluginPath = rootPath
-
-  const utilObjects = [
-    'Util',
-    'Sanitizer'
-  ]
-
-  const domObjects = [
-    'Data',
-    'EventHandler',
-    'Manipulator',
-    'SelectorEngine'
-  ]
 
   if (utilObjects.includes(plugin)) {
     pluginPath = `${rootPath}/util/`
@@ -160,8 +166,6 @@ function build(plugin) {
   if (domObjects.includes(plugin)) {
     pluginPath = `${rootPath}/dom/`
   }
-
-  const pluginFilename = `${plugin.toLowerCase()}.js`
 
   rollup.rollup({
     input: bsPlugins[plugin],
@@ -181,4 +185,5 @@ function build(plugin) {
   })
 }
 
-Object.keys(bsPlugins).forEach(plugin => build(plugin))
+Object.keys(bsPlugins)
+  .forEach(plugin => build(plugin))
