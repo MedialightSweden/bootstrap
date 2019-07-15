@@ -10415,11 +10415,13 @@ a.text-jobs-gray:hover, a.text-jobs-gray:focus {
   }
 }
 
-.border-box {
-  height: 40px;
-  margin-top: -40px;
-  line-height: 50px;
-  background: linear-gradient(transparent 0%, transparent 5%, #fff 60%, #fff 90%);
+@media (max-width: 767.98px) {
+  .border-box {
+    height: 40px;
+    margin-top: -40px;
+    line-height: 50px;
+    background: linear-gradient(transparent 0%, transparent 5%, #fff 60%, #fff 90%);
+  }
 }
 
 .bulleted::before {
