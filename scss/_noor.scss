@@ -175,6 +175,16 @@ $flagged: false !default;
 .professions {
   height: 3rem;
   overflow: hidden;
+
+  @include media-breakpoint-down(sm) {
+    height: 5rem;
+  }
+}
+.border-box {
+  height: 40px;
+  margin-top: -40px;
+  line-height: 50px;
+  background: linear-gradient(transparent 0%, transparent 5%, #fff 60%, #fff 90%);
 }
 .bulleted {
   &::before {
