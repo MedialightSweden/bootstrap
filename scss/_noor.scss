@@ -1,11 +1,13 @@
+$flagged: false !default;
 .search-header {
   position: fixed;
   top: 0;
   left: 0;
+  z-index: $zindex-fixed;
   width: 100%;
   max-height: 100vh;
   overflow-y: auto;
-  background: linear-gradient(rgba(0, 0, 0, .35), rgba(0, 0, 0, .35)), url("/img/bg.jpg");
+  background: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url("/img/blur.jpg");
   background-position: 50%;
   background-size: cover;
   @include media-breakpoint-up(md) {
@@ -24,6 +26,18 @@
       width: auto;
       height: 22px;
     }
+  }
+
+  .shrinker {
+    /* stylelint-disable property-blacklist  */
+    transition: padding .25s;
+    /* stylelint-enable */
+  }
+
+  .counter {
+    /* stylelint-disable property-blacklist  */
+    transition: hight .25s, opacity .25s, padding .25s, line-height .25s, transform .25s;
+    /* stylelint-enable */
   }
 }
 @each $breakpoint in map-keys($grid-breakpoints) {
@@ -68,6 +82,107 @@
   }
 }
 .search-body {
-  padding-top: 330px;
+  padding-top: 304px;
   background-color: $jobs-body;
+  /* stylelint-disable property-blacklist  */
+  transition: padding .25s;
+  /* stylelint-enable */
+
+  @include media-breakpoint-up(md) {
+    &.shrunk {
+      padding-top: 180px;
+      .search-header {
+        .shrinker {
+          /* stylelint-disable declaration-no-important  */
+          padding-top: 0 !important;
+          padding-bottom: 0 !important;
+          /* stylelint-enable */
+        }
+
+        .counter {
+          height: 0;
+          padding-top: 0;
+          padding-bottom: 0;
+          line-height: 0;
+          opacity: 0;
+          transform: rotateX(-90deg);
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    padding-top: 102px;
+  }
+}
+.ad {
+  position: relative;
+
+  @if $flagged {
+    & {
+      padding-left: 2.5rem;
+      .flag {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 1.5rem;
+        height: 100%;
+
+        &::before {
+          position: relative;
+          font-size: .75rem;
+          line-height: 1rem;
+          color: #fff;
+          transform: rotateZ(-90deg);
+        }
+      }
+
+      &.ams {
+        .flag {
+          background-color: rgba(114, 183, 37, .5);
+
+          &::before {
+            content: "Arbetsförmedlingen";
+          }
+        }
+      }
+
+      &.jobbsafari {
+        .flag {
+          background-color: #e7af7c;
+
+          &::before {
+            content: "Jobbsafari";
+          }
+        }
+      }
+
+      &.blocketjobb {
+        .flag {
+          background-color: #8b9fba;
+
+          &::before {
+            content: "Blocket\00a0jobb";
+          }
+        }
+      }
+    }
+  }
+}
+.professions {
+  height: 3rem;
+  overflow: hidden;
+}
+.bulleted {
+  &::before {
+    padding-right: .75rem;
+    font-size: 2rem;
+    line-height: 1rem;
+    color: $gray-500;
+    vertical-align: sub;
+    content: "•";
+  }
 }

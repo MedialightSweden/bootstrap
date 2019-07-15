@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*!
  * Bootstrap v4.3.1 (https://getbootstrap.com/)
  * Copyright 2011-2019 The Bootstrap Authors
@@ -92,40 +93,16 @@ h1, .h1 {
   font-size: 2.5rem;
 }
 
-@media (max-width: 1200px) {
-  h1, .h1 {
-    font-size: calc(1.375rem + 1.5vw) ;
-  }
-}
-
 h2, .h2 {
   font-size: 2rem;
-}
-
-@media (max-width: 1200px) {
-  h2, .h2 {
-    font-size: calc(1.325rem + 0.9vw) ;
-  }
 }
 
 h3, .h3 {
   font-size: 1.75rem;
 }
 
-@media (max-width: 1200px) {
-  h3, .h3 {
-    font-size: calc(1.3rem + 0.6vw) ;
-  }
-}
-
 h4, .h4 {
   font-size: 1.5rem;
-}
-
-@media (max-width: 1200px) {
-  h4, .h4 {
-    font-size: calc(1.275rem + 0.3vw) ;
-  }
 }
 
 h5, .h5 {
@@ -369,12 +346,6 @@ legend {
   white-space: normal;
 }
 
-@media (max-width: 1200px) {
-  legend {
-    font-size: calc(1.275rem + 0.3vw) ;
-  }
-}
-
 mark, .mark {
   padding: 0.2em;
   background-color: #fcf8e3;
@@ -431,22 +402,10 @@ template {
   line-height: 1.2;
 }
 
-@media (max-width: 1200px) {
-  .display-1 {
-    font-size: calc(1.725rem + 5.7vw) ;
-  }
-}
-
 .display-2 {
   font-size: 5.5rem;
   font-weight: 300;
   line-height: 1.2;
-}
-
-@media (max-width: 1200px) {
-  .display-2 {
-    font-size: calc(1.675rem + 5.1vw) ;
-  }
 }
 
 .display-3 {
@@ -455,22 +414,10 @@ template {
   line-height: 1.2;
 }
 
-@media (max-width: 1200px) {
-  .display-3 {
-    font-size: calc(1.575rem + 3.9vw) ;
-  }
-}
-
 .display-4 {
   font-size: 3.5rem;
   font-weight: 300;
   line-height: 1.2;
-}
-
-@media (max-width: 1200px) {
-  .display-4 {
-    font-size: calc(1.475rem + 2.7vw) ;
-  }
 }
 
 .list-unstyled {
@@ -5388,12 +5335,6 @@ input[type="button"].btn-block {
   opacity: .5;
 }
 
-@media (max-width: 1200px) {
-  .close {
-    font-size: calc(1.275rem + 0.3vw) ;
-  }
-}
-
 .close:hover {
   color: #000;
   text-decoration: none;
@@ -10200,10 +10141,11 @@ a.text-jobs-gray:hover, a.text-jobs-gray:focus {
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 1030;
   width: 100%;
   max-height: 100vh;
   overflow-y: auto;
-  background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url("/img/bg.jpg");
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/img/blur.jpg");
   background-position: 50%;
   background-size: cover;
 }
@@ -10228,6 +10170,18 @@ a.text-jobs-gray:hover, a.text-jobs-gray:focus {
 .search-header .brand img {
   width: auto;
   height: 22px;
+}
+
+.search-header .shrinker {
+  /* stylelint-disable property-blacklist  */
+  transition: padding .25s;
+  /* stylelint-enable */
+}
+
+.search-header .counter {
+  /* stylelint-disable property-blacklist  */
+  transition: hight .25s, opacity .25s, padding .25s, line-height .25s, transform .25s;
+  /* stylelint-enable */
 }
 
 .border-top {
@@ -10413,7 +10367,54 @@ a.text-jobs-gray:hover, a.text-jobs-gray:focus {
 }
 
 .search-body {
-  padding-top: 330px;
+  padding-top: 304px;
   background-color: #eeeff1;
+  /* stylelint-disable property-blacklist  */
+  transition: padding .25s;
+  /* stylelint-enable */
+}
+
+@media (min-width: 768px) {
+  .search-body.shrunk {
+    padding-top: 180px;
+  }
+  .search-body.shrunk .search-header .shrinker {
+    /* stylelint-disable declaration-no-important  */
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    /* stylelint-enable */
+  }
+  .search-body.shrunk .search-header .counter {
+    height: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    line-height: 0;
+    opacity: 0;
+    transform: rotateX(-90deg);
+  }
+}
+
+@media (max-width: 767.98px) {
+  .search-body {
+    padding-top: 102px;
+  }
+}
+
+.ad {
+  position: relative;
+}
+
+.professions {
+  height: 3rem;
+  overflow: hidden;
+}
+
+.bulleted::before {
+  padding-right: .75rem;
+  font-size: 2rem;
+  line-height: 1rem;
+  color: #adb5bd;
+  vertical-align: sub;
+  content: "•";
 }
 /*# sourceMappingURL=bootstrap.css.map */
