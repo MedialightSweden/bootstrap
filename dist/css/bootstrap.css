@@ -10374,6 +10374,13 @@ a.text-jobs-gray:hover, a.text-jobs-gray:focus {
   /* stylelint-enable */
 }
 
+.search-body input,
+.search-body button {
+  /* stylelint-disable property-blacklist  */
+  transition: height .25s, font .25s, line-height .25, padding .25s, border-radius .25s;
+  /* stylelint-enable */
+}
+
 @media (min-width: 768px) {
   .search-body.shrunk {
     padding-top: 180px;
@@ -10392,6 +10399,19 @@ a.text-jobs-gray:hover, a.text-jobs-gray:focus {
     opacity: 0;
     transform: rotateX(-90deg);
   }
+  .search-body.shrunk .search-header .search button {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    border-radius: 0.2rem;
+  }
+  .search-body.shrunk .search-header .search input {
+    height: calc(1.5em + 0.5rem + 2px);
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    border-radius: 0.2rem;
+  }
 }
 
 @media (max-width: 767.98px) {
@@ -10405,22 +10425,40 @@ a.text-jobs-gray:hover, a.text-jobs-gray:focus {
 }
 
 .professions {
-  height: 3rem;
+  max-height: 3rem;
   overflow: hidden;
+  /* stylelint-disable property-blacklist  */
+  transition: max-height .5s;
+  /* stylelint-enable */
 }
 
 @media (max-width: 767.98px) {
-  .professions {
-    height: 5rem;
+  .professions.expand {
+    max-height: 100vh;
+    /* stylelint-disable property-blacklist  */
+    transition: max-height 1s;
+    /* stylelint-enable */
   }
-}
-
-@media (max-width: 767.98px) {
   .border-box {
-    height: 40px;
-    margin-top: -40px;
-    line-height: 50px;
-    background: linear-gradient(transparent 0%, transparent 5%, #fff 60%, #fff 90%);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 0;
+    margin-top: .75rem;
+    line-height: 1rem;
+  }
+  .border-box .expansion {
+    z-index: 100;
+    margin-top: 2px;
+  }
+  .border-box::before {
+    position: absolute;
+    display: block;
+    width: 30px;
+    height: 5px;
+    content: "";
+    background-color: #fff;
   }
 }
 
@@ -10431,5 +10469,23 @@ a.text-jobs-gray:hover, a.text-jobs-gray:focus {
   color: #adb5bd;
   vertical-align: sub;
   content: "•";
+}
+
+.gap {
+  display: block;
+  width: 100%;
+  background-color: #eeeff1;
+}
+
+.capsule {
+  display: inline-block;
+  padding: .2rem .25rem;
+  font-size: 1rem;
+  line-height: 1.25rem;
+  color: #fff;
+  background: #adb5bd;
+  /* stylelint-disable property-blacklist  */
+  border-radius: .25rem;
+  /* stylelint-enable */
 }
 /*# sourceMappingURL=bootstrap.css.map */

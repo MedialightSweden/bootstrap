@@ -88,6 +88,13 @@ $flagged: false !default;
   transition: padding .25s;
   /* stylelint-enable */
 
+  input,
+  button {
+    /* stylelint-disable property-blacklist  */
+    transition: height .25s, font .25s, line-height .25, padding .25s, border-radius .25s;
+    /* stylelint-enable */
+  }
+
   @include media-breakpoint-up(md) {
     &.shrunk {
       padding-top: 180px;
@@ -106,6 +113,19 @@ $flagged: false !default;
           line-height: 0;
           opacity: 0;
           transform: rotateX(-90deg);
+        }
+
+        .search {
+          button {
+            @include button-size($btn-padding-y-sm, $btn-padding-x-sm, $btn-font-size-sm, $btn-line-height-sm, $btn-border-radius-sm);
+          }
+          input {
+            height: $input-height-sm;
+            padding: $input-padding-y-sm $input-padding-x-sm;
+            @include font-size($input-font-size-sm);
+            line-height: $input-line-height-sm;
+            @include border-radius($input-border-radius-sm);
+          }
         }
       }
     }
@@ -173,19 +193,41 @@ $flagged: false !default;
   }
 }
 .professions {
-  height: 3rem;
+  max-height: 3rem;
   overflow: hidden;
-
-  @include media-breakpoint-down(sm) {
-    height: 5rem;
-  }
+  /* stylelint-disable property-blacklist  */
+  transition: max-height .5s;
+  /* stylelint-enable */
 }
 @include media-breakpoint-down(sm) {
+  .professions.expand {
+    max-height: 100vh;
+    /* stylelint-disable property-blacklist  */
+    transition: max-height 1s;
+    /* stylelint-enable */
+  }
   .border-box {
-    height: 40px;
-    margin-top: -40px;
-    line-height: 50px;
-    background: linear-gradient(transparent 0%, transparent 5%, #fff 60%, #fff 90%);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 0;
+    margin-top: .75rem;
+    line-height: 1rem;
+
+    .expansion {
+      z-index: 100;
+      margin-top: 2px;
+    }
+
+    &::before {
+      position: absolute;
+      display: block;
+      width: 30px;
+      height: 5px;
+      content: "";
+      background-color: #fff;
+    }
   }
 }
 .bulleted {
@@ -197,4 +239,20 @@ $flagged: false !default;
     vertical-align: sub;
     content: "•";
   }
+}
+.gap {
+  display: block;
+  width: 100%;
+  background-color: $jobs-body;
+}
+.capsule {
+  display: inline-block;
+  padding: .2rem .25rem;
+  font-size: 1rem;
+  line-height: 1.25rem;
+  color: #fff;
+  background: $gray-500;
+  /* stylelint-disable property-blacklist  */
+  border-radius: .25rem;
+  /* stylelint-enable */
 }
