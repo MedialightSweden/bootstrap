@@ -44,6 +44,8 @@ $yellow: #ffc107 !default;
 $green: #28a745 !default;
 $teal: #20c997 !default;
 $cyan: #17a2b8 !default;
+$light-green: #daf3f1 !default;
+$dark-green: #026e66 !default;
 
 $colors: () !default;
 // stylelint-disable-next-line scss/dollar-variable-default
@@ -61,7 +63,10 @@ $colors: map-merge(
     "cyan": $cyan,
     "white": $white,
     "gray": $gray-600,
-    "gray-dark": $gray-800
+    "gray-dark": $gray-800,
+    "jobs-footer": $jobs-footer,
+    "light-green": $light-green,
+    "dark-green": $dark-green
   ),
   $colors
 );
@@ -1477,4 +1482,36 @@ h2 {
 .holder {
   width: 140px;
   height: 78px !important;
+}
+
+@each $color, $value in $colors {
+  .btn-c-#{$color} {
+    @include button-variant($value, $value);
+  }
+}
+
+@each $color, $value in $colors {
+  .btn-hover-transition-#{$color} {
+    @include transition(.3s all linear, .3s all linear);
+
+    &:hover {
+      @include button-variant($value, $value);
+    }
+
+    @each $color, $value in $colors {
+      &.to-c-#{$color} {
+        &:hover {
+          // stylelint-disable declaration-no-important
+          color: $value !important;
+          // stylelint-enable declaration-no-important
+
+          * {
+            // stylelint-disable declaration-no-important
+            color: $value !important;
+            // stylelint-enable declaration-no-important
+          }
+        }
+      }
+    }
+  }
 }

@@ -17,7 +17,7 @@
   @include button-size($btn-padding-y, $btn-padding-x, $btn-font-size, $btn-line-height, $btn-border-radius);
   @include transition($btn-transition);
 
-  @include hover {
+  &:hover {
     color: $body-color;
     text-decoration: none;
   }
@@ -68,38 +68,6 @@ fieldset:disabled a.btn {
   }
 }
 
-@each $color, $value in $colors {
-  .btn-c-#{$color} {
-    @include button-variant($value, $value);
-  }
-}
-
-@each $color, $value in $colors {
-  .btn-hover-transition-#{$color} {
-    @include transition(.3s all linear, .3s all linear);
-
-    &:hover {
-      @include button-variant($value, $value);
-    }
-
-    @each $color, $value in $colors {
-      &.to-c-#{$color} {
-        &:hover {
-          // stylelint-disable declaration-no-important
-          color: $value !important;
-          // stylelint-enable declaration-no-important
-
-          * {
-            // stylelint-disable declaration-no-important
-            color: $value !important;
-            // stylelint-enable declaration-no-important
-          }
-        }
-      }
-    }
-  }
-}
-
 
 //
 // Link buttons
@@ -108,11 +76,11 @@ fieldset:disabled a.btn {
 // Make a button look and behave like a link
 .btn-link {
   font-weight: $font-weight-normal;
-  color: $link-color;
+  color: $btn-link-color;
   text-decoration: $link-decoration;
 
-  @include hover {
-    color: $link-hover-color;
+  &:hover {
+    color: $btn-link-hover-color;
     text-decoration: $link-hover-decoration;
   }
 

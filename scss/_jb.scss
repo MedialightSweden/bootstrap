@@ -67,41 +67,6 @@
 	border-bottom: 0;
 }
 
-.jb-nav-tabs {
-	border-bottom: 4px solid $jobs-primary;
-
-	.nav-item {
-		margin-right: 2px;
-		margin-bottom: -4px;
-	}
-
-	.nav-link {
-		padding: 0.5rem 1.5rem;
-		color: #fff;
-		background-color: $jobs-secondary;
-		border: 0;
-		border-bottom: 4px solid $jobs-primary;
-		@include border-top-radius(0);
-
-		@include hover-focus {
-			border-color: $jobs-primary;
-		}
-
-		&.disabled {
-			color: #fff;
-			background-color: lighten($jobs-secondary, 30%);
-			border-color: $jobs-primary;
-		}
-	}
-
-	.nav-link.active,
-	.nav-item.show .nav-link {
-		color: $nav-tabs-link-active-color;
-		background-color: $nav-tabs-link-active-bg;
-		border-color: $nav-tabs-link-active-border-color;
-	}
-}
-
 .jb-section-border {
 	margin-top: 0.5rem;
 	border-top: 1px solid #ced4da;
@@ -236,26 +201,31 @@
 .nav-animate-color.bg-white .text-white {
 	color: #000;
 }
+
+.bg-light-green {
+	background-color: $light-green;
+}
+
 /*
 .navbar-dark {
-	.navbar-collapse,
-	.navbar-collapse.collapsing,
-	.navbar-collapse.show {
-		&::after {
-			content: "";
-			z-index: -1;
-			position: absolute;
-			top: 51px;
-			bottom: 0;
-			left: 0;
-			right: 0;
-			background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.1) 5px, rgba(0, 0, 0, 0.6) 40px);
-		}
-	}
+    .navbar-collapse,
+    .navbar-collapse.collapsing,
+    .navbar-collapse.show {
+        &::after {
+            content: "";
+            z-index: -1;
+            position: absolute;
+            top: 51px;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.1) 5px, rgba(0, 0, 0, 0.6) 40px);
+        }
+    }
 
-	.navbar-collapse.collapsing {
-		position: unset !important;
-	}
+    .navbar-collapse.collapsing {
+        position: unset !important;
+    }
 }
 */
 .header {
