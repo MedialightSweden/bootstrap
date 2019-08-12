@@ -8,6 +8,7 @@
   overflow-y: auto;
   background-position: 50%;
   background-size: cover;
+  
   @include media-breakpoint-up(md) {
     max-height: none;
     overflow-y: visible;
@@ -29,13 +30,13 @@
 
   .shrinker {
     /* stylelint-disable property-blacklist  */
-    transition: padding .25s;
+    transition: padding .5s;
     /* stylelint-enable */
   }
 
   .counter {
     /* stylelint-disable property-blacklist  */
-    transition: hight .25s, opacity .25s, padding .25s, line-height .25s, transform .25s;
+    transition: hight .5s, opacity .5s, padding .5s, line-height .5s, transform .5s;
     /* stylelint-enable */
   }
 }
@@ -82,9 +83,10 @@
 }
 .search-body {
   padding-top: 304px;
+  word-break: break-word;
   background-color: $jobs-body;
   /* stylelint-disable property-blacklist  */
-  transition: padding .25s;
+  transition: padding .5s;
   /* stylelint-enable */
 
   input,
@@ -95,8 +97,17 @@
   }
 
   @include media-breakpoint-up(md) {
+    &.home {
+      padding-top: 100vh;
+
+      .shrinker {
+        padding-top: calc(50vh - 100px) !important;
+        padding-bottom: calc(50vh - 100px) !important;
+      }
+    }
+
     &.shrunk {
-      padding-top: 180px;
+      padding-top: 280px;
       .search-header {
         .shrinker {
           /* stylelint-disable declaration-no-important  */
@@ -197,4 +208,10 @@
   /* stylelint-disable property-blacklist  */
   border-radius: .25rem;
   /* stylelint-enable */
+}
+
+.job-page-title {
+  @include media-breakpoint-down(md) {
+    font-size: 1.5rem;
+  }
 }
