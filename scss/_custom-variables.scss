@@ -1417,6 +1417,13 @@ $print-body-min-width: map-get($grid-breakpoints, "lg") !default;
 .text-dark-green {
   color: #026e66 !important;
 }
+
+footer h2 {
+  &:after {
+    content: unset;
+  }
+}
+
 h2 {
   @extend .position-relative;
   @extend .font-size-30;
