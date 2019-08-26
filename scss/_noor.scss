@@ -215,3 +215,7 @@
     font-size: 1.5rem;
   }
 }
+
+.no-after::after {
+  content: unset;
+}
