@@ -8,7 +8,7 @@
   overflow-y: auto;
   background-position: 50%;
   background-size: cover;
-  
+
   @include media-breakpoint-up(md) {
     max-height: none;
     overflow-y: visible;
@@ -219,3 +219,58 @@
 .no-after::after {
   content: unset;
 }
+
+
+/* stylelint-disable  */
+.search-for-jobs-by-category {
+  img {
+    width: 165px;
+    height: 110px;
+    object-fit: cover;
+  }
+
+  &.city_in_focus .btn {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+}
+
+.search-for-jobs {
+  /* Job Ad */
+  div.row.border-top {
+    &:first-child {
+      border-top: unset !important;
+    }
+  }
+}
+
+.job-search-tips {
+  .tips_card {
+    max-width: 361px;
+    margin: auto;
+
+    .bg-white {
+      transition: .3s all linear;
+
+      .link {
+        @extend .text-decoration-none;
+        font-size: 20px;
+        color: #00a99d;
+        font-weight: 400;
+        transition: .3s all linear;
+
+        &:hover {
+          @extend .text-decoration-none;
+        }
+      }
+      &:hover {
+        background-color: #026e66 !important;
+
+        p {
+          @extend .text-white;
+        }
+      }
+    }
+  }
+}
+/* stylelint-enable */
