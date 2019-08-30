@@ -273,4 +273,23 @@
     }
   }
 }
+
+.t-hover-green-bg-text-white {
+  @include transition(.2s background-color linear);
+
+  &.selected {
+    @extend .text-white;
+    background-color: $jobs-primary;
+  }
+
+  &.selected:hover {
+    @extend .text-primary;
+    background-color: #fff;
+  }
+
+  &:hover {
+    @extend .text-white;
+    background-color: $jobs-primary;
+  }
+}
 /* stylelint-enable */

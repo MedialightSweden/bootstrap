@@ -1,7 +1,10 @@
 @import "functions";
 @import "variables";
+@import "mixins";
+@import "utilities";
 
-@import "mixins/breakpoints";
+@import "utilities/sizing";
+@import "utilities/api";
 
 .custom-page {
   .text-center {
