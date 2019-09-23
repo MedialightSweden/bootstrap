@@ -440,6 +440,7 @@
     @extend .d-inline-block;
     @extend .border-bottom;
     @extend .border-primary;
+    @extend .border-bottom-thick;
   }
   .content {
     h3 {
@@ -1055,4 +1056,20 @@
       display: none;
     }
   }
+}
+
+.border-bottom-thick {
+  border-bottom-width: 2px !important;
+}
+.border-left-thick {
+  border-left-width: 2px !important;
+}
+.border-right-thick {
+  border-right-width: 2px !important;
+}
+.border-top-thick {
+  border-top-width: 2px !important;
+}
+.border-thick {
+  border-width: 2px !important;
 }

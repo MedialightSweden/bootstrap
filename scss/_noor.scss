@@ -292,4 +292,107 @@
     background-color: $jobs-primary;
   }
 }
+
+.border-bottom-thick {
+  border-bottom-width: 2px !important;
+}
+.border-left-thick {
+  border-left-width: 2px !important;
+}
+.border-right-thick {
+  border-right-width: 2px !important;
+}
+.border-top-thick {
+  border-top-width: 2px !important;
+}
+.border-thick {
+  border-width: 2px !important;
+}
+
+.company_info_container1 {
+  @include media-breakpoint-up(md) {
+    display: flex;
+    flex-flow: row;
+
+    .info_container1 {
+      padding-left: 1rem;
+      padding-right: 1rem;
+      display: flex;
+      flex-flow: column;
+
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    display: flex;
+    flex-flow: column;
+    margin-bottom: 1rem;
+
+    .info_container1 {
+      padding-left: 1rem;
+      padding-right: 1rem;
+      margin-bottom: 1.5rem;
+      display: flex;
+      flex-flow: column;
+    }
+  }
+
+  
+}
+
+
+.without-cv-tag {
+  overflow: hidden;
+  background: white;
+  list-style: none;
+  white-space: nowrap;
+  border-radius: 25px;
+  display: inline-block;
+  color: #f26522;
+  box-shadow: unset;
+  outline: unset;
+  padding: 1px 2px 0 3px;
+  border: solid 1px #f26522;
+  user-select: none;
+
+  &.active {
+    .without-cv-tag-content {
+      opacity: 1;
+      max-width: 150px;
+      transition: all .3s linear;
+      margin: 0 3px;
+    }
+  }
+
+  .without-cv-tag-content {
+    opacity: 0;
+    max-width: 0;
+    display: inline-block;
+    text-decoration: none;
+    transition: all .3s linear;
+  }
+
+  .without-cv-tag-icon {
+    color: #f26522;
+    line-height: 1;
+    display: inline-block;
+    box-shadow: unset;
+    outline: unset;
+  }
+}
+
+/*
+.sponsored banned from adblock
+*/
+.spons-tag {
+  @extend .border;
+  @extend .font-weight-bold;
+
+  color: #f26522;
+  border-color: #f26522 !important;
+  border-top-right-radius: 5px;
+  font-size: 13px;
+  padding: 0 8px;
+}
+
 /* stylelint-enable */
