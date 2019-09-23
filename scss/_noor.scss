@@ -101,8 +101,8 @@
       padding-top: 100vh;
 
       .shrinker {
-        padding-top: 40vh !important;
-        padding-bottom: 40vh !important;
+        padding-top: calc(50vh - 100px) !important;
+        padding-bottom: calc(50vh - 100px) !important;
       }
     }
 
