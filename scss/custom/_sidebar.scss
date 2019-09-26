@@ -1,0 +1,206 @@
+.sidebar {
+  position: fixed;
+  top: 0;
+  z-index: $zindex-fixed;
+  width: 50px;
+  height: 100%;
+  background: $gray-700;
+  @include transition(width .3s linear);
+  .heading {
+    width: 50px;
+    height: 50px;
+    background: $gray-300;
+    @include transition(width .3s linear);
+    .image-wrapper {
+      width: 43px;
+      height: 50px;
+      overflow: hidden;
+      @include transition(width .3s linear);
+      img {
+        display: block;
+        height: 30px;
+        margin: 10px 6.5px;
+      }
+    }
+    .handle {
+      position: relative;
+      top: -51px;
+      right: -51px;
+      width: 50px;
+      height: 50px;
+      padding: 1px;
+      cursor: pointer;
+      @include transition(all .3s linear);
+      .bar {
+        position: relative;
+        width: 60%;
+        height: 4px;
+        margin: 23px auto;
+        background: $black;
+        @include transition(all .3s linear);
+        &::before,
+        &::after {
+          position: absolute;
+          display: block;
+          width: 100%;
+          height: 4px;
+          content: "";
+          background: $black;
+          @include transition(all .3s linear);
+        }
+        &::before {
+          top: -8px;
+          opacity: 1;
+        }
+        &::after {
+          bottom: -8px;
+        }
+      }
+    }
+  }
+  .customer {
+    max-height: 0;
+    padding-bottom: 100%;
+    overflow: hidden;
+    border-bottom: 2px solid rgba(255, 255, 255, .25);
+    @include transition(all .3s linear);
+    .mdi {
+      position: relative;
+      display: block;
+      width: 40px;
+      height: 40px;
+      margin: 5px auto;
+      background: $gray-200;
+      @include border-radius($rounded-pill);
+      @include transition(all .3s linear);
+      &::before {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        font-size: 40px;
+        color: $white;
+        @include transition(all .3s linear);
+        transform: translate(-50%, -50%);
+      }
+    }
+    .customer-info {
+      text-align: center;
+      visibility: hidden;
+      opacity: 0;
+      @include transition(all .3s linear);
+      h4 {
+        margin: 11px 0;
+        color: $white;
+      }
+      .badge {
+        padding: 3px 7px;
+        font-size: 14px;
+        font-weight: 200;
+        color: $white;
+        text-align: center;
+        background: $primary;
+        @include border-radius($border-radius);
+      }
+    }
+  }
+  ul {
+    padding: 0;
+    li {
+      display: flex;
+      height: 40px;
+      overflow: hidden;
+      list-style-type: none;
+      border-bottom: 2px solid rgba(255, 255, 255, .25);
+    }
+    a {
+      display: flex;
+      width: 100%;
+      margin: 6.5px 0 6.5px 10px;
+      color: $white;
+
+    }
+    .mdi {
+      font-size: 24px;
+      line-height: 24px;
+    }
+    span {
+      width: 100%;
+      margin-left: 1rem;
+      line-height: 24px;
+      opacity: 0;
+      @include transition(opacity .1s linear);
+    }
+    .sub-menu {
+      display: none;
+      li {
+        height: 32px;
+        background: $gray-500;
+        border-bottom: 1px solid rgba(255, 255, 255, .25);
+      }
+      a {
+        margin: 5px 0 5px 45px;
+        font-size: 14px;
+      }
+    }
+  }
+  &.open {
+    width: 210px;
+    @include transition(width .3s linear);
+    .heading {
+      width: 210px;
+      @include transition(width .3s linear);
+      .image-wrapper {
+        width: 160px;
+        @include transition(width .3s linear);
+      }
+      .handle {
+        right: -161px;
+        @include transition(all .3s linear);
+        .bar {
+          @include transition(all .3s linear);
+          transform: rotate(45deg);
+          &::before {
+            top: 0;
+            opacity: 0;
+            @include transition(all .3s linear);
+          }
+          &::after {
+            bottom: 0;
+            transform: rotate(90deg);
+            @include transition(all .3s linear);
+          }
+        }
+      }
+    }
+    .customer {
+      max-height: 50px;
+      @include transition(all .3s linear);
+      .mdi {
+        width: 100px;
+        height: 100px;
+        margin: 15px auto 0;
+        @include transition(all .3s linear);
+        &::before {
+          font-size: 100px;
+          @include transition(all .3s linear);
+        }
+      }
+      .customer-info {
+        visibility: visible;
+        opacity: 1;
+        @include transition(all .3s linear);
+      }
+    }
+    li {
+      a {
+        span {
+          &:last-child {
+            opacity: 1;
+            @include transition(opacity .5s linear);
+          }
+        }
+      }
+    }
+  }
+
+}

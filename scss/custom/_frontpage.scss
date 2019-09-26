@@ -1,0 +1,333 @@
+.navbar {
+  justify-content: flex-end;
+  height: 50px;
+  background: $white;
+  border-bottom: .5px solid rgba(0, 0, 0, .2);
+}
+.analytics,
+.serpbook-values,
+.serpbook-extra-values {
+  color: $white;
+  box-shadow: 0 30px 60px -12px rgba(50, 50, 93, .25), 0 18px 36px -18px rgba(0, 0, 0, .3), 0 -12px 36px -8px rgba(0, 0, 0, .025);
+  @include border-radius($border-radius-lg);
+  .mdi {
+    line-height: 71px;
+    &.mdi-desktop-mac,
+    &.mdi-human-female,
+    &.mdi-human-male {
+      font-size: 60px;
+    }
+    &.mdi-cellphone-iphone,
+    &.mdi-city,
+    &.mdi-format-list-bulleted-type,
+    &.mdi-human-handsup {
+      font-size: 32px;
+    }
+    &.mdi-tablet-ipad {
+      font-size: 42px;
+    }
+  }
+}
+.analytics {
+  margin-bottom: 50px;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: $font-weight-lighter;
+  }
+  h1 {
+    height: 72%;
+    font-size: 80px;
+  }
+  h3 {
+    height: 60%;
+    font-size: 45px;
+  }
+  h4 {
+    font-size: 20px;
+  }
+  h5 {
+    font-size: 16px;
+  }
+  h1,
+  h3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .col-lg-4 {
+    padding: 0;
+    background: $gray-700;
+    &:nth-child(2) {
+      .middle,
+      .bottom {
+        .text-center {
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-end;
+          height: 112px;
+        }
+      }
+    }
+    &:first-child {
+      @include border-radius(0 0 0 $border-radius-lg);
+      background: $primary;
+      .bottom {
+        @include border-radius(0 0 0 $border-radius-lg);
+      }
+    }
+    &:last-child {
+      @include border-radius(0 $border-radius-lg $border-radius-lg 0);
+      color: $black;
+      background: $white;
+      .bottom {
+        @include border-radius(0 0 $border-radius-lg 0);
+      }
+    }
+  }
+  .top,
+  .middle,
+  .bottom,
+  .double {
+    padding: 12px 15px;
+  }
+  .top {
+    height: 285px;
+  }
+  .middle,
+  .bottom {
+    height: 142.5px;
+  }
+  .middle {
+    background: rgba(0, 0, 0, .1);
+  }
+  .bottom {
+    background: rgba(0, 0, 0, .2);
+  }
+  .double {
+    height: 427.5px;
+  }
+  .nav-doughnut {
+    padding: 0 15px;
+    .row {
+      height: 100%;
+    }
+    .col {
+      position: relative;
+      height: 100%;
+      padding: 12px 0;
+      background: $white;
+      border-top: .5px solid $gray-900;
+      border-right: .5px solid $gray-900;
+      border-left: .5px solid $gray-900;
+      &.first,
+      &.last {
+        border-right: none;
+        border-left: none;
+      }
+      &.last {
+        @include border-radius(0 0 $border-radius-lg 0);
+      }
+      &.highlighted {
+        background: none;
+        &::before {
+          position: absolute;
+          top: -7.25px;
+          left: calc(50% - 7.5px);
+          display: block;
+          width: 15px;
+          height: 15px;
+          content: "";
+          background: $white;
+          border-bottom: .5px solid $gray-900;
+          border-left: .5px solid $gray-900;
+          transform: rotate(-45deg);
+        }
+      }
+    }
+  }
+}
+.serpbook-nav,
+.serpbook-values,
+.serpbook-extra-values {
+  .col-sm-4,
+  .col-sm-2 {
+    padding: 0;
+    .col {
+      height: 40px;
+      padding: 0;
+    }
+  }
+  span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    border-bottom: 1px solid rgba(0, 0, 0, .1);
+  }
+}
+.serpbook-nav {
+  color: $white;
+  .col {
+    height: 40px;
+    background: $gray-700;
+    &:nth-child(1),
+    &:nth-child(2) {
+      background: $primary;
+      span {
+        border-bottom: none;
+      }
+    }
+    &:nth-child(1) {
+      @include border-radius($border-radius-lg 0 0 0);
+      span {
+        background: rgba(0, 0, 0, .2);
+        @include border-radius($border-radius-lg 0 0 0);
+      }
+    }
+    &:nth-child(2) {
+      span {
+        background: rgba(0, 0, 0, .3);
+      }
+    }
+    &:nth-child(3) {
+      span {
+        background: rgba(0, 0, 0, .3);
+      }
+    }
+    &:nth-child(4) {
+      span {
+        background: rgba(0, 0, 0, .2);
+      }
+    }
+    &:nth-child(5) {
+      @include border-radius(0 $border-radius-lg 0 0);
+      span {
+        background: rgba(0, 0, 0, .1);
+        @include border-radius(0 $border-radius-lg 0 0);
+      }
+    }
+  }
+}
+.serpbook-values,
+.serpbook-extra-values {
+  .col-sm-4,
+  .col-sm-2 {
+    .col {
+      background: $gray-700;
+    }
+    &:nth-child(1),
+    &:nth-child(2) {
+      .col {
+        background: $primary;
+      }
+    }
+    &:nth-child(1) {
+      @include border-radius($border-radius-lg 0 0 $border-radius-lg);
+      .col {
+        &.first {
+          @include border-radius($border-radius-lg 0 0 0);
+        }
+        &:last-child {
+          @include border-radius(0 0 0 $border-radius-lg);
+        }
+      }
+      span {
+        &:first-child {
+          @include border-radius($border-radius-lg 0 0 0);
+        }
+        &:last-child {
+          @include border-radius(0 0 0 $border-radius-lg);
+        }
+      }
+    }
+    &:nth-child(2) {
+      span {
+        background: rgba(0, 0, 0, .1);
+      }
+    }
+    &:nth-child(3) {
+      span {
+        background: rgba(0, 0, 0, .2);
+      }
+    }
+    &:nth-child(4) {
+      span {
+        background: rgba(0, 0, 0, .1);
+      }
+    }
+    &:nth-child(5) {
+      @include border-radius(0 0 $border-radius-lg $border-radius-lg);
+      .col {
+        &.first {
+          @include border-radius(0 $border-radius-lg 0 0);
+        }
+        &:last-child {
+          @include border-radius(0 0 $border-radius-lg 0);
+        }
+      }
+      span {
+        &:first-child {
+          @include border-radius(0 $border-radius-lg 0 0);
+        }
+        &:last-child {
+          @include border-radius(0 0 $border-radius-lg 0);
+        }
+      }
+    }
+  }
+}
+.serpbook-extra-values {
+  margin-top: 10px;
+  margin-bottom: 50px;
+}
+.serpbook-values {
+  margin-bottom: 10px;
+  .col-sm-4,
+  .col-sm-2 {
+    .first {
+      @include border-radius(0 !important);
+      span {
+        @include border-radius(0 !important);
+      }
+    }
+  }
+}
+footer {
+  position: relative;
+  top: 0;
+  height: 50px;
+  background: $gray-900;
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    color: $white;
+    span {
+      width: 100%;
+      font-size: 22px;
+      font-weight: $font-weight-lighter;
+      &:last-child {
+        text-align: right;
+      }
+    }
+    img {
+      height: 100%;
+      max-height: 30px;
+      margin-left: 1rem;
+    }
+  }
+}
+.extra-values {
+  display: block;
+  padding: 2px 15px;
+  margin: 0 auto;
+  @include border-radius($rounded-pill);
+  color: $white;
+  background: $gray-900;
+}
