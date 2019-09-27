@@ -10658,19 +10658,35 @@ footer .container img {
 }
 
 .sidebar ul li {
+  position: relative;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
   height: 40px;
   overflow: hidden;
   list-style-type: none;
   border-bottom: 2px solid rgba(255, 255, 255, 0.25);
 }
 
+.sidebar ul li > .is-active::after {
+  position: absolute;
+  top: calc(50% - 10px);
+  right: 0;
+  display: block;
+  width: 10px;
+  height: 10px;
+  content: "";
+  border-top: 10px solid transparent;
+  border-right: 10px solid #f9f9f9;
+  border-bottom: 10px solid transparent;
+}
+
 .sidebar ul a {
   display: -ms-flexbox;
   display: flex;
   width: 100%;
-  margin: 6.5px 0 6.5px 10px;
+  padding: 6.5px 0 6.5px 10px;
   color: #fff;
 }
 
@@ -10693,8 +10709,12 @@ footer .container img {
   }
 }
 
+.sidebar ul .has-children {
+  height: auto;
+}
+
 .sidebar ul .sub-menu {
-  display: none;
+  display: block;
 }
 
 .sidebar ul .sub-menu li {
@@ -10704,7 +10724,7 @@ footer .container img {
 }
 
 .sidebar ul .sub-menu a {
-  margin: 5px 0 5px 45px;
+  padding: 5px 0 5px 35px;
   font-size: 14px;
 }
 
@@ -10845,5 +10865,20 @@ footer .container img {
   .sidebar.open li a span:last-child {
     transition: none;
   }
+}
+
+.time-indicators {
+  position: absolute;
+  top: -24px;
+  left: 0;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.time-indicators .time-indicator span {
+  padding: 3px 12px;
+  border-radius: 0.3rem 0.3rem 0 0;
+  font-size: 12px;
+  cursor: pointer;
 }
 /*# sourceMappingURL=bootstrap.css.map */

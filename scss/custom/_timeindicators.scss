@@ -1,0 +1,14 @@
+.time-indicators {
+  position: absolute;
+  top: -24px;
+  left: 0;
+  display: flex;
+  .time-indicator {
+    span {
+      padding: 3px 12px;
+      @include border-radius( $border-radius-lg $border-radius-lg 0 0);
+      font-size: 12px;
+      cursor: pointer;
+    }
+  }
+}

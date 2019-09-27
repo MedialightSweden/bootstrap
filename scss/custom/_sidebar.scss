@@ -106,18 +106,33 @@
   ul {
     padding: 0;
     li {
+      position: relative;
       display: flex;
+      flex-direction: column;
       height: 40px;
       overflow: hidden;
       list-style-type: none;
       border-bottom: 2px solid rgba(255, 255, 255, .25);
+      & > .is-active {
+        &::after {
+          position: absolute;
+          top: calc(50% - 10px);
+          right: 0;
+          display: block;
+          width: 10px;
+          height: 10px;
+          content: "";
+          border-top: 10px solid transparent;
+          border-right: 10px solid #f9f9f9;
+          border-bottom: 10px solid transparent;
+        }
+      }
     }
     a {
       display: flex;
       width: 100%;
-      margin: 6.5px 0 6.5px 10px;
+      padding: 6.5px 0 6.5px 10px;
       color: $white;
-
     }
     .mdi {
       font-size: 24px;
@@ -130,15 +145,18 @@
       opacity: 0;
       @include transition(opacity .1s linear);
     }
+    .has-children {
+      height: auto;
+    }
     .sub-menu {
-      display: none;
+      display: block;
       li {
         height: 32px;
         background: $gray-500;
         border-bottom: 1px solid rgba(255, 255, 255, .25);
       }
       a {
-        margin: 5px 0 5px 45px;
+        padding: 5px 0 5px 35px;
         font-size: 14px;
       }
     }
