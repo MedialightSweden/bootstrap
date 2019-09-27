@@ -10881,4 +10881,52 @@ footer .container img {
   font-size: 12px;
   cursor: pointer;
 }
+
+table {
+  box-shadow: 0 30px 60px -12px rgba(50, 50, 93, 0.25), 0 18px 36px -18px rgba(0, 0, 0, 0.3), 0 -12px 36px -8px rgba(0, 0, 0, 0.025);
+  border-radius: 0.3rem;
+}
+
+thead {
+  border-radius: 0.3rem 0.3rem 0 0;
+}
+
+thead th {
+  color: #fff;
+  background: #495057;
+}
+
+thead th:first-child {
+  background: #6aa8e4;
+}
+
+thead .first {
+  border-radius: 0.3rem 0 0 0;
+}
+
+thead .last {
+  border-radius: 0 0.3rem 0 0;
+}
+
+tbody {
+  border-radius: 0 0 0.3rem 0.3rem;
+}
+
+tbody th {
+  color: #fff;
+  background: #6aa8e4;
+}
+
+tbody td {
+  color: #fff;
+  background: #495057;
+}
+
+tbody:last-child .first {
+  border-radius: 0 0 0 0.3rem;
+}
+
+tbody:last-child .last {
+  border-radius: 0 0 0.3rem 0;
+}
 /*# sourceMappingURL=bootstrap.css.map */

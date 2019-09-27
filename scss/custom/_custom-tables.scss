@@ -1,0 +1,39 @@
+table {
+  box-shadow: 0 30px 60px -12px rgba(50, 50, 93, .25), 0 18px 36px -18px rgba(0, 0, 0, .3), 0 -12px 36px -8px rgba(0, 0, 0, .025);
+  @include border-radius($border-radius-lg);
+}
+thead {
+  @include border-radius($border-radius-lg $border-radius-lg 0 0);
+  th {
+    color: $white;
+    background: $gray-700;
+    &:first-child {
+      background: $primary;
+    }
+  }
+  .first {
+    @include border-radius($border-radius-lg 0 0 0);
+  }
+  .last {
+    @include border-radius(0 $border-radius-lg 0 0);
+  }
+}
+tbody {
+  @include border-radius(0 0 $border-radius-lg $border-radius-lg);
+  th {
+    color: $white;
+    background: $primary;
+  }
+  td {
+    color: $white;
+    background: $gray-700;
+  }
+  &:last-child {
+    .first {
+      @include border-radius(0 0 0 $border-radius-lg);
+    }
+    .last {
+      @include border-radius(0 0 $border-radius-lg 0);
+    }
+  }
+}
