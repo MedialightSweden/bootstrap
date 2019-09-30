@@ -10669,7 +10669,15 @@ footer .container img {
   border-bottom: 2px solid rgba(255, 255, 255, 0.25);
 }
 
-.sidebar ul li > .is-active::after {
+.sidebar ul .has-children {
+  height: auto;
+}
+
+.sidebar ul .has-children.open .sub-menu {
+  display: block;
+}
+
+.sidebar ul .is-active::after {
   position: absolute;
   top: calc(50% - 10px);
   right: 0;
@@ -10709,12 +10717,8 @@ footer .container img {
   }
 }
 
-.sidebar ul .has-children {
-  height: auto;
-}
-
 .sidebar ul .sub-menu {
-  display: block;
+  display: none;
 }
 
 .sidebar ul .sub-menu li {
