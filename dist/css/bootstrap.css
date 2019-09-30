@@ -10882,51 +10882,67 @@ footer .container img {
   cursor: pointer;
 }
 
-table {
+.table {
   box-shadow: 0 30px 60px -12px rgba(50, 50, 93, 0.25), 0 18px 36px -18px rgba(0, 0, 0, 0.3), 0 -12px 36px -8px rgba(0, 0, 0, 0.025);
   border-radius: 0.3rem;
 }
 
-thead {
+.table th,
+.table td {
+  color: #fff;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.table thead {
   border-radius: 0.3rem 0.3rem 0 0;
 }
 
-thead th {
+.table thead th {
   color: #fff;
   background: #495057;
+  border-top: none;
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: none;
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-thead th:first-child {
+.table thead th:first-child {
   background: #6aa8e4;
 }
 
-thead .first {
+.table thead .first {
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+  border-left: none;
   border-radius: 0.3rem 0 0 0;
 }
 
-thead .last {
+.table thead .last {
+  border-right: none;
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 0 0.3rem 0 0;
 }
 
-tbody {
+.table tbody {
   border-radius: 0 0 0.3rem 0.3rem;
 }
 
-tbody th {
-  color: #fff;
-  background: #6aa8e4;
-}
-
-tbody td {
-  color: #fff;
-  background: #495057;
-}
-
-tbody:last-child .first {
+.table tbody tr:last-child .last {
   border-radius: 0 0 0 0.3rem;
 }
 
-tbody:last-child .last {
+.table tbody tr:last-child td:last-child {
+  border-right: none;
   border-radius: 0 0 0.3rem 0;
+}
+
+.table tbody th {
+  background: #6aa8e4;
+  border-left: none;
+}
+
+.table tbody td {
+  background: #495057;
 }
 /*# sourceMappingURL=bootstrap.css.map */

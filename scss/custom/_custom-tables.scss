@@ -1,39 +1,58 @@
-table {
+.table {
   box-shadow: 0 30px 60px -12px rgba(50, 50, 93, .25), 0 18px 36px -18px rgba(0, 0, 0, .3), 0 -12px 36px -8px rgba(0, 0, 0, .025);
   @include border-radius($border-radius-lg);
-}
-thead {
-  @include border-radius($border-radius-lg $border-radius-lg 0 0);
-  th {
-    color: $white;
-    background: $gray-700;
-    &:first-child {
-      background: $primary;
-    }
-  }
-  .first {
-    @include border-radius($border-radius-lg 0 0 0);
-  }
-  .last {
-    @include border-radius(0 $border-radius-lg 0 0);
-  }
-}
-tbody {
-  @include border-radius(0 0 $border-radius-lg $border-radius-lg);
-  th {
-    color: $white;
-    background: $primary;
-  }
+  th,
   td {
     color: $white;
-    background: $gray-700;
+    border-top: 1px solid rgba(0, 0, 0, .1);
+    border-right: 1px solid rgba(0, 0, 0, .1);
+    border-left: 1px solid rgba(0, 0, 0, .1);
   }
-  &:last-child {
+  thead {
+    @include border-radius($border-radius-lg $border-radius-lg 0 0);
+    th {
+      color: $white;
+      background: $gray-700;
+      border-top: none;
+      border-right: 1px solid rgba(0, 0, 0, .1);
+      border-bottom: none;
+      border-left: 1px solid rgba(0, 0, 0, .1);
+      &:first-child {
+        background: $primary;
+      }
+    }
     .first {
-      @include border-radius(0 0 0 $border-radius-lg);
+      border-right: 1px solid rgba(0, 0, 0, .1);
+      border-left: none;
+      @include border-radius($border-radius-lg 0 0 0);
     }
     .last {
-      @include border-radius(0 0 $border-radius-lg 0);
+      border-right: none;
+      border-left: 1px solid rgba(0, 0, 0, .1);
+      @include border-radius(0 $border-radius-lg 0 0);
+    }
+  }
+  tbody {
+    @include border-radius(0 0 $border-radius-lg $border-radius-lg);
+    tr {
+      &:last-child {
+        .last {
+          @include border-radius(0 0 0 $border-radius-lg);
+        }
+        td{
+          &:last-child {
+            border-right: none;
+            @include border-radius(0 0 $border-radius-lg 0);
+          }
+        }
+      }
+    }
+    th {
+      background: $primary;
+      border-left: none;
+    }
+    td {
+      background: $gray-700;
     }
   }
 }
