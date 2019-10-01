@@ -9,6 +9,31 @@
       @include border-radius( $border-radius-lg $border-radius-lg 0 0);
       font-size: 12px;
       cursor: pointer;
+      border-right: 1px solid rgba(0, 0, 0, .2);
+    }
+  }
+}
+.analytics {
+  .time-indicator {
+    span {
+      background: $primary-dark;
+    }
+    &.active {
+      span {
+        background: $primary;
+      }
+    }
+  }
+}
+.serpbook {
+  .time-indicator {
+    span {
+      background: $gray-900;
+    }
+    &.active {
+      span {
+        background: $gray-500;
+      }
     }
   }
 }

@@ -6,7 +6,7 @@
  */
 :root {
   --blue: #6aa8e4;
-  --indigo: #6610f2;
+  --indigo: #4995de;
   --purple: #6f42c1;
   --pink: #f075a2;
   --red: #dc3545;
@@ -10884,6 +10884,23 @@ footer .container img {
   border-radius: 0.3rem 0.3rem 0 0;
   font-size: 12px;
   cursor: pointer;
+  border-right: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.analytics .time-indicator span {
+  background: #4995de;
+}
+
+.analytics .time-indicator.active span {
+  background: #6aa8e4;
+}
+
+.serpbook .time-indicator span {
+  background: #212529;
+}
+
+.serpbook .time-indicator.active span {
+  background: #adb5bd;
 }
 
 .table {
