@@ -282,8 +282,19 @@
   }
 }
 .serpbook-extra-values {
+  height: auto;
+  max-height: 0;
   margin-top: 10px;
   margin-bottom: 50px;
+  visibility: hidden;
+  opacity: 0;
+  @include transition( max-height .3s linear);
+  &.open {
+    max-height: 9999px;
+    visibility: visible;
+    opacity: 1;
+    @include transition( max-height .3s linear);
+  }
 }
 .serpbook-values {
   margin-bottom: 10px;

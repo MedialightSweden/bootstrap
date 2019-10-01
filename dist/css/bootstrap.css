@@ -10411,8 +10411,32 @@ a.text-dark:hover, a.text-dark:focus {
 }
 
 .serpbook-extra-values {
+  height: auto;
+  max-height: 0;
   margin-top: 10px;
   margin-bottom: 50px;
+  visibility: hidden;
+  opacity: 0;
+  transition: max-height 0.3s linear;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .serpbook-extra-values {
+    transition: none;
+  }
+}
+
+.serpbook-extra-values.open {
+  max-height: 9999px;
+  visibility: visible;
+  opacity: 1;
+  transition: max-height 0.3s linear;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .serpbook-extra-values.open {
+    transition: none;
+  }
 }
 
 .serpbook-values {
@@ -10895,12 +10919,13 @@ footer .container img {
   background: #6aa8e4;
 }
 
-.serpbook .time-indicator span {
+.serpbook-nav .time-indicator span {
+  padding: 2.5px 11.5px;
   background: #212529;
 }
 
-.serpbook .time-indicator.active span {
-  background: #adb5bd;
+.serpbook-nav .time-indicator.active span {
+  background: #495057;
 }
 
 .table {
