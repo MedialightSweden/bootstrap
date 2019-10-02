@@ -4,6 +4,7 @@
   z-index: $zindex-fixed;
   width: 50px;
   height: 100%;
+  font-weight: $font-weight-lighter;
   background: $gray-700;
   @include transition(width .3s linear);
   .heading {
@@ -116,9 +117,16 @@
     }
     .has-children {
       height: auto;
+      max-height: 40px;
+      @include transition(all .4s linear);
       &.open {
-        .sub-menu {
-          display: block;
+        max-height: 40px;
+        visibility: visible;
+        @include transition(all .3s linear);
+      }
+      .is-active {
+        &::after {
+          top: 10px;
         }
       }
     }
@@ -154,10 +162,10 @@
       @include transition(opacity .1s linear);
     }
     .sub-menu {
-      display: none;
+      display: block;
       li {
         height: 32px;
-        background: $gray-500;
+        background: $gray-900;
         border-bottom: 1px solid rgba(255, 255, 255, .25);
       }
       a {
@@ -224,6 +232,12 @@
         }
       }
     }
+    .has-children {
+      &.open {
+        max-height: 200px;
+        visibility: visible;
+        @include transition(all .4s linear);
+      }
+    }
   }
-
 }
