@@ -40,6 +40,9 @@ main {
   color: $orange;
 }
 
+.btn.btn-light {
+  border-color: theme-color-level(secondary, -8);
+}
 .btn.extra-values {
   display: block;
   padding: 2px 15px;
