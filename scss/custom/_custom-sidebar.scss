@@ -1,7 +1,7 @@
 .sidebar {
   position: fixed;
   top: 0;
-  z-index: $zindex-fixed;
+  z-index: $zindex-popover;
   width: 50px;
   height: 100%;
   font-weight: $font-weight-lighter;
@@ -187,20 +187,6 @@
       .handle {
         right: -161px;
         @include transition(all .3s linear);
-        .bar {
-          @include transition(all .3s linear);
-          transform: rotate(45deg);
-          &::before {
-            top: 0;
-            opacity: 0;
-            @include transition(all .3s linear);
-          }
-          &::after {
-            bottom: 0;
-            transform: rotate(90deg);
-            @include transition(all .3s linear);
-          }
-        }
       }
     }
     .customer {

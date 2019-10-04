@@ -3,12 +3,35 @@ body {
   font-size: 16px;
   line-height: 1.42857;
 }
+.app {
+  height: 100vh;
+  padding: 0;
+  overflow: hidden;
+}
+main {
+  height: 100%;
+  padding: 0 0 0 50px;
+  @include transition(all .3s linear);
+  overflow-y: scroll;
+  background: #f9f9f9;
+}
+.page.open {
+  padding: 0 0 0 210px;
+  @include transition(all .3s linear);
+}
+.page-content {
+  position: relative;
+  min-height: calc(100% - 100px);
+  padding: 100px 0 50px;
+  overflow: hidden;
+}
 
 @import "custom-menu";
 @import "custom-sidebar";
 @import "custom-frontpage";
 @import "custom-timeindicators";
 @import "custom-tables";
+@import "custom-footer";
 
 .mdi-arrow-up {
   color: $green;
@@ -17,7 +40,7 @@ body {
   color: $orange;
 }
 
-.btn .extra-values {
+.btn.extra-values {
   display: block;
   padding: 2px 15px;
   margin: 0 auto;
@@ -29,32 +52,5 @@ body {
   }
   &:focus {
     box-shadow: none;
-  }
-}
-
-footer {
-  position: relative;
-  top: 0;
-  height: 50px;
-  background: $gray-900;
-  .container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 100%;
-    color: $white;
-    span {
-      width: 100%;
-      font-size: 22px;
-      font-weight: $font-weight-lighter;
-      &:last-child {
-        text-align: right;
-      }
-    }
-    img {
-      height: 100%;
-      max-height: 30px;
-      margin-left: 1rem;
-    }
   }
 }
