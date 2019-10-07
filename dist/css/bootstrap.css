@@ -10351,7 +10351,7 @@ main {
 }
 
 .sidebar ul .has-children .is-active::after {
-  top: 10px;
+  display: none;
 }
 
 .sidebar ul .is-active::after {
@@ -10407,6 +10407,10 @@ main {
 .sidebar ul .sub-menu a {
   padding: 5px 0 5px 35px;
   font-size: 14px;
+}
+
+.sidebar ul .sub-menu .is-active::after {
+  display: block;
 }
 
 .sidebar.open {

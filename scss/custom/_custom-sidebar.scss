@@ -126,7 +126,7 @@
       }
       .is-active {
         &::after {
-          top: 10px;
+          display: none;
         }
       }
     }
@@ -171,6 +171,11 @@
       a {
         padding: 5px 0 5px 35px;
         font-size: 14px;
+      }
+      .is-active {
+        &::after {
+          display: block;
+        }
       }
     }
   }
