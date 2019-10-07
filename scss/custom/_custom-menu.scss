@@ -11,9 +11,6 @@
   border-bottom: .5px solid rgba(0, 0, 0, .2);
   .btn {
     margin: 4.5px 15px;
-    &:first-child {
-      margin-right: 0;
-    }
   }
 }
 
@@ -23,7 +20,7 @@
   height: 38px !important;
 }
 .select2-container {
-  margin: 0 15px !important;
+  margin: 0 15px 0 0 !important;
   .select2-selection {
     height: 100% !important;
     background: $light !important;
@@ -34,7 +31,21 @@
       color: $gray-900 !important;
     }
   }
-  .dropdown-wrapper {
-    background: salmon !important;
+  .select2-dropdown {
+    max-width: 470px !important;
+    top: 6px !important;
+    .select2-search__field {
+      @include border-radius($border-radius !important);
+    }
+  }
+  .select2-results__option {
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  .select2-results__option--highlighted {
+    background-color: $pink !important;
+    @include border-radius($border-radius !important);
   }
 }
