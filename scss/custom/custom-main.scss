@@ -6,13 +6,11 @@ body {
 .app {
   height: 100vh;
   padding: 0;
-  overflow: hidden;
 }
-main {
+.page.container-fluid {
   height: 100%;
   padding: 0 0 0 50px;
   @include transition(all .3s linear);
-  overflow-y: scroll;
   background: #f9f9f9;
 }
 .page.open {
@@ -32,10 +30,13 @@ main {
 @import "custom-timeindicators";
 @import "custom-tables";
 @import "custom-footer";
+@import "custom-loader";
 
+.green,
 .mdi-arrow-up {
   color: $green;
 }
+.red,
 .mdi-arrow-down {
   color: $orange;
 }
