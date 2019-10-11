@@ -10059,7 +10059,7 @@ body {
 
 .page-content {
   position: relative;
-  min-height: calc(100% - 100px);
+  min-height: calc(100% - 50px);
   padding: 100px 0 50px;
   overflow: hidden;
 }
@@ -10398,7 +10398,7 @@ body {
 
 .sidebar ul .sub-menu li {
   height: 32px;
-  background: #212529;
+  background: #3d4349;
   border-bottom: 1px solid rgba(255, 255, 255, 0.25);
 }
 
@@ -10757,6 +10757,22 @@ body {
 
 .serpbook-nav {
   color: #fff;
+}
+
+.serpbook-nav.fixed {
+  position: fixed;
+  top: 50px;
+  z-index: 1030;
+  width: 100%;
+  max-width: 1140px;
+}
+
+.serpbook-nav.fixed .time-indicators {
+  top: 49px;
+}
+
+.serpbook-nav.fixed .time-indicators span {
+  border-radius: 0 0 0.3rem 0.3rem;
 }
 
 .serpbook-nav .col {

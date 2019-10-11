@@ -176,6 +176,19 @@
   }
 }
 .serpbook-nav {
+  &.fixed {
+    position: fixed;
+    top: 50px;
+    z-index: $zindex-fixed;
+    width: 100%;
+    max-width: 1140px;
+    .time-indicators {
+      top: 49px;
+      span {
+        @include border-radius(0 0 $border-radius-lg $border-radius-lg);
+      }
+    }
+  }
   color: $white;
   .col {
     height: 50px;
