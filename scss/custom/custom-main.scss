@@ -4,7 +4,8 @@ body {
   line-height: 1.42857;
 }
 .app {
-  height: 100vh;
+  height: 100%;
+  min-height: 100vh;
   padding: 0;
 }
 .page.container-fluid {
