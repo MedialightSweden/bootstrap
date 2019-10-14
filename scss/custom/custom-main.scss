@@ -51,7 +51,7 @@ body {
   margin: 0 auto;
   @include border-radius($rounded-pill);
   color: $white;
-  background: $gray-900;
+  background: $secondary;
   &:hover {
     color: $white;
   }

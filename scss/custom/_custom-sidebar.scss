@@ -71,7 +71,7 @@
       width: 40px;
       height: 40px;
       margin: 5px auto;
-      background: $gray-200;
+      background: $gray-600;
       @include border-radius($rounded-pill);
       @include transition(all .3s linear);
       &::before {
@@ -91,6 +91,7 @@
       @include transition(all .3s linear);
       h4 {
         margin: 11px 0;
+        font-weight: 200;
         color: $white;
       }
       .badge {
@@ -165,7 +166,7 @@
       display: block;
       li {
         height: 32px;
-        background: theme-color-level(secondary, 2);
+        background: $gray-800;
         border-bottom: 1px solid rgba(255, 255, 255, .25);
       }
       a {
