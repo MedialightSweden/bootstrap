@@ -3,3 +3,4 @@
 **/vendor/
 /_gh_pages/
 /scss/custom/_custom-menu.scss
+/scss/custom/_custom-sidebar.scss

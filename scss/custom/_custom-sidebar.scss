@@ -150,6 +150,14 @@
       width: 100%;
       padding: 6.5px 0 6.5px 10px;
       color: $white;
+      &[disabled] {
+        text-decoration: none;
+        .mdi,
+        span {
+          color: $gray-600;
+          font-weight: 400;
+        }
+      }
     }
     .mdi {
       font-size: 24px;
