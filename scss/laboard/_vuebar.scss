@@ -1,0 +1,40 @@
+$vb-width: 12px !default;
+$vb-margin: 5px !default;
+$vb-color: $gray-700 !default;
+
+.vb
+{
+  & > .vb-dragger {
+    right: 0;
+    z-index: 5;
+    width: $vb-width;
+
+    /* stylelint-disable function-blacklist */
+    /* stylelint-disable property-blacklist */
+    & > .vb-dragger-styler {
+      display: block;
+      height: calc(100% - #{($vb-width - 2)});
+      margin: $vb-margin $vb-margin $vb-margin 0;
+      background-color: rgba($vb-color, .1);
+      border-radius: $vb-width * 2;
+      transition: background-color 100ms ease-out, margin 100ms ease-out, height 100ms ease-out;
+      transform: rotate3d(0, 0, 0, 0);
+      backface-visibility: hidden;
+    }
+    /* stylelint-enable */
+
+    &:hover > .vb-dragger-styler,
+    & > .vb-dragger > .vb-dragger-styler
+    {
+      background-color: rgba($vb-color, .5);
+    }
+  }
+
+  &.vb-scrolling-phantom > .vb-dragger > .vb-dragger-styler {
+    background-color: rgba($vb-color, .3);
+  }
+
+  &.vb-dragging-phantom > .vb-dragger > .vb-dragger-styler {
+    background-color: rgba($vb-color, .5);
+  }
+}
