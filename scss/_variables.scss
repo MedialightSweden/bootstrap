@@ -73,7 +73,7 @@ $info:          $cyan !default;
 $warning:       $yellow !default;
 $danger:        $red !default;
 $light:         $gray-100 !default;
-$dark:          $gray-800 !default;
+$dark:          $gray-700 !default;
 
 $theme-colors: () !default;
 // stylelint-disable-next-line scss/dollar-variable-default
@@ -1103,3 +1103,42 @@ $positions: static, relative, absolute, fixed, sticky !default;
 
 $print-page-size:                   a3 !default;
 $print-body-min-width:              map-get($grid-breakpoints, "lg") !default;
+
+//*** Custom Components
+
+// Blocks
+
+$block-colors: ("primary": $primary, "secondary": $secondary) !default;
+$block-position: relative !default;
+
+$block-height-sm: 142.5px !default;
+$block-height-md: $block-height-sm * 2 !default;
+$block-height-lg: $block-height-sm + $block-height-md !default;
+
+// Tables
+
+$thead-colors: (
+  "1": theme-color-level(primary, 3),
+  "2": theme-color-level(primary, 4),
+  "3": theme-color-level(secondary, 4),
+  "4": theme-color-level(secondary, 3),
+  "5": theme-color-level(secondary, 2)
+) !default;
+
+$tbody-colors: (
+  "1": theme-color-level(primary, 2),
+  "2": theme-color-level(primary, 3),
+  "3": theme-color-level(secondary, 3),
+  "4": theme-color-level(secondary, 2),
+  "5": theme-color-level(secondary, 1)
+) !default;
+
+$thead-font-base: $font-weight-bold ($font-size-base * .9375) $font-family-base !default;
+$tbody-font-base: $font-weight-normal $font-size-base $font-family-base !default;
+$tbody-font-small: $font-weight-normal $font-size-base $font-family-base !default;
+
+// Time indicators
+
+$time-height: $spacer * 1.5 !default;
+$time-font-base: $font-weight-normal ($font-size-base * .875) $font-family-base !default;
+$time-font-sm: $font-weight-normal ($font-size-base * .75) $font-family-base !default;

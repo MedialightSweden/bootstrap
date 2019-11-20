@@ -1,0 +1,39 @@
+.time {
+  $self: &;
+
+  display: flex;
+  position: absolute;
+  top: -$time-height;
+  left: 0;
+  width: 100%;
+  height: $time-height;
+  text-align: center;
+  background: red;
+
+  &-indicator {
+    color: $white;
+    @include border-radius($border-radius-lg $border-radius-lg 0 0);
+  }
+
+  &.primary {
+    #{$self} {
+      max-width: 225px;
+    }
+
+    #{$self}-indicator {
+      font: $time-font-base;
+      background: $primary;
+    }
+  }
+
+  &.secondary {
+    #{$self} {
+      max-width: 185px;
+    }
+
+    #{$self}-indicator {
+      font: $time-font-sm;
+      background: $secondary;
+    }
+  }
+}

@@ -1,27 +1,32 @@
 .block {
   $self: &;
 
+  position: $block-position;
   padding: 0;
+  color: $white;
 
   &-top {
-    height: 285px;
+    position: inherit;
+    height: $block-height-md;
   }
 
   &-middle {
-    height: 142.5px;
+    position: inherit;
+    height: $block-height-sm;
   }
 
   &-bottom {
-    height: 142.5px;
+    position: inherit;
+    height: $block-height-sm;
+    color: $dark;
     background: $white;
   }
 
   &-double {
-    height: 427.5px;
+    position: inherit;
+    height: $block-height-lg;
     background: $white;
   }
-
-  $block-colors: ("primary": $primary, "secondary": $secondary);
 
   @each $name, $color in $block-colors {
     &-#{$name} {
@@ -32,6 +37,7 @@
       }
 
       #{$self}-bottom {
+        color: $white;
         background: theme-color-level(#{$name}, if(#{$name} == "primary", 2, 3));
       }
     }
