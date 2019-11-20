@@ -7,13 +7,13 @@
 
 $white:    #fff !default;
 $gray-100: #f8f9fa !default;
-$gray-200: #e9ecef !default;
+$gray-200: #f9f9f9 !default;
 $gray-300: #dee2e6 !default;
 $gray-400: #ced4da !default;
 $gray-500: #adb5bd !default;
-$gray-600: #6c757d !default;
-$gray-700: #495057 !default;
-$gray-800: #343a40 !default;
+$gray-600: #676562 !default;
+$gray-700: #565350 !default;
+$gray-800: #3c3a38 !default;
 $gray-900: #212529 !default;
 $black:    #000 !default;
 
@@ -34,16 +34,16 @@ $grays: map-merge(
   $grays
 );
 
-$blue:    #007bff !default;
-$indigo:  #6610f2 !default;
+$blue:    #6aa8e4 !default;
+$indigo:  #4995de !default;
 $purple:  #6f42c1 !default;
-$pink:    #e83e8c !default;
+$pink:    #f075a2 !default;
 $red:     #dc3545 !default;
-$orange:  #fd7e14 !default;
-$yellow:  #ffc107 !default;
-$green:   #28a745 !default;
+$orange:  #ff8363 !default;
+$yellow:  #f3c46c !default;
+$green:   #9dcc64 !default;
 $teal:    #20c997 !default;
-$cyan:    #17a2b8 !default;
+$cyan:    #64b4dd !default;
 
 $colors: () !default;
 // stylelint-disable-next-line scss/dollar-variable-default
@@ -238,6 +238,7 @@ $line-height-lg:              1.5 !default;
 $line-height-sm:              1.5 !default;
 
 $border-width:                1px !default;
+$border-width-lg:             2px !default;
 $border-color:                $gray-300 !default;
 
 $border-radius:               .25rem !default;
@@ -247,7 +248,7 @@ $border-radius-sm:            .2rem !default;
 $rounded-pill:                50rem !default;
 
 $box-shadow-sm:               0 .125rem .25rem rgba($black, .075) !default;
-$box-shadow:                  0 .5rem 1rem rgba($black, .15) !default;
+$box-shadow:                  0 30px 60px -12px rgba(50, 50, 93, .25), 0 18px 36px -18px rgba(0, 0, 0, .3), 0 -12px 36px -8px rgba(0, 0, 0, .025) !default;
 $box-shadow-lg:               0 1rem 3rem rgba($black, .175) !default;
 
 $component-active-color:      $white !default;
@@ -675,12 +676,12 @@ $zindex-tooltip:                    1070 !default;
 
 // Navs
 
-$nav-link-padding-y:                .5rem !default;
+$nav-link-padding-y:                1rem / 10 !default;
 $nav-link-padding-x:                1rem !default;
 $nav-link-disabled-color:           $gray-600 !default;
 
 $nav-tabs-border-color:             $gray-300 !default;
-$nav-tabs-border-width:             $border-width !default;
+$nav-tabs-border-width:             $border-width-lg !default;
 $nav-tabs-border-radius:            $border-radius !default;
 $nav-tabs-link-hover-border-color:  $gray-200 $gray-200 $nav-tabs-border-color !default;
 $nav-tabs-link-active-color:        $gray-700 !default;
@@ -691,7 +692,7 @@ $nav-pills-border-radius:           $border-radius !default;
 $nav-pills-link-active-color:       $component-active-color !default;
 $nav-pills-link-active-bg:          $component-active-bg !default;
 
-$nav-divider-color:                 $gray-200 !default;
+$nav-divider-color:                 rgba($white, .25) !default;
 $nav-divider-margin-y:              $spacer / 2 !default;
 
 

@@ -1,0 +1,50 @@
+.block {
+  $self: &;
+
+  padding: 0;
+
+  &-top {
+    height: 285px;
+  }
+
+  &-middle {
+    height: 142.5px;
+  }
+
+  &-bottom {
+    height: 142.5px;
+    background: $white;
+  }
+
+  &-double {
+    height: 427.5px;
+    background: $white;
+  }
+
+  $block-colors: ("primary": $primary, "secondary": $secondary);
+
+  @each $name, $color in $block-colors {
+    &-#{$name} {
+      background: #{$color};
+
+      #{$self}-middle {
+        background: theme-color-level(#{$name}, if(#{$name} == "primary", 1, 2));
+      }
+
+      #{$self}-bottom {
+        background: theme-color-level(#{$name}, if(#{$name} == "primary", 2, 3));
+      }
+    }
+  }
+}
+
+.analytics {
+  padding: 0;
+  margin-bottom: ($spacer * 4);
+
+  box-shadow: $box-shadow;
+}
+
+.serpbook {
+  padding: 0;
+}
