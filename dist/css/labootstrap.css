@@ -5725,6 +5725,19 @@ a.close.disabled {
   background-color: rgba(70, 67, 65, 0.5);
 }
 
+.vue-tooltip.tooltip-custom {
+  font-size: small;
+  color: #fff;
+  background-color: #908c8a;
+  box-shadow: none;
+  /* stylelint-disable declaration-no-important */
+  /* stylelint-enable */
+}
+
+.vue-tooltip.tooltip-custom .tooltip-arrow {
+  border-color: #908c8a !important;
+}
+
 .clearfix::after {
   display: block;
   clear: both;
