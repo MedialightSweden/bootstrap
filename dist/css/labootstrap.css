@@ -5641,6 +5641,11 @@ a.close.disabled {
   position: relative;
   margin-bottom: 0;
   text-align: center;
+  border-spacing: 0 0;
+  border-collapse: separate;
+  /* stylelint-disable declaration-no-important  */
+  /* stylelint-disable selector-no-qualifying-type  */
+  /* stylelint-enable  */
   /* stylelint-disable selector-max-type  */
   /* stylelint-enable  */
 }
@@ -5650,12 +5655,23 @@ a.close.disabled {
 }
 
 .laboard-table th {
+  z-index: 100;
+  padding: 0 0.25rem;
   font-weight: 300;
   color: #fff;
+  vertical-align: middle !important;
   background-color: #2ea1b8;
-  border-color: #fff;
   border-top: none;
+  border-right: 1px solid #71bfcf;
   border-bottom: none;
+}
+
+.laboard-table th > span {
+  line-height: 1rem;
+}
+
+.laboard-table th:last-child {
+  border-right: none;
 }
 
 .laboard-table tr:last-child td {
@@ -5664,6 +5680,15 @@ a.close.disabled {
 
 .laboard-table tbody tr {
   font-size: 0.875rem;
+}
+
+.laboard-table tbody tr td {
+  border-right: 1px solid #e3e2e2;
+  border-bottom: 1px solid #e3e2e2;
+}
+
+.laboard-table tbody tr td:last-child {
+  border-right: none;
 }
 
 .laboard-table tbody tr:first-child td {
@@ -5685,16 +5710,26 @@ a.close.disabled {
   vertical-align: middle;
 }
 
-.laboard-table-sticky th {
+.laboard-table-sticky tr {
+  /* stylelint-disable selector-max-type  */
+  /* stylelint-enable */
+}
+
+.laboard-table-sticky tr th {
   position: -webkit-sticky;
   position: sticky;
   top: 0;
 }
 
+.laboard-table-sticky tr:last-child th {
+  top: 1.5rem;
+  border-top: 1px solid #71bfcf;
+}
+
 .vb > .vb-dragger {
   right: 0;
   z-index: 5;
-  width: 12px;
+  width: 10px;
   /* stylelint-disable function-blacklist */
   /* stylelint-disable property-blacklist */
   /* stylelint-enable */
@@ -5702,10 +5737,10 @@ a.close.disabled {
 
 .vb > .vb-dragger > .vb-dragger-styler {
   display: block;
-  height: calc(100% - 10px);
+  height: calc(100% - 8px);
   margin: 5px 5px 5px 0;
   background-color: rgba(70, 67, 65, 0.1);
-  border-radius: 24px;
+  border-radius: 20px;
   transition: background-color 100ms ease-out, margin 100ms ease-out, height 100ms ease-out;
   transform: rotate3d(0, 0, 0, 0);
   -webkit-backface-visibility: hidden;
