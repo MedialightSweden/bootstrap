@@ -9,10 +9,14 @@
 %table-body {
   display: block;
   box-shadow: $box-shadow;
+  @include border-radius($border-radius-lg);
+  overflow-x: hidden;
 }
 
 .serpbook {
+
   &-table {
+    position: relative;
     text-align: center;
 
     tr {
@@ -37,18 +41,29 @@
   }
 
   &-nav {
-    display: block;
+
     font: $thead-font-base;
+    @include border-radius($border-radius-lg $border-radius-lg 0 0);
+
+    th {
+      padding: ($table-cell-padding * 1.25) $table-cell-padding;
+    }
   }
 
   &-values {
+
     @extend %table-body;
-    // font:
+    @include border-radius(0 0 $border-radius-lg $border-radius-lg);
+    font: $tbody-font-base;
+
+    td {
+      padding: ($table-cell-padding * 1.459) $table-cell-padding;
+    }
   }
 
   &-categories {
     @extend %table-body;
-    margin: ($spacer * 4) 0;
+    margin: 0 0 ($spacer * 4);
     // font:
   }
 

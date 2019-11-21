@@ -102,13 +102,13 @@
       @include transition(all .3s linear);
       h4 {
         margin: 11px 0;
-        font-weight: 200;
+        font-weight: $font-weight-lighter;
         color: $white;
       }
       .badge {
         padding: 3px 7px;
         font-size: 14px;
-        font-weight: 200;
+        font-weight: $font-weight-lighter;
         color: $white;
         text-align: center;
         background: $primary;
@@ -157,7 +157,9 @@
     @extend .navigation-bar;
     margin-top: 3px;
     background: $dark;
-
+    &-item {
+      border-bottom: 1px solid $mid;
+    }
     &-link {
       @extend .navigation-link;
       padding: ($spacer / 4) 0;

@@ -1,0 +1,17 @@
+.chart {
+  &-nav {
+    padding-top: 0;
+    padding-bottom: 0;
+    border-top: 1px solid rgba($secondary, .3);
+  }
+
+  &-nav-item {
+    cursor: pointer;
+    height: $block-height-sm;
+    &:nth-child(2) {
+      border: 1px solid rgba($secondary, .3);
+      border-top: none;
+      border-bottom: none;
+    }
+  }
+}

@@ -1,0 +1,32 @@
+.search-select {
+  
+  .dropdown {
+    width: 50%;
+    position: fixed;
+    top: 50px;
+    right: $grid-gutter-width;
+  }
+
+  .search {
+    width: 50%;
+  }
+
+  .text {
+    display: none;
+  }
+
+  .menu {
+    width: 50%;
+    position: absolute;
+    max-height: 350px;
+    background: $white;
+    overflow-y: scroll;
+    .item {
+        padding: ($spacer / 2) 0;
+        &:hover,
+        &.selected {
+          background: $pink;
+        }
+    }
+  }
+}

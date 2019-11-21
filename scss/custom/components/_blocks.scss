@@ -1,29 +1,43 @@
+%block-common {
+  position: inherit;
+  padding: ($grid-gutter-width / 2);
+}
+
 .block {
   $self: &;
 
-  position: $block-position;
+  position: relative;
   padding: 0;
   color: $white;
 
   &-top {
-    position: inherit;
+    @extend %block-common;
     height: $block-height-md;
+    h1 {
+      line-height: $block-height-md - 106;
+    }
   }
 
   &-middle {
-    position: inherit;
+    @extend %block-common;
     height: $block-height-sm;
+    h3 {
+      line-height: $block-height-sm / 2.6;
+    }
   }
 
   &-bottom {
-    position: inherit;
+    @extend %block-common;
     height: $block-height-sm;
     color: $dark;
     background: $white;
+    h3 {
+      line-height: $block-height-sm / 2.6;
+    }
   }
 
   &-double {
-    position: inherit;
+    @extend %block-common;
     height: $block-height-lg;
     background: $white;
   }
@@ -42,15 +56,19 @@
       }
     }
   }
+
+  &-child {
+    display: flex;
+    height: $block-height-sm - $grid-gutter-width;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
 }
 
 .analytics {
-  padding: 0;
+  position: relative;
   margin-bottom: ($spacer * 4);
-
+  @include border-radius(0 $border-radius-lg $border-radius-lg $border-radius-lg);
   box-shadow: $box-shadow;
-}
-
-.serpbook {
-  padding: 0;
 }

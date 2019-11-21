@@ -8,32 +8,40 @@
   width: 100%;
   height: $time-height;
   text-align: center;
-  background: red;
 
   &-indicator {
+    padding: ($spacer / 5) 0;
+    cursor: pointer;
+    overflow: hidden;
     color: $white;
+    border-right: 1px solid rgba($black, .2);
     @include border-radius($border-radius-lg $border-radius-lg 0 0);
   }
 
   &.primary {
-    #{$self} {
-      max-width: 225px;
-    }
 
     #{$self}-indicator {
+      width: calc(100% / 5);
       font: $time-font-base;
-      background: $primary;
+      background: theme-color-level(primary, 2);
+
+      &.active {
+        background: $primary
+      }
     }
   }
 
   &.secondary {
-    #{$self} {
-      max-width: 185px;
-    }
 
     #{$self}-indicator {
+      width: calc(100% / 3);
+
       font: $time-font-sm;
       background: $secondary;
+
+      &.active {
+        background: theme-color-level(secondary, 3);
+      }
     }
   }
 }

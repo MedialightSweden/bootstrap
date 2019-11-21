@@ -300,8 +300,8 @@ $line-height-base:            1.5 !default;
 $h1-font-size:                $font-size-base * 2.5 !default;
 $h2-font-size:                $font-size-base * 2 !default;
 $h3-font-size:                $font-size-base * 1.75 !default;
-$h4-font-size:                $font-size-base * 1.5 !default;
-$h5-font-size:                $font-size-base * 1.25 !default;
+$h4-font-size:                $font-size-base * 1.25 !default;
+$h5-font-size:                $font-size-base * 1 !default;
 $h6-font-size:                $font-size-base !default;
 
 $headings-margin-bottom:      $spacer / 2 !default;
@@ -1109,7 +1109,6 @@ $print-body-min-width:              map-get($grid-breakpoints, "lg") !default;
 // Blocks
 
 $block-colors: ("primary": $primary, "secondary": $secondary) !default;
-$block-position: relative !default;
 
 $block-height-sm: 142.5px !default;
 $block-height-md: $block-height-sm * 2 !default;
@@ -1134,7 +1133,7 @@ $tbody-colors: (
 ) !default;
 
 $thead-font-base: $font-weight-bold ($font-size-base * .9375) $font-family-base !default;
-$tbody-font-base: $font-weight-normal $font-size-base $font-family-base !default;
+$tbody-font-base: $font-weight-normal ($font-size-base * 1.125) $font-family-base !default;
 $tbody-font-small: $font-weight-normal $font-size-base $font-family-base !default;
 
 // Time indicators
