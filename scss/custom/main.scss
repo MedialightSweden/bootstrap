@@ -1,16 +1,13 @@
-@import "components/navigation";
+@import "views/sidebar";
 @import "components/blocks";
 @import "components/tables";
 @import "components/time-indicators";
 @import "components/mdi-icons";
 @import "components/charts";
-@import "components/custom-menu";
-@import "components/custom-footer";
-@import "components/custom-loader";
+@import "views/custom-menu";
+@import "views/custom-footer";
+@import "components/loader";
 @import "components/search-select";
-
-$sidebar-collapsed-width: 50px !default;
-$sidebar-expanded-width: 210px !default;
 
 a {
   text-decoration: none;
@@ -22,6 +19,7 @@ body {
   font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: $font-size-base;
   line-height: 1.42857;
+  background: $gray-200;
 }
 .app {
   height: 100%;
@@ -34,7 +32,6 @@ body {
   height: 100%;
   padding: 0 0 0 $sidebar-collapsed-width;
   @include transition(all .3s linear);
-  background: $gray-200;
   &.open {
     padding: 0 0 0 $sidebar-expanded-width;
   }

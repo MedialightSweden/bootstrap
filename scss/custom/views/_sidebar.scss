@@ -1,0 +1,188 @@
+$open: ".sidebar.open";
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  z-index: $zindex-popover;
+  width: $sidebar-collapsed-width;
+  height: 100%;
+  font-weight: $font-weight-lighter;
+  background: $dark;
+  @include transition(width .3s linear);
+
+  &.open {
+    width: $sidebar-expanded-width;
+    @include transition(all .3s linear);
+  }
+}
+
+.branding {
+  width: $sidebar-collapsed-width;
+  height: $sidebar-collapsed-width;
+  background: $gray-300;
+  @include transition(width .3s linear);
+  &-wrapper {
+    width: 43px;
+    height: $sidebar-collapsed-width;
+    overflow: hidden;
+    @include transition(width .3s linear);
+  }
+  &-logo {
+    display: block;
+    height: 30px;
+    margin: 10px 6.5px;
+  }
+
+  #{$open} & {
+    width: $sidebar-expanded-width;
+    &-wrapper {
+      width: $sidebar-expanded-width - $sidebar-collapsed-width;
+    }
+  }
+}
+
+.hamburger {
+  $height: 4px;
+  $padding: 1px;
+
+  position: relative;
+  top: -($sidebar-collapsed-width + $padding);
+  right: -($sidebar-collapsed-width + $padding);
+  width: $sidebar-collapsed-width;
+  height: $sidebar-collapsed-width;
+  padding: $padding;
+  cursor: pointer;
+  @include transition(all .3s linear);
+
+  &-bar {
+    position: relative;
+    width: 60%;
+    height: $height;
+    margin: (($height * 6) - $padding) auto;
+    background: $black;
+
+    &::before,
+    &::after {
+      position: absolute;
+      display: block;
+      width: 100%;
+      height: $height;
+      content: "";
+      background: $black;
+    }
+    &::before {
+      top: -($height * 2);
+      opacity: 1;
+    }
+    &::after {
+      bottom: -($height * 2);
+    }
+  }
+
+  #{$open} & {
+    right: -($sidebar-expanded-width - $sidebar-collapsed-width) + $padding;
+  }
+}
+
+.customer {
+  max-height: 0;
+  padding-bottom: 100%;
+  overflow: hidden;
+  border-bottom: $nav-tabs-border-width solid $nav-tabs-border-color;
+  @include transition(all .3s linear);
+
+  &-info {
+    text-align: center;
+    visibility: hidden;
+    opacity: 0;
+    @include transition(all .3s linear);
+    h4 {
+      margin: $spacer 0;
+      font-weight: $font-weight-lighter;
+      color: $white;
+    }
+    .badge {
+      padding: 3px 7px;
+      font-size: $font-size-base * 0.875;
+      font-weight: $font-weight-lighter;
+      color: $white;
+      text-align: center;
+      background: $primary;
+      @include border-radius($rounded-pill);
+    }
+  }
+
+  #{$open} & {
+    max-height: $sidebar-collapsed-width; 
+    & .mdi {
+      width: 100px;
+      height: 100px;
+      margin: ($grid-gutter-width / 2) auto 0;
+      &::before {
+        font-size: 100px;
+      }
+    }
+
+    &-info {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+}
+
+.navigation {
+  $self: &;
+
+  &-bar {
+    padding: 0;
+    color: $white;
+    list-style: none;
+  }
+  &-item {
+    position: relative;
+    border-bottom: $nav-tabs-border-width solid $nav-tabs-border-color;
+
+    &:hover {
+      background: $nav-tabs-hover-color;
+    }
+  }
+  &-link {
+    display: flex;
+    width: 100%;
+    height: 40px;
+    align-items: center;
+    overflow: hidden;
+    color: inherit;
+
+    &[disabled] {
+      .mdi,
+      span {
+        font-weight: $font-weight-normal;
+        color: $dropdown-link-disabled-color;
+      }
+    }
+
+    &.is-active {
+      #{$self}-item {
+        background: $dropdown-link-disabled-color;
+      }
+    }
+  }
+}
+
+.submenu {
+  @extend .navigation-bar;
+  background: $gray-900;
+  &-item {
+    border-bottom: 1px solid $dark;
+
+    &:hover {
+      background: theme-color-level(secondary, 4);
+    }
+  }
+  &-link {
+    @extend .navigation-link;
+    height: 30px;
+    padding-left: ($spacer * 1.5);
+  }
+}
