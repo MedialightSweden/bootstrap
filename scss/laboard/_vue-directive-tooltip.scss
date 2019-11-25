@@ -1,5 +1,6 @@
 .vue-tooltip {
   &.tooltip-custom {
+    z-index: 200;
     font-size: small;
     color: $white;
     background-color: $gray-400;

@@ -5728,33 +5728,34 @@ a.close.disabled {
 .laboard-table-wrapper-scrollbar::-webkit-scrollbar {
   width: 0.5rem;
   height: 0.5rem;
-  background-color: #e3e2e2;
+  background-color: #fff;
 }
 
 .laboard-table-wrapper-scrollbar::-webkit-scrollbar-track {
+  background: #fff;
+  border: 1px solid #c7c5c5;
+  border-radius: 0.5rem;
+}
+
+.laboard-table-wrapper-scrollbar::-webkit-scrollbar-thumb {
   background: #c7c5c5;
   border: 1px solid #aca9a7;
   border-radius: 0.5rem;
 }
 
-.laboard-table-wrapper-scrollbar::-webkit-scrollbar-thumb {
+.laboard-table-wrapper-scrollbar::-webkit-scrollbar-thumb:hover {
   background: #aca9a7;
   border: 1px solid #908c8a;
-  border-radius: 0.5rem;
 }
 
-.laboard-table-wrapper-scrollbar::-webkit-scrollbar-thumb:hover {
+.laboard-table-wrapper-scrollbar::-webkit-scrollbar-thumb:active {
   background: #908c8a;
   border: 1px solid #746f6d;
 }
 
-.laboard-table-wrapper-scrollbar::-webkit-scrollbar-thumb:active {
-  background: #746f6d;
-  border: 1px solid #5d5957;
-}
-
 /* stylelint-enable */
 .vue-tooltip.tooltip-custom {
+  z-index: 200;
   font-size: small;
   color: #fff;
   background-color: #908c8a;
