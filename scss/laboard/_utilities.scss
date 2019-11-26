@@ -1,12 +1,17 @@
+/* stylelint-disable */
 .text-orange {
-  color: $orange;
+  color: $orange !important;
 }
 .text-blue {
-  color: $blue;
+  color: $blue !important;
 }
 .text-green {
-  color: $green;
+  color: $green !important;
 }
 .text-red {
-  color: $red;
+  color: $red !important;
 }
+.bg-primary-light {
+  background-color: rgba($cyan-100, .35);
+}
+/* stylelint-enable */

@@ -5662,8 +5662,8 @@ a.close.disabled {
   vertical-align: middle !important;
   background-color: #2ea1b8;
   border-top: none;
-  border-right: 1px solid #71bfcf;
-  border-bottom: 1px solid #71bfcf !important;
+  border-right: 1px solid #92ceda;
+  border-bottom: 1px solid #92ceda !important;
 }
 
 .laboard-table th > span {
@@ -5675,8 +5675,8 @@ a.close.disabled {
 }
 
 .laboard-table tbody tr td {
-  border-right: 1px solid #e3e2e2;
-  border-bottom: 1px solid #e3e2e2;
+  border-right: 1px solid #c7c5c5;
+  border-bottom: 1px solid #c7c5c5;
 }
 
 .laboard-table-empty {
@@ -5706,7 +5706,7 @@ a.close.disabled {
   left: 0;
   color: #fff;
   background-color: #2ea1b8;
-  border-bottom: 1px solid #71bfcf;
+  border-bottom: 1px solid #92ceda;
 }
 
 /* stylelint-enable */
@@ -5768,22 +5768,28 @@ a.close.disabled {
   border-color: #908c8a !important;
 }
 
+/* stylelint-disable */
 .text-orange {
-  color: #d87336;
+  color: #d87336 !important;
 }
 
 .text-blue {
-  color: #2e6ab8;
+  color: #2e6ab8 !important;
 }
 
 .text-green {
-  color: #34b92e;
+  color: #34b92e !important;
 }
 
 .text-red {
-  color: #d63639;
+  color: #d63639 !important;
 }
 
+.bg-primary-light {
+  background-color: rgba(180, 221, 229, 0.35);
+}
+
+/* stylelint-enable */
 .clearfix::after {
   display: block;
   clear: both;
