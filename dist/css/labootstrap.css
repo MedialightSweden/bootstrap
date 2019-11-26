@@ -5768,6 +5768,22 @@ a.close.disabled {
   border-color: #908c8a !important;
 }
 
+.text-orange {
+  color: #d87336;
+}
+
+.text-blue {
+  color: #2e6ab8;
+}
+
+.text-green {
+  color: #34b92e;
+}
+
+.text-red {
+  color: #d63639;
+}
+
 .clearfix::after {
   display: block;
   clear: both;
