@@ -9,8 +9,6 @@
 %table-body {
   display: block;
   box-shadow: $box-shadow;
-  @include border-radius($border-radius-lg);
-  overflow-x: hidden;
 }
 
 .serpbook {
@@ -61,14 +59,29 @@
     }
   }
 
-  &-categories {
+  &-extra {
     @extend %table-body;
+    position: relative;
     margin: 0 0 ($spacer * 4);
-    // font:
-  }
+    font: $tbody-font-small;
 
-  &-products {
-    @extend %table-body;
-    // font:
+    .table-label {
+      position: absolute;
+      top: -21px;
+      padding: 0 $grid-gutter-width;
+      @include border-radius($border-radius-lg $border-radius-lg 0 0);
+      font-size: $font-size-base;
+      font-weight: $font-weight-bold;
+      color: $white;
+      background: $dark;
+    }
+
+    td {
+      padding: ($table-cell-padding * .625) $table-cell-padding;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 }

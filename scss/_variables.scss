@@ -1139,7 +1139,7 @@ $tbody-colors: (
 
 $thead-font-base: $font-weight-bold ($font-size-base * .9375) $font-family-base !default;
 $tbody-font-base: $font-weight-normal ($font-size-base * 1.125) $font-family-base !default;
-$tbody-font-small: $font-weight-normal $font-size-base $font-family-base !default;
+$tbody-font-small: $font-weight-normal ($font-size-base * .875 ) $font-family-base !default;
 
 // Time indicators
 
