@@ -1,17 +1,23 @@
 /* stylelint-disable */
-.text-orange {
-  color: $orange !important;
+.bg-yellow {
+  background-color: $yellow-400 !important;
 }
-.text-blue {
-  color: $blue !important;
+.bg-green {
+  background-color: $green-400 !important;
 }
-.text-green {
-  color: $green !important;
-}
-.text-red {
-  color: $red !important;
+.bg-red {
+  background-color: $red-400 !important;
 }
 .bg-primary-light {
-  background-color: rgba($cyan-100, .35);
+  background-color: rgba($cyan, .15);
+}
+.bg-yellow-light {
+  background-color: rgba($yellow-400, .15);
+}
+.bg-green-light {
+  background-color: rgba($green-400, .15);
+}
+.bg-red-light {
+  background-color: rgba($red-400, .15);
 }
 /* stylelint-enable */
