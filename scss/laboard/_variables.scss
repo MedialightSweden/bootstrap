@@ -5,16 +5,18 @@
 
 // Color system
 
+$base-gray: #807f7e !default;
+
 $white:    #fff !default;
-$gray-100: #e3e2e2 !default;
-$gray-200: #c7c5c5 !default;
-$gray-300: #aca9a7 !default;
-$gray-400: #908c8a !default;
-$gray-500: #746f6d !default;
-$gray-600: #5d5957 !default;
-$gray-700: #464341 !default;
-$gray-800: #2e2c2c !default;
-$gray-900: #171616 !default;
+$gray-100: lighten($base-gray, 40%) !default;
+$gray-200: lighten($base-gray, 30%) !default;
+$gray-300: lighten($base-gray, 20%) !default;
+$gray-400: lighten($base-gray, 10%) !default;
+$gray-500: $base-gray !default;
+$gray-600: darken($base-gray, 10%) !default;
+$gray-700: darken($base-gray, 20%) !default;
+$gray-800: darken($base-gray, 30%) !default;
+$gray-900: darken($base-gray, 40%) !default;
 $black:    #000 !default;
 
 $grays: () !default;

@@ -3,12 +3,12 @@
     z-index: 200;
     font-size: small;
     color: $white;
-    background-color: $gray-400;
+    background-color: $gray-600;
     box-shadow: none;
 
     /* stylelint-disable declaration-no-important */
     .tooltip-arrow {
-      border-color: $gray-400 !important;
+      border-color: $gray-600 !important;
     }
     /* stylelint-enable */
   }

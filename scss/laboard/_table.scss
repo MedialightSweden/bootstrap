@@ -1,5 +1,6 @@
-$laboard-sticky-borders-color: $cyan-200 !default;
-$laboard-body-borders-color: $gray-200 !default;
+$laboard-background-color: $gray-400 !default;
+$laboard-header-borders-color: $gray-100 !default;
+$laboard-body-borders-color: $gray-300 !default;
 
 .laboard-table
 {
@@ -28,10 +29,10 @@ $laboard-body-borders-color: $gray-200 !default;
     font-weight: $font-weight-light;
     color: $white;
     vertical-align: middle !important;
-    background-color: $primary;
+    background-color: $laboard-background-color;
     border-top: none;
-    border-right: 1px solid $laboard-sticky-borders-color;
-    border-bottom: 1px solid $laboard-sticky-borders-color !important;
+    border-right: 1px solid $laboard-header-borders-color;
+    border-bottom: 1px solid $laboard-header-borders-color !important;
 
     & > span {
       line-height: $font-size-base;
@@ -88,8 +89,8 @@ $laboard-body-borders-color: $gray-200 !default;
           left: 0;
           z-index: 10;
           color: $white;
-          background-color: $primary;
-          border-bottom: 1px solid $laboard-sticky-borders-color;
+          background-color: $laboard-background-color;
+          border-bottom: 1px solid $laboard-header-borders-color;
         }
       }
     }
