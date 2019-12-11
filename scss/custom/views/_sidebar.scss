@@ -102,19 +102,24 @@ $open: ".sidebar.open";
       color: $white;
     }
     .badge {
+      max-width: 160px;
       padding: 3px 7px;
       font-size: $font-size-base * 0.875;
       font-weight: $font-weight-lighter;
       color: $white;
       text-align: center;
       background: $primary;
+      border: none;
       @include border-radius($rounded-pill);
+      &:focus {
+        outline: transparent;
+      }
     }
   }
 
   #{$open} & {
     max-height: $sidebar-collapsed-width; 
-    & .mdi {
+    & .mdi-account-circle {
       width: 100px;
       height: 100px;
       margin: ($grid-gutter-width / 2) auto 0;

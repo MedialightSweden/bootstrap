@@ -68,6 +68,10 @@
       }
     }
 
+    &-chevron-down {
+      @extend %nav-icons;
+    }
+
     &-message-bulleted {
       @extend %nav-icons;
     }

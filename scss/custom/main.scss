@@ -5,6 +5,7 @@
 @import "components/mdi-icons";
 @import "components/charts";
 @import "views/custom-menu";
+@import "views/login";
 @import "views/custom-footer";
 @import "components/loader";
 @import "components/search-select";
@@ -34,6 +35,9 @@ body {
   @include transition(all .3s linear);
   &.open {
     padding: 0 0 0 $sidebar-expanded-width;
+    &.no-sidebar {
+      padding: 0;
+    }
   }
 }
 
