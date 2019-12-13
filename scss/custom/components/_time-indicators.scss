@@ -43,5 +43,13 @@
         background: theme-color-level(secondary, 3);
       }
     }
+
+    &.fixed {
+      top: 50px;
+
+      #{$self}-indicator {
+        @include border-radius(0 0 $border-radius-lg $border-radius-lg);
+      }
+    }
   }
 }

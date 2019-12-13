@@ -39,12 +39,22 @@
   }
 
   &-nav {
+    top: 0;
 
     font: $thead-font-base;
     @include border-radius($border-radius-lg $border-radius-lg 0 0);
 
     th {
       padding: ($table-cell-padding * 1.25) $table-cell-padding;
+    }
+
+    &.fixed {
+      position: fixed;
+      top: 50px;
+      width: 100%;
+      max-width: 1080px;
+      z-index: $zindex-sticky;
+      transition: all .3s linear;
     }
   }
 
