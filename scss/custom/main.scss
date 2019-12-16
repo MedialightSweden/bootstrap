@@ -9,6 +9,7 @@
 @import "views/custom-footer";
 @import "components/loader";
 @import "components/search-select";
+@import "views/key-statistics";
 
 a {
   text-decoration: none;
@@ -32,7 +33,9 @@ body {
   @extend .container-fluid;
   height: 100%;
   padding: 0 0 0 $sidebar-collapsed-width;
+  margin-bottom: 50px;
   @include transition(all .3s linear);
+  background: $gray-200;
   &.open {
     padding: 0 0 0 $sidebar-expanded-width;
     &.no-sidebar {

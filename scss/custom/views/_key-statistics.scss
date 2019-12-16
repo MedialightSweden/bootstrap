@@ -1,0 +1,34 @@
+.keyword-statistics {
+  text-align: center;
+  color: $white;
+  background: $secondary;
+  padding: $spacer * 1.4;
+  @include border-radius($border-radius-lg);
+  
+  .placing-growth {
+    border-right: 1px solid $white;
+  }
+
+  .placing-moves {
+    height: 425px;
+  }
+
+  .row.bottom {
+    padding-top: $spacer;
+    margin-top: $spacer;
+    border-top: 1px solid $white;
+  }
+
+  .overall-change {
+    display: block;
+    width: 300px;
+    height: 300px;
+    margin: 25px auto;
+    border-radius: 50%;
+    background: $white;
+    line-height: 300px;
+    color: #F075A2;
+    font-size: 80px;
+    font-weight: 300;
+  }
+}
