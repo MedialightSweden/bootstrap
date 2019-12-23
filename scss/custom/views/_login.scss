@@ -1,4 +1,4 @@
-.login {
+.container-form {
   max-width: 650px;
   margin: 0 auto;
   background: $secondary;
@@ -9,6 +9,5 @@
   form {
     padding: ($grid-gutter-width / 2) 0 0;
     margin: ($grid-gutter-width / 2) 0;
-    border-top: 1px solid $white;
   }
 }
