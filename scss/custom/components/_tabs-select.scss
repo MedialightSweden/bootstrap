@@ -1,15 +1,15 @@
-.time {
+.tabs {
   $self: &;
 
   display: flex;
   position: absolute;
-  top: -$time-height;
+  top: -$tab-height;
   left: 0;
   width: 100%;
-  height: $time-height;
+  height: $tab-height;
   text-align: center;
 
-  &-indicator {
+  &-single {
     padding: ($spacer / 5) 0;
     cursor: pointer;
     overflow: hidden;
@@ -20,9 +20,9 @@
 
   &.primary {
 
-    #{$self}-indicator {
+    #{$self}-single {
       width: calc(100% / 5);
-      font: $time-font-base;
+      font: $tab-font-base;
       background: theme-color-level(primary, 2);
 
       &.active {
@@ -33,10 +33,10 @@
 
   &.secondary {
 
-    #{$self}-indicator {
+    #{$self}-single {
       width: calc(100% / 3);
 
-      font: $time-font-sm;
+      font: $tab-font-sm;
       background: $secondary;
 
       &.active {
@@ -47,7 +47,7 @@
     &.fixed {
       top: 50px;
 
-      #{$self}-indicator {
+      #{$self}-single {
         @include border-radius(0 0 $border-radius-lg $border-radius-lg);
       }
     }
