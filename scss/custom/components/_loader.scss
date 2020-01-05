@@ -2,15 +2,15 @@
   animation : shimmer 3s infinite linear;
   background-size: 1000px 100%;
 
-  & .primary {
+  & + .primary {
     background: linear-gradient(to right, theme-color-level(primary, -0.4) 4%, theme-color-level(primary, -0.1) 25%, theme-color-level(primary, -0.3) 36%);
   }
 
-  & .secondary {
+  & + .secondary {
     background: linear-gradient(to right, theme-color-level(dark, -0.4) 4%, theme-color-level(dark, -0.1) 25%, theme-color-level(dark, -0.3) 36%);
   }
 
-  & .white {
+  & + .white {
     background: linear-gradient(to right, theme-color-level(light, -0.4) 4%, theme-color-level(light, -0.1) 25%, theme-color-level(light, -0.3) 36%);
   }
 }
