@@ -1,0 +1,55 @@
+.tabs {
+  $self: &;
+
+  display: flex;
+  position: absolute;
+  top: -$tabs-height;
+  left: 0;
+  width: 100%;
+  height: $tabs-height;
+  text-align: center;
+
+  &-single {
+    padding: ($spacer / 5) 0;
+    cursor: pointer;
+    overflow: hidden;
+    color: $white;
+    border-right: 1px solid rgba($black, .2);
+    @include border-radius($border-radius-lg $border-radius-lg 0 0);
+  }
+
+  &.primary {
+
+    #{$self}-single {
+      width: calc(100% / 5);
+      font: $tabs-font-base;
+      background: theme-color-level(primary, 2);
+
+      &.active {
+        background: $primary
+      }
+    }
+  }
+
+  &.secondary {
+
+    #{$self}-single {
+      width: calc(100% / 3);
+
+      font: $tabs-font-sm;
+      background: $secondary;
+
+      &.active {
+        background: theme-color-level(secondary, 3);
+      }
+    }
+  }
+
+  &.fixed {
+    top: 50px;
+
+    #{$self}-single {
+      @include border-radius(0 0 $border-radius-lg $border-radius-lg);
+    }
+  }
+}
