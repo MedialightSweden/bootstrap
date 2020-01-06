@@ -11,8 +11,22 @@
   box-shadow: $box-shadow;
 }
 
-.serpbook {
+%borderd-edges {
+  &:first-child,
+  &:last-child {
+    overflow: hidden;
+  }
 
+  &:first-child {
+    @include border-radius(0 $border-radius-lg 0 0);
+  }
+
+  &:last-child {
+    @include border-radius(0 0 $border-radius-lg $border-radius-lg);
+  }
+}
+
+.serpbook {
   &-table {
     position: relative;
     text-align: center;
@@ -20,7 +34,8 @@
     tr {
       &:last-child {
         td {
-          border-bottom: none;
+          border-color: none;
+          border-width: 0;
         }
       }
     }
@@ -33,7 +48,7 @@
 
     td {
       color: $white;
-      border-bottom: 1px solid rgba($black, .1);
+      border-bottom: 1px solid rgba($black, 0.1);
       @include set-background($tbody-colors);
     }
   }
@@ -42,10 +57,22 @@
     top: 0;
 
     font: $thead-font-base;
-    @include border-radius($border-radius-lg $border-radius-lg 0 0);
 
     th {
       padding: ($table-cell-padding * 1.25) $table-cell-padding;
+
+      &:first-child,
+      &:last-child {
+        overflow: hidden;
+      }
+
+      &:first-child {
+        @include border-radius($border-radius-lg 0 0 0);
+      }
+
+      &:last-child {
+        @include border-radius(0 $border-radius-lg 0 0);
+      }
     }
 
     &.fixed {
@@ -54,15 +81,22 @@
       width: 100%;
       max-width: 1080px;
       z-index: $zindex-sticky;
-      transition: all .3s linear;
+      transition: all 0.3s linear;
     }
   }
 
   &-values {
-
     @extend %table-body;
     @include border-radius(0 0 $border-radius-lg $border-radius-lg);
     font: $tbody-font-base;
+
+    tr {
+      @extend %borderd-edges;
+
+      &:first-child {
+        @include border-radius(0);
+      }
+    }
 
     td {
       padding: ($table-cell-padding * 1.459) $table-cell-padding;
@@ -71,13 +105,18 @@
 
   &-extra {
     @extend %table-body;
+    @include border-radius($border-radius-lg);
     position: relative;
     margin: 0 0 ($spacer * 4);
     font: $tbody-font-small;
 
+    tr {
+      @extend %borderd-edges;
+    }
+
     .table-label {
       position: absolute;
-      top: -21px;
+      top: -18px;
       padding: 0 $grid-gutter-width;
       @include border-radius($border-radius-lg $border-radius-lg 0 0);
       font-size: $font-size-base;
@@ -87,7 +126,7 @@
     }
 
     td {
-      padding: ($table-cell-padding * .625) $table-cell-padding;
+      padding: ($table-cell-padding * 0.625) $table-cell-padding;
     }
 
     &:last-child {
