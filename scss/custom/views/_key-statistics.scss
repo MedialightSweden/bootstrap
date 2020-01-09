@@ -1,26 +1,16 @@
-.keyword-statistics {
-  text-align: center;
-  color: $white;
-  background: $secondary;
-  padding: $spacer * 1.4;
-  @include border-radius($border-radius-lg);
-  box-shadow: $box-shadow;
+.keywords {
   
-  .placing-growth {
+  &-placing-growth {
+    @extend .col-sm-6;
     border-right: 1px solid $white;
   }
 
-  .placing-moves {
+  &-placing-moves {
+    @extend .col-sm-6;
     height: 425px;
   }
 
-  .row.bottom {
-    padding-top: $spacer;
-    margin-top: $spacer;
-    border-top: 1px solid $white;
-  }
-
-  .overall-change {
+  &-overall-change {
     display: block;
     width: 300px;
     height: 300px;
@@ -31,5 +21,15 @@
     color: #F075A2;
     font-size: 80px;
     font-weight: 300;
+  }
+
+  &.top {
+
+  }
+
+  &.bottom {
+    padding-top: $spacer;
+    margin-top: $spacer;
+    border-top: 1px solid $white;
   }
 }

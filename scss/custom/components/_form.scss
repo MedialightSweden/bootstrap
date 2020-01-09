@@ -1,9 +1,9 @@
 .container-form {
   $self: &;
 
-  @extend .col-sm-9;
+  @extend .col-sm-8;
   padding: $grid-gutter-width;
-  margin: 0 auto;
+  margin: auto;
   @include border-radius($border-radius-lg);
   box-shadow: $box-shadow;
   color: white;
