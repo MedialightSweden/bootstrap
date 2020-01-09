@@ -1,0 +1,44 @@
+.container-form {
+  $self: &;
+
+  @extend .col-sm-9;
+  padding: $grid-gutter-width;
+  margin: 0 auto;
+  @include border-radius($border-radius-lg);
+  box-shadow: $box-shadow;
+  color: white;
+  background: $secondary;
+
+  &-header {
+    padding-bottom: ($grid-gutter-width / 2);
+    
+    &.stroked {
+      border-bottom: 1px solid $white;
+    }
+  }
+
+  .form {
+    margin: ($grid-gutter-width / 2) 0;
+
+    &-group {
+      position: relative;
+    }
+
+    &-input-checker {
+      position: absolute;
+      bottom: ($input-height-inner-sm / 3);
+      right: ($grid-gutter-width / 2);
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    &-control {
+ 
+      &:focus + .form-input-checker {
+        opacity: 1;
+        visibility: visible;
+        @include transition(opacity .3s linear);
+      }
+    }
+  }
+}
