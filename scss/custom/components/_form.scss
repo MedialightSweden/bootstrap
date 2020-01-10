@@ -1,7 +1,7 @@
 .container-form {
   $self: &;
 
-  @extend .col-sm-8;
+  @extend .col-sm-7;
   padding: $grid-gutter-width;
   margin: auto;
   @include border-radius($border-radius-lg);
@@ -16,29 +16,29 @@
       border-bottom: 1px solid $white;
     }
   }
+}
 
-  .form {
-    margin: ($grid-gutter-width / 2) 0;
+.form {
+  margin: ($grid-gutter-width / 2) 0;
 
-    &-group {
-      position: relative;
-    }
+  &-group {
+    position: relative;
+  }
 
-    &-input-checker {
-      position: absolute;
-      bottom: ($input-height-inner-sm / 3);
-      right: ($grid-gutter-width / 2);
-      opacity: 0;
-      visibility: hidden;
-    }
+  &-input-checker {
+    position: absolute;
+    bottom: ($input-height-inner-sm / 3);
+    right: ($grid-gutter-width / 2);
+    opacity: 0;
+    visibility: hidden;
+  }
 
-    &-control {
- 
-      &:focus + .form-input-checker {
-        opacity: 1;
-        visibility: visible;
-        @include transition(opacity .3s linear);
-      }
+  &-control {
+
+    &:focus + .form-input-checker {
+      opacity: 1;
+      visibility: visible;
+      @include transition(opacity .3s linear);
     }
   }
 }
