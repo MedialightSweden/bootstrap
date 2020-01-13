@@ -1,12 +1,23 @@
 .keywords {
   
+  &-placing-overall {
+    @extend .container;
+
+    position: relative;
+    min-height: 350px;
+  }
+
   &-placing-growth {
     @extend .col-sm-6;
+
+    position: relative;
     border-right: 1px solid $white;
   }
 
   &-placing-moves {
     @extend .col-sm-6;
+
+    position: relative;
     height: 425px;
   }
 
@@ -23,13 +34,33 @@
     font-weight: 300;
   }
 
-  &.top {
+  &-table {
+    color: $white;
+    thead tr {
+      background: $gray-800;
+    }
+  
+    thead td,
+    tbody td {
+      &:last-child {
+        color: $orange;
+      }
+      &:nth-last-child(2) {
+        color: $pink;
+      }
+    }
+    & .highlight {
+      background: theme-color-level(secondary, 3);
+    }
+  }
 
+  &.top {
+    padding-bottom: $spacer;
+    border-bottom: 1px solid $white;
   }
 
   &.bottom {
     padding-top: $spacer;
     margin-top: $spacer;
-    border-top: 1px solid $white;
   }
 }
