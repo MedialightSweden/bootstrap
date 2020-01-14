@@ -38,6 +38,12 @@ $open: ".sidebar.open";
       transform: scale3d(1, 1, 1);
 	    animation: pulse 1s infinite;
     }
+
+    &.no-sidebar {
+      position: absolute;
+      top: 0;
+      left: $grid-gutter-width / 2;
+    }
   }
 
   #{$open} & {
@@ -205,7 +211,8 @@ $open: ".sidebar.open";
 	}
 
 	70% {
-		transform: scale3d(1, 0, 1);
+		transform: scale3d(1, 0
+    , 1);
 	}
 
 	100% {
