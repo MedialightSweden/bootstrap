@@ -1,0 +1,30 @@
+span.text-right {
+  cursor: pointer;
+}
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+}
+
+.expand-enter-active,
+.expand-leave-active {
+  max-height: 100vh;
+  transition: all 0.3s;
+}
+.expand-enter,
+.expand-leave-to {
+  max-height: 0;
+  opacity: 0;
+}
+.option-toggle {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 15px;
+  margin-bottom: 16px;
+  p,
+  i {
+    margin-bottom: 8px;
+  }
+}
