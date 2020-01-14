@@ -14,6 +14,8 @@
     @extend %block-common;
     height: $block-height-md;
     h1 {
+      font-size: 85px;
+      font-weight: $font-weight-light;
       line-height: $block-height-md - 106;
     }
   }
@@ -22,6 +24,8 @@
     @extend %block-common;
     height: $block-height-sm;
     h3 {
+      font-size: 50px;
+      font-weight: $font-weight-light;
       line-height: $block-height-sm / 2.6;
     }
   }
@@ -32,6 +36,8 @@
     color: $dark;
     background: $white;
     h3 {
+      font-size: 50px;
+      font-weight: $font-weight-light;
       line-height: $block-height-sm / 2.6;
     }
   }

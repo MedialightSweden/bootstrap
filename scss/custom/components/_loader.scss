@@ -28,6 +28,11 @@
 
     position: absolute;
 
+    &.top {
+      top: $grid-gutter-width / 2;
+      right: $grid-gutter-width / 2;
+    }
+
     &.bottom {
       bottom: $grid-gutter-width / 2;
       right: $grid-gutter-width / 2;
@@ -37,6 +42,14 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
+    }
+
+    &.center-bottom {
+      position: relative;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      padding-top: 50px;
     }
 
     span {
@@ -65,6 +78,15 @@
     & + span {
       color: #ffffff;
     }
+  }
+}
+
+.error {
+
+  &-wrapper {
+    margin: auto;
+    width: 100%;
+    text-align: center;
   }
 }
 

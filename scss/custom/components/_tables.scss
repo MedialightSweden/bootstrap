@@ -27,6 +27,17 @@
 }
 
 .serpbook {
+  padding-top: 0;
+  opacity: 1;
+  visibility: visible;
+  transition: all .3s linear;
+
+  &.hidden {
+    padding-top: 100px;
+    opacity: 0;
+    visibility: hidden;
+  }
+
   &-table {
     position: relative;
     text-align: center;

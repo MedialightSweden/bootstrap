@@ -73,6 +73,13 @@ body {
   }
 }
 
+a {
+  color: inherit;
+  &:hover {
+    color: inherit;
+  }
+}
+
 .green,
 .mdi-arrow-up {
   color: $green;
