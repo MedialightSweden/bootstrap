@@ -1,3 +1,11 @@
+//*** Chart Sizes
+canvas {
+  width: 100%;
+  &#bar-chart {
+    height: 350px;
+  }
+}
+
 .chart {
   &-nav {
     padding-top: 0;

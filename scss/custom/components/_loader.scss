@@ -5,7 +5,6 @@
 }
 
 .loader {
-  $self: &;
 
   @extend %loader-size;
 

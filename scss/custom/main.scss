@@ -85,11 +85,3 @@ body {
 .btn.btn-light {
   border-color: theme-color-level(secondary, -8);
 }
-
-//*** Chart Sizes
-canvas {
-  width: 100%;
-  &#bar-chart {
-    height: 350px;
-  }
-}
