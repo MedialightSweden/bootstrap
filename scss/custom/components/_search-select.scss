@@ -1,5 +1,4 @@
 .search-select {
-
   .v-select {
     position: fixed;
     top: 0;
@@ -21,43 +20,42 @@
       opacity: 1;
     }
   }
+}
 
-  .vs {
+.vs {
+  &__selected,
+  &__actions {
+    display: none;
+  }
 
-    &__selected,
-    &__actions {
-      display: none;
-    }
+  &__dropdown-toggle {
+    padding: ($spacer / 2);
+  }
 
-    &__dropdown-toggle {
-      padding: ($spacer / 2);
-    }
+  &__search {
+    width: 100%;
+    padding: 0;
+  }
 
-    &__search {
-      width: 100%;
-      padding: 0;
-    }
+  &__dropdown-menu {
+    max-height: 400px;
+    padding: 0;
+    margin-bottom: 0;
+    overflow-y: scroll;
+    list-style: none;
+  }
 
-    &__dropdown-menu {
-      max-height: 400px;
-      padding: 0;
-      margin-bottom: 0;
-      overflow-y: scroll;
-      list-style: none;
-    }
+  &__dropdown-option {
+    width: 100%;
+    padding: ($spacer / 2) 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 
-    &__dropdown-option {
-      width: 100%;
-      padding: ($spacer / 2) 0;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-
-      &--highlight,
-      &:hover {
-        color: $white;
-        background: $pink;
-      }
+    &--highlight,
+    &:hover {
+      color: $white;
+      background: $pink;
     }
   }
 }

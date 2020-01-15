@@ -186,8 +186,10 @@ $open: ".sidebar.open" !default;
     height: 40px;
     overflow: hidden;
     color: inherit;
+    cursor: pointer;
 
     &[disabled] {
+      cursor: default;
       .mdi,
       span {
         font-weight: $font-weight-normal;
