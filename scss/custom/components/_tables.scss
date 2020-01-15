@@ -43,6 +43,7 @@
     text-align: center;
 
     tr {
+
       &:last-child {
         td {
           border-color: none;
@@ -110,7 +111,11 @@
     }
 
     td {
-      padding: ($table-cell-padding * 1.459) $table-cell-padding;
+      padding: ($table-cell-padding) $table-cell-padding;
+
+      &:not(:first-child):not(:nth-child(2)) {
+        font-size: $h4-font-size * 1.2;
+      }
     }
   }
 
@@ -123,6 +128,11 @@
 
     tr {
       @extend %borderd-edges;
+    }
+
+    tr:nth-child(2) {
+      overflow: hidden;
+      @include border-radius( 0 $border-radius-lg 0 0);
     }
 
     .table-label {
