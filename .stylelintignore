@@ -2,4 +2,4 @@
 **/dist/
 **/vendor/
 /_gh_pages/
-/scss/custom/components/_custom-menu.scss
+/scss/custom/components/_charts.scss

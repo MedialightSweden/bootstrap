@@ -32,6 +32,7 @@
     "css-compile-docs": "cross-env-shell node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 site/docs/$npm_package_version_short/assets/scss/docs.scss site/docs/$npm_package_version_short/assets/css/docs.min.css",
     "css-lint": "npm-run-all --parallel css-lint-*",
     "css-lint-main": "stylelint \"scss/**/*.scss\" --cache --cache-location .cache/.stylelintcache",
+    "css-lint-fix": "stylelint --fix \"scss/**/*.scss\"",
     "css-lint-docs": "stylelint \"site/docs/**/assets/scss/*.scss\" \"site/docs/**/*.css\" --cache --cache-location .cache/.stylelintcache",
     "css-lint-vars": "fusv scss/ site/docs/",
     "css-minify": "npm-run-all --parallel css-minify-*",
@@ -96,7 +97,9 @@
     "url": "https://github.com/twbs/bootstrap/issues"
   },
   "license": "MIT",
-  "dependencies": {},
+  "dependencies": {
+    "g": "^2.0.1"
+  },
   "peerDependencies": {
     "jquery": "1.9.1 - 3",
     "popper.js": "^1.14.6"
@@ -142,7 +145,7 @@
     "shelljs": "^0.8.3",
     "shx": "^0.3.2",
     "sinon": "^7.2.2",
-    "stylelint": "^9.9.0",
+    "stylelint": "^9.10.1",
     "stylelint-config-twbs-bootstrap": "^0.2.1",
     "uglify-js": "^3.4.9",
     "vnu-jar": "18.11.5"

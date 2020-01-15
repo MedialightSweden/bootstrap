@@ -5,13 +5,13 @@
   padding: $grid-gutter-width;
   margin: auto;
   @include border-radius($border-radius-lg);
-  box-shadow: $box-shadow;
-  color: white;
+  color: $white;
   background: $secondary;
+  box-shadow: $box-shadow;
 
   &-header {
     padding-bottom: ($grid-gutter-width / 2);
-    
+
     &.stroked {
       border-bottom: 1px solid $white;
     }
@@ -27,17 +27,17 @@
 
   &-input-checker {
     position: absolute;
-    bottom: ($input-height-inner-sm / 3);
     right: ($grid-gutter-width / 2);
-    opacity: 0;
+    bottom: ($input-height-inner-sm / 3);
     visibility: hidden;
+    opacity: 0;
   }
 
   &-control {
 
     &:focus + .form-input-checker {
-      opacity: 1;
       visibility: visible;
+      opacity: 1;
       @include transition(opacity .3s linear);
     }
   }

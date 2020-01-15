@@ -1,23 +1,65 @@
-span.text-right {
-  cursor: pointer;
-}
-.fade-enter-active, .fade-leave-active {
-  transition: opacity .5s;
-}
-.fade-enter, .fade-leave-to {
-  opacity: 0;
+span {
+  & .text-right {
+    cursor: pointer;
+  }
 }
 
-.expand-enter-active,
-.expand-leave-active {
-  max-height: 100vh;
-  transition: all 0.3s;
+.fade {
+
+  %transition {
+    @include transition(opacity .5s linear);
+  }
+
+  %affect {
+    opacity: 0;
+  }
+
+  &-enter {
+    @extend %affect;
+  }
+
+  &-leave-to {
+    @extend %affect;
+  }
+
+  &-enter-active {
+    @extend %transition;
+  }
+
+  &-leave-leave {
+    @extend %transition;
+  }
 }
-.expand-enter,
-.expand-leave-to {
-  max-height: 0;
-  opacity: 0;
+
+.expand {
+
+  %transition {
+    max-height: 100vh;
+    @include transition(all .3s linear);
+  }
+
+  %affect {
+    max-height: 0;
+    opacity: 0;
+  }
+
+  &-enter {
+    @extend %affect;
+  }
+
+  &-leave-to {
+    @extend %affect;
+  }
+
+  &-enter-active {
+    @extend %transition;
+  }
+
+  &-leave-active {
+    @extend %transition;
+  }
 }
+
 .option-toggle {
   display: flex;
   justify-content: space-between;

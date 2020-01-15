@@ -2,13 +2,13 @@
   @extend .container-fluid;
 
   position: fixed;
-  bottom: 0;
   right: 0;
+  bottom: 0;
+  z-index: -1;
   height: 50px;
   padding-left: $sidebar-collapsed-width;
-  @include transition(all .3s linear);
   background: $dark;
-  z-index: -1;
+  @include transition(all .3s linear);
 
   &-container {
     @extend .container;
@@ -19,11 +19,11 @@
   &-info,
   &-logo {
     @extend .col-md-6;
-
-    color: $white;
-    line-height: 50px;
     font-size: $h4-font-size * 1.1;
     font-weight: $font-weight-lighter;
+    line-height: 50px;
+
+    color: $white;
 
     &.image {
       width: auto;
@@ -34,8 +34,8 @@
   }
 
   &-logo {
-    text-align: right;
     font-size: 16px;
+    text-align: right;
   }
 }
 

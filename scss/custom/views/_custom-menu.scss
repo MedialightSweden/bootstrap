@@ -13,9 +13,9 @@
     margin: 4.5px 15px;
     &.name-placeholder {
       width: 144px;
-      white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
+      white-space: nowrap;
     }
   }
 }

@@ -1,19 +1,19 @@
 .console {
-  
+
   &-group {
     @include border-radius($border-radius-lg);
     overflow: hidden;
 
     .btn {
 
-      border-radius: 0;
+      @include border-radius(0);
     }
   }
 
   .btn {
+    border-color: theme-color-level(info, 2);
     border-style: solid;
     border-width: 1px;
-    border-color: theme-color-level(info, 2);
 
     &:last-child {
       border-color: theme-color-level(warning, 2);

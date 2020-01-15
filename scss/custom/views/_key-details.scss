@@ -7,28 +7,28 @@
 }
 
 .datepicker {
-  text-align: right;
   padding: 25px 0;
+  text-align: right;
 }
 
 .error {
   width: 100%;
   padding-top: 25px;
-  color: black;
+  color: $black;
   text-align: center;
 }
 
 .reports-table {
-  color: $white;
-  @include border-radius($border-radius-lg);
   overflow: hidden;
-  box-shadow: $box-shadow;
+  color: $white;
   text-align: center;
+  box-shadow: $box-shadow;
+  @include border-radius($border-radius-lg);
   td {
     border-right: 1px solid rgba($black, .3);
     &:last-child {
       border: none;
-    }   
+    }
   }
   thead {
     td {

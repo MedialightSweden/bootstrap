@@ -1,5 +1,5 @@
 .keywords {
-  
+
   &-placing-overall {
     @extend .container;
 
@@ -26,12 +26,12 @@
     width: 300px;
     height: 300px;
     margin: 25px auto;
-    border-radius: 50%;
-    background: $white;
-    line-height: 300px;
-    color: #F075A2;
     font-size: 80px;
     font-weight: 300;
+    line-height: 300px;
+    color: #f075a2;
+    background: $white;
+    @include border-radius(50%);
   }
 
   &-table {
@@ -39,7 +39,7 @@
     thead tr {
       background: $gray-800;
     }
-  
+
     thead td,
     tbody td {
       &:last-child {

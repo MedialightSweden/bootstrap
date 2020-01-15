@@ -28,14 +28,14 @@
 
 .serpbook {
   padding-top: 0;
-  opacity: 1;
   visibility: visible;
-  transition: all .3s linear;
+  opacity: 1;
+  @include transition(all .3s linear);
 
   &.hidden {
     padding-top: 100px;
-    opacity: 0;
     visibility: hidden;
+    opacity: 0;
   }
 
   &-table {
@@ -59,7 +59,7 @@
 
     td {
       color: $white;
-      border-bottom: 1px solid rgba($black, 0.1);
+      border-bottom: 1px solid rgba($black, .1);
       @include set-background($tbody-colors);
     }
   }
@@ -89,10 +89,10 @@
     &.fixed {
       position: fixed;
       top: 50px;
+      z-index: $zindex-sticky;
       width: 100%;
       max-width: 1080px;
-      z-index: $zindex-sticky;
-      transition: all 0.3s linear;
+      @include transition(all .3s linear);
     }
   }
 
@@ -129,15 +129,15 @@
       position: absolute;
       top: -21px;
       padding: 0 $grid-gutter-width;
-      @include border-radius($border-radius-lg $border-radius-lg 0 0);
       font-size: $font-size-base;
       font-weight: $font-weight-bold;
       color: $white;
       background: $dark;
+      @include border-radius($border-radius-lg $border-radius-lg 0 0);
     }
 
     td {
-      padding: ($table-cell-padding * 0.625) $table-cell-padding;
+      padding: ($table-cell-padding * .625) $table-cell-padding;
     }
 
     &:last-child {

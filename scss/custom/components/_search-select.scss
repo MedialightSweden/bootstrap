@@ -1,24 +1,24 @@
 .search-select {
-  
+
   .v-select {
-    width: 100%;
-    max-width: 480px;
     position: fixed;
     top: 0;
     right: $grid-gutter-width;
-    padding: ($spacer/2) 0 0;
     z-index: 0;
-    opacity: 0;
+    width: 100%;
+    max-width: 480px;
+    padding: ($spacer / 2) 0 0;
     visibility: hidden;
-    @include border-radius(0 0 $border-radius-lg $border-radius-lg);
     background: $white;
     box-shadow: $box-shadow;
-    
+    opacity: 0;
+    @include border-radius(0 0 $border-radius-lg $border-radius-lg);
+
     &.vs--show {
       top: 50px;
       z-index: $zindex-popover;
-      opacity: 1;
       visibility: visible;
+      opacity: 1;
     }
   }
 
@@ -30,7 +30,7 @@
     }
 
     &__dropdown-toggle {
-      padding: ($spacer/2);
+      padding: ($spacer / 2);
     }
 
     &__search {
@@ -39,19 +39,19 @@
     }
 
     &__dropdown-menu {
-      list-style: none;
+      max-height: 400px;
       padding: 0;
       margin-bottom: 0;
-      max-height: 400px;
       overflow-y: scroll;
+      list-style: none;
     }
 
     &__dropdown-option {
-      padding: ($spacer/2) 0;
       width: 100%;
-      white-space: nowrap;
+      padding: ($spacer / 2) 0;
       overflow: hidden;
       text-overflow: ellipsis;
+      white-space: nowrap;
 
       &--highlight,
       &:hover {

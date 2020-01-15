@@ -1,7 +1,7 @@
 //*** Chart Sizes
 canvas {
   width: 100%;
-  &#bar-chart {
+  & #bar-chart {
     height: 350px;
   }
 }
@@ -14,8 +14,8 @@ canvas {
   }
 
   &-nav-item {
-    cursor: pointer;
     height: $block-height-sm;
+    cursor: pointer;
     &:nth-child(2) {
       border: 1px solid rgba($secondary, .3);
       border-top: none;
@@ -27,17 +27,17 @@ canvas {
       color: $white;
       background: $secondary;
       &::after {
-        display: block;
         position: absolute;
         top: -10px;
         left: calc(50% - 10px);
+        display: block;
         width: 20px;
         height: 20px;
-        background: $white;
         content: "";
-        transform: rotate(45deg);
+        background: $white;
         border-right: 1px solid rgba($secondary, .3);
-        border-bottom: 1px solid rgba($secondary, .3);;
+        border-bottom: 1px solid rgba($secondary, .3);
+        transform: rotate(45deg);
       }
     }
   }
