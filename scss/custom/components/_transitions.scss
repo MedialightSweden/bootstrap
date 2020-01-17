@@ -1,0 +1,41 @@
+.fade {
+
+  &-enter,
+  &-leave-to {
+    opacity: 0;
+  }
+
+  &-enter-active,
+  &-leave-leave {
+    @include transition(opacity .3s linear);
+  }
+}
+
+.expand {
+
+  %transition {
+    max-height: 100vh;
+    @include transition(all .3s linear);
+  }
+
+  %affect {
+    max-height: 0;
+    opacity: 0;
+  }
+
+  &-enter {
+    @extend %affect;
+  }
+
+  &-leave-to {
+    @extend %affect;
+  }
+
+  &-enter-active {
+    @extend %transition;
+  }
+
+  &-leave-active {
+    @extend %transition;
+  }
+}

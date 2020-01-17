@@ -1,0 +1,36 @@
+.modal {
+  
+  &-wrapper {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba($black, .4);
+    z-index: $zindex-popover;
+  }
+
+  &-container {
+
+    @extend .container;
+    display: flex;
+    height: 400px;
+  }
+
+  &-close-icon {
+    position: absolute;
+    top: 10px;
+    right: $grid-gutter-width / 2;
+    cursor: pointer;
+  }
+
+  &-close-btn {
+    position: absolute;
+    bottom: $grid-gutter-width / 2;
+    right: $grid-gutter-width / 2;
+    cursor: pointer;
+  }
+}

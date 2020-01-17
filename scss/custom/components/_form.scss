@@ -41,4 +41,17 @@
       @include transition(opacity .3s linear);
     }
   }
+
+  &-control-file {
+    opacity: 0;
+  }
+
+  &-control-file-label {
+
+    @extend .btn;
+    @extend .btn-info;
+    @include border-radius(0 $border-radius-sm $border-radius-sm 0);
+    cursor: pointer;
+    color: $white;
+  }
 }

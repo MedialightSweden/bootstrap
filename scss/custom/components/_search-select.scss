@@ -1,3 +1,5 @@
+@import "vue-select/src/scss/vue-select.scss";
+
 .search-select {
   .v-select {
     position: fixed;
@@ -23,18 +25,23 @@
 }
 
 .vs {
+  $self: &;
+
   &__selected,
   &__actions {
     display: none;
   }
 
   &__dropdown-toggle {
-    padding: ($spacer / 2);
+    width: 100%;
+    padding: 2px 0 6px;
+    background: $white;
   }
 
-  &__search {
+  &__selected-options {
     width: 100%;
-    padding: 0;
+    flex-wrap: nowrap;
+    overflow: hidden;
   }
 
   &__dropdown-menu {
@@ -47,7 +54,7 @@
 
   &__dropdown-option {
     width: 100%;
-    padding: ($spacer / 2) 0;
+    padding: ($spacer / 2);
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -56,6 +63,28 @@
     &:hover {
       color: $white;
       background: $pink;
+    }
+  }
+
+  &--with-action {
+
+    display: flex;
+
+    #{$self}__selected,
+    #{$self}__actions {
+      display: flex;
+    }
+
+    #{$self}__selected {
+      display: block;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    &.inline {
+      width: calc(100% - 34px);
+      float: left;
     }
   }
 }

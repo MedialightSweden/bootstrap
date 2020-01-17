@@ -13,6 +13,8 @@
 @import "views/key-details";
 @import "views/console";
 @import "views/manage";
+@import "components/modal";
+@import "components/transitions";
 
 a {
   color: inherit;
@@ -44,6 +46,10 @@ body {
     &.no-sidebar {
       padding: 0;
     }
+  }
+
+  &.no-sidebar {
+    padding: 0;
   }
 
   &-wrapper {
