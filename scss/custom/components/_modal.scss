@@ -28,9 +28,7 @@
   }
 
   &-close-btn {
-    position: absolute;
-    bottom: $grid-gutter-width / 2;
-    right: $grid-gutter-width / 2;
+    margin-top: $spacer;
     cursor: pointer;
   }
 }

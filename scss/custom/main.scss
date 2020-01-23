@@ -1,3 +1,4 @@
+@import "components/transitions";
 @import "views/sidebar";
 @import "components/blocks";
 @import "components/tables";
@@ -14,7 +15,6 @@
 @import "views/console";
 @import "views/manage";
 @import "components/modal";
-@import "components/transitions";
 
 a {
   color: inherit;
