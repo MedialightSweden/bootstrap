@@ -1,21 +1,9 @@
 .container-form {
   $self: &;
 
-  @extend .col-sm-7;
+  @extend .console;
   padding: $grid-gutter-width;
-  margin: auto;
-  @include border-radius($border-radius-lg);
   color: $white;
-  background: $secondary;
-  box-shadow: $box-shadow;
-
-  &-header {
-    padding-bottom: ($grid-gutter-width / 2);
-
-    &.stroked {
-      border-bottom: 1px solid $white;
-    }
-  }
 }
 
 .form {
@@ -23,6 +11,10 @@
 
   &-group {
     position: relative;
+
+    .btn {
+      cursor: pointer;
+    }
   }
 
   &-input-checker {

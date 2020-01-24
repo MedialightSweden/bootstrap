@@ -131,7 +131,8 @@ $open: ".sidebar.open" !default;
     }
     .badge {
       max-width: 160px;
-      padding: 3px 7px;
+      overflow: hidden;
+      padding: 3px $grid-gutter-width / 2;
       font-size: $font-size-base * .875;
       font-weight: $font-weight-lighter;
       color: $white;
@@ -139,9 +140,8 @@ $open: ".sidebar.open" !default;
       background: $primary;
       border: none;
       @include border-radius($rounded-pill);
-      &:focus {
-        outline: transparent;
-      }
+      text-overflow: ellipsis;
+      white-space: nowrap;
     }
   }
 

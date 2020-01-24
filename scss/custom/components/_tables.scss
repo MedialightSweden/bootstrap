@@ -18,11 +18,11 @@
   }
 
   &:first-child {
-    @include border-radius(0 $border-radius-lg 0 0);
+    @include border-radius(0 $border-radius-xl 0 0);
   }
 
   &:last-child {
-    @include border-radius(0 0 $border-radius-lg $border-radius-lg);
+    @include border-radius(0 0 $border-radius-xl $border-radius-xl);
   }
 }
 
@@ -79,11 +79,11 @@
       }
 
       &:first-child {
-        @include border-radius($border-radius-lg 0 0 0);
+        @include border-radius($border-radius-xl 0 0 0);
       }
 
       &:last-child {
-        @include border-radius(0 $border-radius-lg 0 0);
+        @include border-radius(0 $border-radius-xl 0 0);
       }
     }
 
@@ -99,7 +99,7 @@
 
   &-values {
     @extend %table-body;
-    @include border-radius(0 0 $border-radius-lg $border-radius-lg);
+    @include border-radius(0 0 $border-radius-xl $border-radius-xl);
     font: $tbody-font-base;
 
     tr {
@@ -121,7 +121,7 @@
 
   &-extra {
     @extend %table-body;
-    @include border-radius($border-radius-lg);
+    @include border-radius($border-radius-xl);
     position: relative;
     margin: 0 0 ($spacer * 4);
     font: $tbody-font-small;
@@ -132,7 +132,7 @@
 
     tr:nth-child(2) {
       overflow: hidden;
-      @include border-radius( 0 $border-radius-lg 0 0);
+      @include border-radius( 0 $border-radius-xl 0 0);
     }
 
     .table-label {
@@ -143,11 +143,15 @@
       font-weight: $font-weight-bold;
       color: $white;
       background: $dark;
-      @include border-radius($border-radius-lg $border-radius-lg 0 0);
+      @include border-radius($border-radius-xl $border-radius-xl 0 0);
     }
 
     td {
       padding: ($table-cell-padding * .625) $table-cell-padding;
+
+      &:not(:first-child):not(:nth-child(2)) {
+        font-size: $h4-font-size;
+      }
     }
 
     &:last-child {

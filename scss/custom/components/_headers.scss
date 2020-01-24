@@ -1,0 +1,7 @@
+.header {
+  padding-bottom: ($grid-gutter-width / 2);
+
+  &.stroked {
+    border-bottom: 1px solid $white;
+  }
+}

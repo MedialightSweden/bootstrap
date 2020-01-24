@@ -1,0 +1,34 @@
+.input {
+  
+  @extend .form-group;
+  position: relative;
+  margin-bottom: $spacer * 1.25;
+
+  &-checker {
+    position: absolute;
+    right: ($grid-gutter-width / 2);
+    bottom: ($input-height-inner-sm / 3.5);
+    
+  }
+
+  &-notice {
+    position: absolute;
+    padding-left: $grid-gutter-width / 6;
+    color: $danger;
+    line-height: 1;
+  }
+
+  &-control {
+    @extend .form-control;
+
+    
+
+    .full-width {
+      width: 100%;
+    }
+
+    .half-width {
+      width: 50%
+    }
+  }
+}

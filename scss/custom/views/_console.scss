@@ -1,5 +1,12 @@
 .console {
 
+  @extend .col-6;
+  padding: $grid-gutter-width / 2;
+  margin: auto;
+  @include border-radius($border-radius-xl);
+  background: $secondary;
+  box-shadow: $box-shadow;
+
   &-group {
     @include border-radius($border-radius-lg);
     overflow: hidden;
@@ -10,13 +17,15 @@
     }
   }
 
-  .btn {
+  .btn-info {
     border-color: theme-color-level(info, 2);
     border-style: solid;
     border-width: 1px;
+  }
 
-    &:last-child {
-      border-color: theme-color-level(warning, 2);
-    }
+  .btn-warning {
+    border-color: theme-color-level(warning, 2);
+    border-style: solid;
+    border-width: 1px;
   }
 }
