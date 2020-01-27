@@ -125,9 +125,10 @@ $open: ".sidebar.open" !default;
       color: $white;
     }
     .badge {
+      position: relative;
       max-width: 160px;
       overflow: hidden;
-      padding: 3px $grid-gutter-width / 2;
+      padding: 3px ($grid-gutter-width / 1.4);
       margin: 0 auto;
       font-size: $font-size-base * .875;
       font-weight: $font-weight-lighter;
@@ -140,6 +141,12 @@ $open: ".sidebar.open" !default;
       white-space: nowrap;
       &.has-children {
         cursor: pointer;
+
+        &::after {
+          position: absolute;
+          top: calc(50% - 2px);
+          right: 10px;
+        }
       }
     }
   }

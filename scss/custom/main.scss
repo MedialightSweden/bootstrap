@@ -74,7 +74,7 @@ body {
   &-content {
     position: relative;
     width: 100%;
-    padding: $spacer * 1.4;
+    padding: $grid-gutter-width;
     margin: auto;
     color: $white;
     text-align: center;
