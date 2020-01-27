@@ -44,11 +44,6 @@ $open: ".sidebar.open" !default;
     height: 30px;
     margin: 10px 6.5px;
 
-    // &.pulse {
-    //   transform: scale(1);
-    //   animation: pulse 1s infinite;
-    // }
-
     &.no-sidebar {
       position: absolute;
       top: 0;
@@ -133,6 +128,7 @@ $open: ".sidebar.open" !default;
       max-width: 160px;
       overflow: hidden;
       padding: 3px $grid-gutter-width / 2;
+      margin: 0 auto;
       font-size: $font-size-base * .875;
       font-weight: $font-weight-lighter;
       color: $white;
@@ -142,6 +138,9 @@ $open: ".sidebar.open" !default;
       @include border-radius($rounded-pill);
       text-overflow: ellipsis;
       white-space: nowrap;
+      &.has-children {
+        cursor: pointer;
+      }
     }
   }
 

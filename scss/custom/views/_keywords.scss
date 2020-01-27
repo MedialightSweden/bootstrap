@@ -19,6 +19,13 @@
 
     position: relative;
     height: 425px;
+    padding: 0 ($spacer * 3);
+
+    canvas {
+      max-width: 300px;
+      max-height: 350px;
+      margin: 0 auto;
+    }
   }
 
   &-overall-change {
