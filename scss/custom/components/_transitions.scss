@@ -1,3 +1,13 @@
+%transition {
+  max-height: 100vh;
+  @include transition(all .3s linear);
+}
+
+%affect {
+  max-height: 0;
+  opacity: 0;
+}
+
 .fade {
 
   &-enter,
@@ -7,21 +17,11 @@
 
   &-enter-active,
   &-leave-leave {
-    @include transition(opacity .3s linear);
+    @include transition(opacity .2s linear);
   }
 }
 
 .expand {
-
-  %transition {
-    max-height: 100vh;
-    @include transition(all .3s linear);
-  }
-
-  %affect {
-    max-height: 0;
-    opacity: 0;
-  }
 
   &-enter {
     @extend %affect;

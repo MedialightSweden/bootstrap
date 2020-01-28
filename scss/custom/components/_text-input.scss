@@ -3,18 +3,23 @@
   @extend .form-group;
   position: relative;
   margin-bottom: $spacer * 1.25;
+  text-align: left;
 
   &-checker {
     position: absolute;
+    top: ($input-height-inner-sm * 1.3);
     right: ($grid-gutter-width / 2);
-    bottom: ($input-height-inner-sm / 3.5);
+
+    &.no-label {
+      top: ($input-height-inner-sm / 3);
+    }
   }
 
   &-notice {
-    position: absolute;
+    position: relative;
     padding-left: $grid-gutter-width / 6;
-    color: $danger;
-    line-height: 1;
+    color: $info;
+    line-height: 1; 
   }
 
   &-control {
@@ -27,5 +32,9 @@
     .half-width {
       width: 50%
     }
+  }
+
+  &.hint-visible {
+    margin-bottom: 0;
   }
 }
