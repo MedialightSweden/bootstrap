@@ -1138,7 +1138,7 @@ $tbody-colors: (
   "5": theme-color-level(secondary, 1)
 ) !default;
 
-$thead-font-base: $font-weight-bold ($font-size-base * .9375) $font-family-base !default;
+$thead-font-base: $font-weight-normal ($font-size-base * .9375) $font-family-base !default;
 $tbody-font-base: $font-weight-normal ($font-size-base * 1.125) $font-family-base !default;
 $tbody-font-small: $font-weight-normal ($font-size-base * .875 ) $font-family-base !default;
 

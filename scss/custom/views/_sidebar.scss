@@ -23,7 +23,7 @@ $open: ".sidebar.open" !default;
   @include transition(width .3s linear);
 
   &-wrapper {
-    width: 43px;
+    width: 44.4px;
     height: $sidebar-collapsed-width;
     overflow: hidden;
     @include transition(width .3s linear);
@@ -213,7 +213,9 @@ $open: ".sidebar.open" !default;
 
 .submenu {
   @extend .navigation-bar;
-  background: $gray-900;
+  background: theme-color-level(secondary, 6);
+  font-size: $font-size-base * 0.9;
+  
   &-item {
     border-bottom: 1px solid $dark;
 
