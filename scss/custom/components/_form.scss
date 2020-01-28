@@ -1,8 +1,12 @@
 .container-form {
   $self: &;
 
-  @extend .console;
+  @extend .col-6;
   padding: $grid-gutter-width;
+  margin: auto;
+  @include border-radius($border-radius-xl);
+  background: $secondary;
+  box-shadow: $box-shadow;
   color: $white;
 }
 

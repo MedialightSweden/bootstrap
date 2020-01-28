@@ -1,11 +1,7 @@
 .console {
 
-  @extend .col-6;
+  @extend .container-form;
   padding: $grid-gutter-width / 2;
-  margin: auto;
-  @include border-radius($border-radius-xl);
-  background: $secondary;
-  box-shadow: $box-shadow;
 
   &-group {
     @include border-radius($border-radius-lg);
