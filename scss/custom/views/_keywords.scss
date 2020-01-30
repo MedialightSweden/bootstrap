@@ -8,14 +8,14 @@
   }
 
   &-placing-growth {
-    @extend .col-sm-6;
+    @extend .col-md-6;
 
     position: relative;
     border-right: 1px solid $white;
   }
 
   &-placing-moves {
-    @extend .col-sm-6;
+    @extend .col-md-6;
 
     position: relative;
     height: 425px;
@@ -29,17 +29,24 @@
   }
 
   &-overall-change {
-    display: block;
-    width: 300px;
-    height: 300px;
+    position: relative;
+    width: 80%;
+    height: auto;
+    padding-top: 80%;
     margin: 25px auto;
     font-size: 80px;
     font-weight: $font-weight-light;
-    line-height: 300px;
     color: #f075a2;
     background: $white;
     @include border-radius(50%);
-  }
+
+    h1 {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  } 
 
   &-table {
     color: $white;

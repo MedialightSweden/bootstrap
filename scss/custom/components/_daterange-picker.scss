@@ -1,0 +1,18 @@
+.datepicker {
+  position: relative;
+  
+  span {
+    position: relative;
+    left: -$grid-gutter-width / 2;
+    cursor: pointer;
+  }
+
+  .vue-daterange-picker {
+
+    position: relative;
+    right: -$grid-gutter-width / 2;
+    .form-control {
+      padding-right: $grid-gutter-width * 1.5;
+    }
+  }
+}

@@ -8,6 +8,7 @@
 @import "components/text-input";
 @import "components/loader";
 @import "components/search-select";
+@import "components/daterange-picker";
 @import "components/modal";
 
 @import "views/sidebar";
@@ -87,4 +88,8 @@ body {
 .btn.btn-light {
   border-color: theme-color-level(secondary, -8);
   font-weight: $font-weight-normal;
+}
+
+canvas {
+  max-width: 100%;
 }
