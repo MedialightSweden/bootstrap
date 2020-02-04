@@ -86,7 +86,7 @@
       width: 40px;
       height: 40px;
       margin: 5px auto;
-      background: $gray-600;
+      background: theme-color-level(secondary, -2);
       @include border-radius($rounded-pill);
       @include transition(all .3s linear);
       &::before {
@@ -94,7 +94,7 @@
         top: 50%;
         left: 50%;
         font-size: 40px;
-        color: $white;
+        color: theme-color-level(secondary, -10);
         @include transition(all .3s linear);
         transform: translate(-50%, -50%);
       }

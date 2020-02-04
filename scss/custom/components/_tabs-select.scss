@@ -9,6 +9,10 @@
   height: $tab-height;
   text-align: center;
 
+  @include media-breakpoint-down(lg) {
+    width: 200%;
+  }
+
   &-single {
     padding: ($spacer / 5) 0;
     overflow: hidden;
@@ -23,7 +27,7 @@
     #{$self}-single {
       width: calc(100% / 5);
       font: $tab-font-base;
-      background: theme-color-level(primary, 2);
+      background: theme-color-level(primary, 1.2);
 
       &.active {
         background: $primary;
@@ -45,7 +49,8 @@
     }
 
     &.fixed {
-      top: 50px;
+      top: initial;
+      bottom: -$tab-height;
 
       #{$self}-single {
         @include border-radius(0 0 $border-radius-lg $border-radius-lg);

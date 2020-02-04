@@ -50,6 +50,12 @@
       transform: translate(-50%, -50%);
     }
 
+    &.menu {
+      top: 50%;
+      right: $grid-gutter-width / 2;
+      transform: translate(0, -50%);
+    }
+
     &.center-bottom {
       position: relative;
       display: flex;

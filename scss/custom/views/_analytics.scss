@@ -37,6 +37,7 @@
     }
     td {
       background: $secondary;
+      vertical-align: middle;
       &:first-child {
         background: $primary;
       }

@@ -19,7 +19,7 @@ $open: ".sidebar.open" !default;
 .branding {
   width: $sidebar-collapsed-width;
   height: $sidebar-collapsed-width;
-  background: $gray-300;
+  background: theme-color-level(secondary, -10);
   @include transition(width .3s linear);
 
   &-wrapper {
@@ -32,11 +32,6 @@ $open: ".sidebar.open" !default;
   &-link {
     display: block;
     width: 50px;
-
-    &.pulse {
-      transform: scale(1);
-      animation: pulse 1s infinite;
-    }
   }
 
   &-logo {
@@ -48,6 +43,11 @@ $open: ".sidebar.open" !default;
       position: absolute;
       top: 0;
       left: $grid-gutter-width / 2;
+    }
+
+    &.pulse {
+      transform: scale(1);
+      animation: pulse 1s infinite;
     }
   }
 
@@ -82,7 +82,7 @@ $open: ".sidebar.open" !default;
     width: 60%;
     height: $height;
     margin: (($height * 6) - $padding) auto;
-    background: $black;
+    background: theme-color-level(secondary, 6);
 
     &::before,
     &::after {
@@ -91,7 +91,7 @@ $open: ".sidebar.open" !default;
       width: 100%;
       height: $height;
       content: "";
-      background: $black;
+      background: theme-color-level(secondary, 6);
     }
     &::before {
       top: -($height * 2);
@@ -122,7 +122,7 @@ $open: ".sidebar.open" !default;
     h4 {
       margin: $spacer 0;
       font-weight: $font-weight-lighter;
-      color: $white;
+      color: theme-color-level(secondary, -10);
     }
     .badge {
       position: relative;
@@ -174,7 +174,7 @@ $open: ".sidebar.open" !default;
 
   &-bar {
     padding: 0;
-    color: $white;
+    color: theme-color-level(secondary, -10);
     list-style: none;
   }
   &-item {
@@ -204,9 +204,7 @@ $open: ".sidebar.open" !default;
     }
 
     &.is-active {
-      #{$self}-item {
-        background: $dropdown-link-disabled-color;
-      }
+      background: $nav-tabs-hover-color;
     }
   }
 }
@@ -227,6 +225,10 @@ $open: ".sidebar.open" !default;
     @extend .navigation-link;
     height: 30px;
     padding-left: ($spacer * 1.5);
+
+    &.is-active {
+      background: theme-color-level(secondary, 4);
+    }
   }
 }
 
@@ -235,7 +237,7 @@ $open: ".sidebar.open" !default;
     transform: scale(1.1);
   }
 
-  70% {
+  80% {
     transform: scale(1);
   }
 

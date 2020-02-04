@@ -54,14 +54,17 @@
 
     th {
       position: relative;
+      vertical-align: middle;;
       color: $white;
       @include set-background($thead-colors);
     }
 
     td {
       color: $white;
+      vertical-align: middle;
       border-bottom: 1px solid rgba($black, .1);
       @include set-background($tbody-colors);
+      font-weight: $font-weight-light;
     }
   }
 
@@ -72,6 +75,7 @@
 
     th {
       padding: ($table-cell-padding * 1.25) $table-cell-padding;
+      font-weight: $font-weight-normal;
 
       &:first-child,
       &:last-child {
