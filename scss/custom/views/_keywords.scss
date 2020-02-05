@@ -45,6 +45,7 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
+      @include font-fluid(300px, 1080px, 22px, 70px);
     }
   } 
 
