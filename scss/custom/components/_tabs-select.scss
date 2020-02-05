@@ -9,10 +9,6 @@
   height: $tab-height;
   text-align: center;
 
-  @include media-breakpoint-down(lg) {
-    width: 200%;
-  }
-
   &-single {
     padding: ($spacer / 5) 0;
     overflow: hidden;

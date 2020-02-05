@@ -98,6 +98,10 @@
       width: 100%;
       max-width: 1080px;
       @include transition(all .3s linear);
+
+      th {
+        @include border-radius(0);
+      }
     }
   }
 
