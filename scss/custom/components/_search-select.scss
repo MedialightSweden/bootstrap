@@ -102,6 +102,13 @@
       float: left;
     }
   }
+
+  &--multiple {
+
+    #{$self}__selected-options {
+      flex-wrap: wrap;
+    }
+  }
 }
 
 //*** Dropdown pill in sidebar
