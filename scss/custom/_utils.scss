@@ -1,0 +1,63 @@
+@function strip-unit($value) {
+  @return $value / ($value * 0 + 1);
+}
+
+@mixin font_fluid($min-vw, $max-vw, $min-font-size, $max-font-size) {
+  $u1: unit($min-vw);
+  $u2: unit($max-vw);
+  $u3: unit($min-font-size);
+  $u4: unit($max-font-size);
+
+  @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
+    & {
+      font-size: $min-font-size;
+      @media screen and (min-width: $min-vw) {
+        font-size: calc(#{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
+      }
+      @media screen and (min-width: $max-vw) {
+        font-size: $max-font-size;
+      }
+    }
+  }
+}
+
+.anchor-decoration {
+
+  position: relative;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.copy-alert {
+
+  display: block;
+  position: absolute;
+  top: calc(50% - 14px);
+  right: - 80px;
+  padding: 4px 8px; 
+  opacity: 0;
+  visibility: hidden;
+  @include border-radius($border-radius-lg);
+  @include transition(all .2s linear);
+  color: $white;
+  background: $primary;
+
+  &.copied {
+
+    opacity: 1;
+    visibility: visible;  
+    
+    &::after {
+      display: block;
+      position: absolute;
+      top: calc(50% - 7px);
+      left: -7px;
+      width: 7px;
+      height: 7px;
+      content: '';
+      border-top: 7px solid transparent;
+      border-right: 7px solid $primary;
+      border-bottom: 7px solid transparent;
+    }
+  }
+}
