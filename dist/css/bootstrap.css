@@ -8237,14 +8237,15 @@ a.text-warninglight:hover, a.text-warninglight:focus {
 }
 
 .tool-tip:hover::after {
-  top: -26px;
+  top: -28px;
   left: -25px;
   z-index: 9;
-  width: 130px;
-  font-size: 14px;
+  width: 150px;
+  padding: 2px 0;
+  font-size: 12px;
   color: #f8f9fa;
   text-align: center;
-  content: "Set Automatically";
+  content: "No data from Serpbook";
   background: #000;
   border-radius: 0.3rem;
 }
@@ -8281,6 +8282,7 @@ a.text-warninglight:hover, a.text-warninglight:focus {
 
 .header {
   padding-bottom: 15px;
+  margin-bottom: 15px;
 }
 
 .header.stroked {
