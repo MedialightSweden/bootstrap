@@ -1,5 +1,5 @@
 .input {
-  
+
   @extend .form-group;
   position: relative;
   margin-bottom: $spacer * 1.25;
@@ -17,10 +17,10 @@
 
   &-notice {
     position: relative;
-    color: $yellow;
     font-weight: $font-weight-light;
-    line-height: 1; 
-  } 
+    line-height: 1;
+    color: $yellow;
+  }
 
   &-control {
     @extend .form-control;
@@ -30,7 +30,7 @@
     }
 
     .half-width {
-      width: 50%
+      width: 50%;
     }
   }
 

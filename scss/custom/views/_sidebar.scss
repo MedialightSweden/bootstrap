@@ -127,18 +127,18 @@ $open: ".sidebar.open" !default;
     .badge {
       position: relative;
       max-width: 160px;
-      overflow: hidden;
       padding: 3px ($grid-gutter-width / 1.4);
       margin: 0 auto;
+      overflow: hidden;
       font-size: $font-size-base * .875;
       font-weight: $font-weight-lighter;
       color: $white;
       text-align: center;
+      text-overflow: ellipsis;
+      white-space: nowrap;
       background: $primary;
       border: none;
       @include border-radius($rounded-pill);
-      text-overflow: ellipsis;
-      white-space: nowrap;
       &.has-children {
         cursor: pointer;
 
@@ -211,9 +211,9 @@ $open: ".sidebar.open" !default;
 
 .submenu {
   @extend .navigation-bar;
+  font-size: $font-size-base * .9;
   background: theme-color-level(secondary, 6);
-  font-size: $font-size-base * 0.9;
-  
+
   &-item {
     border-bottom: 1px solid $dark;
 

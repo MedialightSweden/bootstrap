@@ -1,16 +1,16 @@
 .modal {
-  
+
   &-wrapper {
     position: fixed;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
-    background: rgba($black, .4);
     z-index: $zindex-popover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: rgba($black, .4);
   }
 
   &-container {

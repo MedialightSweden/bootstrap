@@ -54,17 +54,17 @@
 
     th {
       position: relative;
-      vertical-align: middle;;
       color: $white;
+      vertical-align: middle;
       @include set-background($thead-colors);
     }
 
     td {
+      font-weight: $font-weight-light;
       color: $white;
       vertical-align: middle;
       border-bottom: 1px solid rgba($black, .1);
       @include set-background($tbody-colors);
-      font-weight: $font-weight-light;
     }
   }
 

@@ -18,14 +18,14 @@
   @include border-radius($border-radius-lg);
   td {
     border-right: 1px solid rgba($black, .2);
-    &:last-child { 
+    &:last-child {
       border: none;
     }
   }
   thead {
     td {
-      background: $gray-800;
       vertical-align: middle;
+      background: $gray-800;
       &:first-child {
         background: theme-color-level(primary, 3);
       }
@@ -36,8 +36,8 @@
       border-top: 1px solid rgba($black, .2);
     }
     td {
-      background: $secondary;
       vertical-align: middle;
+      background: $secondary;
       &:first-child {
         background: $primary;
       }

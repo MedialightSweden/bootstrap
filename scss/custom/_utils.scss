@@ -22,23 +22,23 @@
 }
 
 @mixin pusedo_triangle($direction, $color, $size) {
+  z-index: $zindex-tooltip;
 
   width: $size;
   height: $size;
-  content: '';
-  z-index: $zindex-tooltip;
+  content: "";
   border-#{$direction}: $size solid $color;
 
   $transparent-border: $size solid transparent;
 
   @if $direction == top or $direction == bottom {
 
-    border-left: $transparent-border;
     border-right: $transparent-border;
+    border-left: $transparent-border;
   } @else if $direction == right or $direction == left{
 
-    border-bottom: $transparent-border;
     border-top: $transparent-border;
+    border-bottom: $transparent-border;
   }
 }
 
@@ -59,15 +59,15 @@
 
     &::before {
       @extend %triangle-pos;
-      content: 'Copied!';
       top: calc(50% - 14px);
       right: - 80px;
       padding: 4px 8px;
-      @include border-radius($border-radius-lg);
       color: $white;
+      content: "Copied!";
       background: $primary;
+      @include border-radius($border-radius-lg);
     }
-    
+
     &::after {
       @extend %triangle-pos;
       top: calc(50% - 7px);
@@ -92,14 +92,14 @@
       @extend %triangle-pos;
       top: -26px;
       left: -25px;
-      content: 'Set Automatically';
-      width:  130px;
-      color: $light;
-      background: $black;
-      text-align: center;
-      font-size: 14px;
-      border-radius: 5px;
       z-index: 9;
+      width: 130px;
+      font-size: 14px;
+      color: $light;
+      text-align: center;
+      content: "Set Automatically";
+      background: $black;
+      @include border-radius($border-radius-lg);
     }
   }
 }

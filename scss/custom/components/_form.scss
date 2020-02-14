@@ -4,10 +4,10 @@
   @extend .col-6;
   padding: $grid-gutter-width;
   margin: auto;
-  @include border-radius($border-radius-xl);
+  color: $white;
   background: $secondary;
   box-shadow: $box-shadow;
-  color: $white;
+  @include border-radius($border-radius-xl);
 }
 
 .form {
@@ -47,7 +47,7 @@
     @extend .btn;
     @extend .btn-info;
     @include border-radius(0 $border-radius-sm $border-radius-sm 0);
-    cursor: pointer;
     color: $white;
+    cursor: pointer;
   }
 }
