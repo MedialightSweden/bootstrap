@@ -21,6 +21,27 @@
   }
 }
 
+@mixin pusedo_triangle($direction, $color, $size) {
+
+  width: $size;
+  height: $size;
+  content: '';
+  z-index: $zindex-tooltip;
+  border-#{$direction}: $size solid $color;
+
+  $transparent-border: $size solid transparent;
+
+  @if $direction == top or $direction == bottom {
+
+    border-left: $transparent-border;
+    border-right: $transparent-border;
+  } @else if $direction == right or $direction == left{
+
+    border-bottom: $transparent-border;
+    border-top: $transparent-border;
+  }
+}
+
 .anchor-decoration {
 
   position: relative;
@@ -28,36 +49,57 @@
   cursor: pointer;
 }
 
-.copy-alert {
+.drag-cursor {
+  cursor: grab;
+}
 
-  display: block;
-  position: absolute;
-  top: calc(50% - 14px);
-  right: - 80px;
-  padding: 4px 8px; 
-  opacity: 0;
-  visibility: hidden;
-  @include border-radius($border-radius-lg);
-  @include transition(all .2s linear);
-  color: $white;
-  background: $primary;
+.copy-alert {
 
   &.copied {
 
-    opacity: 1;
-    visibility: visible;  
+    &::before {
+      @extend %triangle-pos;
+      content: 'Copied!';
+      top: calc(50% - 14px);
+      right: - 80px;
+      padding: 4px 8px;
+      @include border-radius($border-radius-lg);
+      color: $white;
+      background: $primary;
+    }
     
     &::after {
-      display: block;
-      position: absolute;
+      @extend %triangle-pos;
       top: calc(50% - 7px);
-      left: -7px;
-      width: 7px;
-      height: 7px;
-      content: '';
-      border-top: 7px solid transparent;
-      border-right: 7px solid $primary;
-      border-bottom: 7px solid transparent;
+      right: -($triangle-base * 2);
+      @include pusedo_triangle(right, $primary, $triangle-base);
+    }
+  }
+}
+
+.tool-tip {
+
+  position: relative;
+
+  &:hover {
+    &::before {
+      @extend %triangle-pos;
+      top: -9px;
+      left: -1px;
+      @include pusedo_triangle(top, $black, $triangle-base);
+    }
+    &::after {
+      @extend %triangle-pos;
+      top: -26px;
+      left: -25px;
+      content: 'Set Automatically';
+      width:  130px;
+      color: $light;
+      background: $black;
+      text-align: center;
+      font-size: 14px;
+      border-radius: 5px;
+      z-index: 9;
     }
   }
 }
