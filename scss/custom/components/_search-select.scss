@@ -46,9 +46,9 @@
   }
 
   &.inline {
-    width: 90%;
+    width: calc(100% - 45px);
     float: left;
-    margin-right: 2%;
+    margin-right: 10px;
   }
 
   &.no-tags {
