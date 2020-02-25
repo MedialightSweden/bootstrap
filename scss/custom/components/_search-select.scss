@@ -45,6 +45,13 @@
     @extend %turncate;
   }
 
+  &__tag {
+    background: $primary !important;
+    span {
+      background: inherit;
+    }
+  }
+
   &.inline {
     width: calc(100% - 45px);
     float: left;
