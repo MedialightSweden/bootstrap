@@ -1,0 +1,22 @@
+@mixin toggle-condition($expanded: false) {
+  &:first-child {
+    display: if($expanded, none, block);
+  }
+  &:last-child {
+    display: if($expanded, block, none);
+  }
+}
+
+@mixin toggle-icon($children: 2, $child: 1) {
+  @for $n from 1 through $children {
+    @if $child == $n {
+      :nth-child(#{$n}) {
+        display: block;
+      }
+    } @else {
+      :nth-child(#{$n}) {
+        display: none;
+      }
+    }
+  }
+}

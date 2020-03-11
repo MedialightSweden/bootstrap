@@ -1,0 +1,25 @@
+footer {
+  color: $white !important;
+  .container {
+    padding: ($spacer * 2.5) ($grid-gutter-width / 2);
+  }
+  .col-md-6 {
+    flex-wrap: wrap;
+    flex-direction: row;
+    .textwidget {
+      margin-top: $spacer;
+      width: 80%;
+    }
+  }
+  .col-md-3 {
+    width: 100%;
+    padding: 20px ($grid-gutter-width / 2) 0;
+    @include media-breakpoint-up(md) {
+      width: initial;
+      padding: 0 ($grid-gutter-width / 2);
+    }
+  }
+  small {
+    display: block;
+  }
+}

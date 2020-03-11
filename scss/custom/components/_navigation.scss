@@ -1,202 +1,518 @@
-.sidebar {
-  $size: 50px;
-  $light: $gray-300;
-  $mid: $gray-700;
-  $dark: $gray-900;
+/**
+ *
+ * Navigations
+ *
+ * Navigation Component
+ *  -Elements
+ *    Wrapper
+ *    Branding
+ *    Logo
+ *    Bar
+ *    Item
+ *    Link
+ *
+ *  .Modifyers
+ *    filled - Filled menu bar
+ *    Handheld - small screen rules 
+ */
+
+// There's room for more improvements. Lots of duplicates and hardcoded property values
+
+// Variables @ bottom of _variables.scss
+
+//*** Placeholders
+%flexbox {
+  display: flex;
+  position: relative;
+  align-self: center;
+}
+
+%container {
+  @include make-container;
+
+  position: relative;
+}
+
+%wrapper {
+  @extend %container;
+  @include make-container-max-widths;
+}
+
+%sidebar-font {
+  font-size: 19px;
+  font-family: $font-family-links;
+}
+
+// Themes navigation, to use with modifyer on parent element as --theme-color
+@mixin theme-nav($parent) {
+  @each $name, $color in $theme-colors {
+    &-#{$name} {
+      %colors {
+        color: #{$color};
+      }
+
+      #{$parent}-link {
+        @extend %colors;
+
+        &:hover {
+          color: theme-color-level(#{$name}, 2);
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+
+.navigation {
+  $self: &;
 
   position: fixed;
   top: 0;
-  z-index: $zindex-popover;
-  width: $size;
-  height: 100%;
-  font-weight: $font-weight-lighter;
-  background: $mid;
-  @include transition(width .3s linear);
+  left: 0;
+  width: 100%;
+  height: $nav-container-height;
+  background: $nav-container-background;
+  z-index: $zindex-fixed;
 
-  .branding {
-    width: $size;
-    height: $size;
-    background: $light;
-    @include transition(width .3s linear);
-    &-wrapper {
-      width: 43px;
-      height: $size;
-      overflow: hidden;
-      @include transition(width .3s linear);
+  @include media-breakpoint-up(lg) {
+    background: transparent;
+    border-bottom: 1px solid $nav-container-border-bottom;
+    @include transition(background-color 0.4s linear);
+
+    &[data-scroll="fill"] {
+      background: $nav-container-background;
+      border-bottom: none;
     }
-    &-logo {
-      display: block;
-      height: 30px;
-      margin: 10px 6.5px;
+  }
+  //*** Elements
+  &-wrapper {
+    @extend %flexbox;
+    @extend %wrapper;
+
+    height: inherit;
+    justify-content: space-between;
+  }
+
+  &-branding {
+    @extend %flexbox;
+
+    max-height: ($nav-container-height - $nav-spacing);
+    margin-right: ($nav-spacing / 2);
+
+    #{$self}-logo {
+      height: 100%;
     }
   }
 
-  .hamburger {
-    $height: 4px;
-    $padding: 1px;
+  &-bar {
+    @extend %flexbox;
+    @extend %container;
 
-    position: relative;
-    top: -($size + $padding);
-    right: -($size + $padding);
-    width: $size;
-    height: $size;
-    padding: $padding;
+    // justify-content: inherit;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  &-item {
+    @extend %container;
+
+    width: auto;
+    align-self: center;
+
+    @include media-breakpoint-up(lg) {
+      &:nth-child(2) {
+        margin-right: calc(100% - 704px);
+      }
+    }
+  }
+
+  &-link {
+    display: flex;
+    padding: 0;
+    align-items: center;
     cursor: pointer;
-    @include transition(all .3s linear);
-    &-bar {
-      position: relative;
-      width: 60%;
-      height: $height;
-      margin: (($height * 6) - $padding) auto;
-      background: $black;
-      @include transition(all .3s linear);
-      &::before,
-      &::after {
-        position: absolute;
-        display: block;
-        width: 100%;
-        height: $height;
-        content: "";
-        background: $black;
-        @include transition(all .3s linear);
-      }
-      &::before {
-        top: -($height * 2);
-        opacity: 1;
-      }
-      &::after {
-        bottom: -($height * 2);
-      }
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: none;
     }
   }
 
-  .customer {
-    max-height: 0;
-    padding-bottom: 100%;
-    overflow: hidden;
-    border-bottom: 2px solid rgba(255, 255, 255, .25);
-    @include transition(all .3s linear);
-    .mdi {
-      position: relative;
-      display: block;
-      width: 40px;
-      height: 40px;
-      margin: 5px auto;
-      background: $gray-600;
-      @include border-radius($rounded-pill);
-      @include transition(all .3s linear);
-      &::before {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        font-size: 40px;
-        color: $white;
-        @include transition(all .3s linear);
-        transform: translate(-50%, -50%);
-      }
-    }
-    &-info {
-      text-align: center;
-      visibility: hidden;
-      opacity: 0;
-      @include transition(all .3s linear);
-      h4 {
-        margin: 11px 0;
-        font-weight: 200;
-        color: $white;
-      }
-      .badge {
-        padding: 3px 7px;
-        font-size: 14px;
-        font-weight: 200;
-        color: $white;
-        text-align: center;
-        background: $primary;
-        @include border-radius($border-radius);
-      }
-    }
+  //*** Modifyers
+  &.filled {
+    background: $nav-container-background;
+    border-bottom: none;
   }
 
-  .navigation {
+  @include theme-nav($self);
 
-    &-bar {
-      padding: 0;
-      color: $white;
-      list-style: none;
-    }
-    &-item {
-      position: relative;
-      min-height: 40px;
-      border-bottom: $nav-tabs-border-width solid $nav-divider-color;
-    }
-    &-link {
-      display: block;
-      width: 100%;
-      color: inherit;
+  &.handheld {
+    @include media-breakpoint-down(md) {
+      #{$self}-bar {
+        position: fixed;
+        top: $nav-container-height;
+        right: -100%;
+        height: 100%;
+        max-width: map-get($grid-breakpoints, "sm");
+        flex-direction: column;
+        justify-content: left;
+        background: $submenu-background;
+        @include transition(right 0.3s ease-in-out);
 
-      .mdi {
-        margin: 0 ($spacer / 1.3);
-        font-size: $h4-font-size;
-      }
-
-      &[disabled] {
-        .mdi,
-        span {
-          font-weight: 400;
-          color: $gray-600;
+        &[data-state="open"] {
+          right: 0;
         }
       }
+
+      #{$self}-item {
+        width: 100%;
+        padding: 0;
+        border-bottom: 2px solid $nav-item-border-bottom;
+        &:last-child {
+          border-bottom: none;
+        }
+
+        //*** quickfix for button.. can be cleaner..
+        .btn {
+          margin: ($nav-spacing / 2) 0 0 ($nav-spacing / 2);
+        }
+      }
+
+      #{$self}-link {
+        width: 100%;
+        justify-content: space-between;
+        padding: ($nav-spacing / 2);
+        color: $submenu-link-color;
+
+        &:hover {
+          color: inherit;
+        }
+      }
+    }
+  }
+
+  &.loggedin {
+    
+    .loggedin-items {
+
+      @include media-breakpoint-up(lg) {
+        display: inline-flex;
+        border-left: 2px solid $nav-container-border-bottom;
+      }
+
+      .toggle-direction {
+        display: none;
+
+        @include media-breakpoint-down(md) {
+          display: block;
+          width: 100%;
+          text-align: right;
+        }
+      }
+
+      #{$self}-link {
+        justify-content: left;
+        font-size: inherit;
+
+        @include media-breakpoint-up(lg) {
+          font-size: 0;
+        }
+      }
+    }
+
+    #{$self}-item {
+      margin: 0;
+
+      @include media-breakpoint-up(lg) {
+        &:nth-child(2) {
+          margin-right: calc(100% - 502px);
+        }
+      }
+    }
+
+    #{$self}-link {
+      
+      .mdi-account-circle-outline,
+      .mdi-email-outline {
+        position: relative;
+        margin: 0 $spacer 0 0;
+        line-height: 21px;
+        z-index: -1;
+
+        @include media-breakpoint-up(lg) {
+          margin: 0;
+          font-size: 31px;
+        }
+      }
+
+      .mdi-email-outline {
+        &::after {
+          display: block;
+          position: absolute;
+          top: -14px;
+          right: -12px;
+          width: 24px;
+          height: 24px;
+          background: theme-color("danger");
+          content: "4";
+          border-radius: 50%;
+          font-size: 14px;
+          font-weight: $font-weight-bolder;
+          color: white;
+          text-align: center;
+
+          @include media-breakpoint-down(md) {
+            top: -8px;
+            right: -12px;
+            width: 20px;
+            height: 20px;
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  }
+}
+
+//*** Submenu Component
+.submenu {
+  $self: &;
+
+  position: fixed;
+  top: $nav-container-height;
+  height: auto;
+  max-height: 0;
+  padding: ($nav-spacing / 2);
+  opacity: 0;
+  overflow: hidden;
+  visibility: hidden;
+  list-style: none;
+  @include border-radius(0 0 $border-radius-lg $border-radius-lg);
+  box-shadow: $dropdown-box-shadow;
+  background: $submenu-background;
+  @include transition(max-height .4s linear, opacity .4s linear);
+
+  &[data-state="expand"] {
+    max-height: 100vh;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &-item {
+    @extend .navigation-item;
+
+    padding: ($nav-spacing/3) ($nav-spacing / 2);
+  }
+
+  &-link {
+    cursor: pointer;
+    text-decoration: none;
+    color: $submenu-link-color;
+
+    &:hover {
+      text-decoration: none;
+      color: inherit;
+    }
+  }
+
+  //*** Modifyers
+  &.sidebar {
+    position: relative;
+    top: initial;
+    padding: 0;
+    @include border-radius(0);
+    box-shadow: none;
+    background: none;
+
+    &[data-state="expand"] {
+      border-left: 5px solid $primary;
+
+      @include media-breakpoint-down(sm) {
+        border-left: 5px solid $smooth;
+      }
+    }
+
+    #{$self}-link {
+      @extend %sidebar-font;
+      font-weight: $font-weight-normal;
 
       &:hover {
-        //color:
+        color: $sidebar-link-hover-color;
+        font-weight: $font-weight-bold;
+      }
+
+      @include media-breakpoint-down(sm) {
+        color: $white;
+        &:hover {
+          color: $smooth;
+        }
       }
     }
   }
 
-  .submenu {
-    @extend .navigation-bar;
-    margin-top: 3px;
-    background: $dark;
+  &.handheld {
+    @include media-breakpoint-down(md) {
+      position: relative;
+      top: initial;
+      padding: 0;
+      @include border-radius(0);
+      box-shadow: none;
 
-    &-link {
-      @extend .navigation-link;
-      padding: ($spacer / 4) 0;
-      margin-left: ($spacer * 1.5);
+      &[data-state="expand"] {
+        background: $submenu-handheld-background;
+      }
+
+      #{$self}-item {
+        padding: ($nav-spacing / 2);
+        border-bottom: none;
+        border-top: 1px solid $submenu-item-border;
+      }
+    }
+  }
+}
+
+.sidebar-navigation {
+  $self: &;
+  //*** Elements
+  &-list {
+    @extend %sidebar-font;
+    padding: 0;
+    list-style: none;
+    font-weight: $font-weight-bold;
+  }
+
+  &-item {
+    padding: ($nav-spacing / 3) ($nav-spacing / 2);
+  }
+
+  &-link {
+    color: $sidebar-link-color;
+    text-decoration: none;
+
+    &[data-target="expandSecondaryMenu"] {
+      display: none;
+    }
+
+    &:hover,
+    &[data-state="expand"] {
+      color: $sidebar-link-hover-color;
+      text-decoration: none;
     }
   }
 
-  &.open {
-    width: 210px;
-    @include transition(all .3s linear);
+  //*** Modifyers
+  &.handheld {
+    @include media-breakpoint-down(sm) {
+      position: fixed;
+      top: $nav-container-height;
+      left: 0;
+      width: 100%;
+      overflow: hidden;
+      background: $secondary;
+      z-index: $zindex-popover;
 
-    .branding {
-      width: 210px;
+      #{$self}-list {
+        max-height: 38px;
+        padding-bottom: $nav-spacing;
+        @include transition(max-height 0.3s linear);
 
-      .branding-wrapper {
-        width: 160px;
-      }
-    }
-
-    .hamburger {
-      right: -161px;
-    }
-
-    .customer {
-      max-height: $size;
-
-      .mdi {
-        width: 100px;
-        height: 100px;
-        margin: 15px auto 0;
-
-        &::before {
-          font-size: 100px;
+        &[data-toggle="expanded"] {
+          max-height: 100vh;
         }
       }
 
-      .customer-info {
-        visibility: visible;
-        opacity: 1;
+      #{$self}-link {
+        color: $white;
+
+        &[data-target="expandSecondaryMenu"] {
+          display: flex;
+          margin-top: 6px;
+          color: $white !important; // Override hover color
+        }
+
+        &:hover,
+        &[data-state="expand"] {
+          color: $smooth;
+        }
+      }
+    }
+  }
+}
+
+// class for displaying navigation__link arrows
+.toggle-direction {
+  @include toggle-icon($children: 3, $child: 1);
+
+  display: inline-flex;
+  position: relative;
+  line-height: $font-size-base;
+  z-index: -1;
+  @include media-breakpoint-up(lg) {
+    @include toggle-icon($children: 3, $child: 3);
+  }
+
+  .mdi {
+    margin: 0;
+  }
+}
+
+a[data-state="expand"] > .toggle-direction {
+  @include toggle-icon($children: 3, $child: 2);
+}
+
+// Hamburgermenu
+.handler {
+  $width: 34px;
+  $height: 3px;
+
+  %bars {
+    position: absolute;
+    width: 100%;
+    height: $height;
+    content: "";
+    background: $handler-bars-color;
+  }
+
+  @extend %flexbox;
+  @extend %container;
+
+  width: $width + $nav-spacing;
+  height: inherit;
+  margin: 0;
+
+  @include media-breakpoint-up(lg) {
+    display: none;
+  }
+
+  &-bar {
+    @extend %flexbox;
+
+    width: inherit;
+    height: $height;
+    background: $handler-bars-color;
+    z-index: -1;
+
+    &::before {
+      @extend %bars;
+      bottom: ($height * 2.4);
+    }
+
+    &::after {
+      @extend %bars;
+      top: ($height * 2.4);
+    }
+
+    &[data-state="open"] {
+      transform: rotate(-45deg);
+      @include transition(all 0.3s linear);
+      &::before {
+        top: 0;
+        transform: rotate(90deg);
+      }
+
+      &::after {
+        display: none;
       }
     }
   }

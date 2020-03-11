@@ -1,0 +1,81 @@
+.aa-card {
+  $self: &;
+
+  @extend .col-md-3;
+
+  position: relative;
+  // height: 160px;
+
+  &:hover {
+
+    #{$self}-fig {
+
+      img {
+        transform: scale3d(1.03, 1.03, 1.03);
+        @include transition(all .3s linear);
+      }
+    }
+
+    #{$self}-cap {
+        
+      background: theme-color-level(primary, 2);
+    }
+  }
+
+  figure {
+    
+    height: 100%;
+    margin: 0;
+    background: $gray-200;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: inherit;
+      object-fit: cover;
+      opacity: 1;
+      transform: scale3d(1, 1, 1);
+      @include transition(all .3s linear);
+    }
+  }
+
+  &-title {
+    font-weight: $font-weight-bold;
+  }
+
+  &-tags {
+    
+  }
+
+  &-cap {
+
+    padding: $spacer 0;
+    text-align: center;
+    color: $white;
+    background: $primary;
+    cursor: pointer;
+    
+    h3 {
+      margin: 0;
+      font-weight: $font-weight-light;
+    }
+  }
+
+  &-count {
+    $space: $spacer / 2 !default;
+
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    top: $space;
+    right: $space * 3;
+    width: 42px;
+    height: 42px;
+    @include border-radius($rounded-pill);
+    color: $white;
+    background: $primary;
+    text-align: center;
+    z-index: $zindex-dropdown;
+  }
+}

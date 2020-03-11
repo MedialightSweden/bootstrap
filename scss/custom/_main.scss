@@ -1,0 +1,15 @@
+html {
+  padding: 0 !important;
+  margin-top: 0 !important;
+}
+
+body {
+  font-family: $font-family-base;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-normal;
+  color: $black;
+
+  @include media-breakpoint-up(sm) {
+    font-size: $font-size-base;
+  }
+}

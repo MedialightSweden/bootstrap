@@ -1,0 +1,43 @@
+%sticky-sidebar {
+  position: relative;
+  top: 0;
+  width: 90%;
+  margin: ($spacer*3) auto;
+  @include border-radius($border-radius-lg);
+  z-index: $zindex-sticky;
+  
+  @include media-breakpoint-up(md) {
+      position: absolute;
+      top: ($spacer*3);
+      $align: ($grid-gutter-width/2);
+      width: 220px;
+      margin: 0 auto;
+  }
+}
+
+@mixin sidebar-brakepoints($side) {
+  #{$side}: 0;
+  @include media-breakpoint-up(md) {
+      #{$side}: ($grid-gutter-width/2);
+  }
+
+  @include media-breakpoint-up(lg) {
+      #{$side}: calc(50% - 475px);
+  }
+
+  @include media-breakpoint-up(xl) {
+      #{$side}: calc(50% - 570px);
+  }
+}
+
+.sticky-sidebar {
+  @extend %sticky-sidebar;
+  &.right {
+      padding: $spacer ($grid-gutter-width / 2);
+      background: theme-color('darken');
+      @include sidebar-brakepoints('right');
+  }
+  &.left {
+      @include sidebar-brakepoints('left');
+  }   
+}

@@ -1,0 +1,47 @@
+.comments {
+
+  padding: $grid-gutter-width / 2;
+  background: theme-color-level(primary, -10);
+
+  &-card {
+    border-bottom: 1px solid $gray-500;
+    margin-bottom: $spacer / 2;
+  }
+
+  &-title {
+    display: flex;
+  }
+
+  &-name {
+
+  }
+
+  &-date {
+
+  }
+
+  &-content {
+    margin-bottom: $spacer / 2;
+  }
+}
+
+.comment-respond {
+
+  padding: $grid-gutter-width / 2;
+  border: 15px solid $primary;
+  background: $white;
+  .comment-form {
+  
+    background: $white;
+    textarea[name="comment"] {
+      
+      resize: none;
+      width: 100%;
+    }
+
+    small {
+      width: 100%;
+      word-wrap: break-word;
+    }
+  }
+}

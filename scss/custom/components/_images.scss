@@ -1,0 +1,48 @@
+%image-base {
+  img {
+      max-width: 100%;
+      object-fit: cover;
+      object-position: 50% 50%;
+      @include border-radius(0);
+  }
+  @include media-breakpoint-up(sm) {
+      padding: 0 ($grid-gutter-width/2);
+      img {
+          @include border-radius($border-radius-sm);
+      }
+  }
+}
+
+.fit {
+  &-height {
+      @extend %image-base;
+      img {
+          width: 100%;
+          @include media-breakpoint-up(sm) {
+              height: 100%;
+          }
+      }
+  }
+
+  &-width {
+      @extend %image-base;
+      img {
+          width: 100%;
+      }
+  }
+}
+
+.flat-width {
+  img {
+      width: 100%;
+  }
+  @include media-breakpoint-up(sm) {
+      padding: 0 ($grid-gutter-width/2);
+  }
+}
+.full-width-sm {
+  padding: 0;
+  @include media-breakpoint-up(sm) {
+      padding: 0 ($grid-gutter-width/2);
+  }
+}

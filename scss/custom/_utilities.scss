@@ -1,0 +1,14 @@
+.list {
+
+  list-style: none;
+  padding: 0;
+  text-align: left;
+
+  &-item {
+    list-style-type: none;
+    a {
+      color: $white;
+      text-decoration: none;
+    }
+  }
+}

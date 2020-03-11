@@ -1,0 +1,47 @@
+//*** .row with center position for grid with vary cols
+.page-content {
+  position: relative;
+}
+
+.row-center {
+  @extend .row;
+  justify-content: center;
+}
+
+//*** Behaves just as .container-fluid except for fixed padding = pt-5 & pb-5
+.section-fluid {
+  @include make-container(0);
+
+  padding-top: ($spacer*3);
+  padding-bottom: ($spacer*3);
+
+  @include media-breakpoint-up(sm) {
+    padding: ($spacer*3) ($grid-gutter-width/2);
+  }
+}
+
+//*** .container with padding for sidebar right side
+.container-sidebar-right {
+  @extend .container;
+
+  @include media-breakpoint-up(md) {
+    padding-right: 235px;
+  }
+}
+
+//*** .container with padding for sidebar left side
+.container-sidebar-left {
+  @extend .container;
+
+  @include media-breakpoint-up(md) {
+    padding-left: 235px;
+  }
+}
+
+//*** .container with fixed padding = pt-5 & pb-5
+.container-spacer {
+  @extend .container;
+
+  padding-top: ($spacer*3);
+  padding-bottom: ($spacer*3);
+}
