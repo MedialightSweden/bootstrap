@@ -40,7 +40,12 @@
   }
 
   &-title {
+    font-size: 18px;
     font-weight: $font-weight-bold;
+  }
+
+  &-excerpt {
+    font-size: 14px;
   }
 
   &-tags {

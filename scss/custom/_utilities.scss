@@ -12,3 +12,28 @@
     }
   }
 }
+
+.bullet {
+  $self: &;
+
+  ul {
+    $size: ($spacer/2);
+    
+    list-style: none;
+    padding: 0;
+
+    li {
+      &::before {
+        display: inline-block;
+        position: relative;
+        width: $size;
+        height: $size;
+        margin-right: $size * 1.5;
+        content: '';
+        @include border-radius($rounded-pill);
+        $font-weight: $font-weight-bold;
+        background: $primary;
+      }
+    }
+  }
+}

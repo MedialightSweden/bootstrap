@@ -76,12 +76,12 @@
 
   @include media-breakpoint-up(lg) {
     background: transparent;
-    border-bottom: 1px solid $nav-container-border-bottom;
+    // border-bottom: 1px solid $nav-container-border-bottom;
     @include transition(background-color 0.4s linear);
 
     &[data-scroll="fill"] {
       background: $nav-container-background;
-      border-bottom: none;
+      // border-bottom: none;
     }
   }
   //*** Elements
