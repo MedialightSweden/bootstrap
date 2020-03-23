@@ -14,9 +14,10 @@
     @extend %block-common;
     height: $block-height-md;
     h1 {
-      font-size: 85px;
+      //font-size: 85px;
       font-weight: $font-weight-light;
       line-height: $block-height-md - 106;
+      @include font-fluid(300px, 1920px, 16px, 70px);
     }
   }
 
@@ -24,9 +25,10 @@
     @extend %block-common;
     height: $block-height-sm;
     h3 {
-      font-size: 50px;
+      //font-size: 50px;
       font-weight: $font-weight-light;
       line-height: $block-height-sm / 2.6;
+      @include font-fluid(300px, 1920px, 16px, 50px);
     }
   }
 
@@ -36,9 +38,10 @@
     color: $dark;
     background: $white;
     h3 {
-      font-size: 50px;
+      //font-size: 50px;
       font-weight: $font-weight-light;
       line-height: $block-height-sm / 2.6;
+      @include font-fluid(300px, 1920px, 16px, 50px);
     }
   }
 
