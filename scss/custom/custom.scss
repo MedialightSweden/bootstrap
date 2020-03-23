@@ -1,8 +1,9 @@
 @import "mixins/mixins";
 @import "utilities";
 
-@import "main";
+@import "root";
 
+@import "components/buttons";
 @import "components/covers";
 @import "components/containers";
 @import "components/navigation";

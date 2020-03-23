@@ -1,0 +1,21 @@
+.btn {
+
+  &-block {
+
+    &.card {
+      padding: .782rem 0;
+      font-size: 14px;
+    }
+  }
+
+  &.right {
+    $width: 87px;
+
+    display: block;
+    width: $width;
+    padding: .188rem .75rem;
+    margin-bottom: $grid-gutter-width / 2;
+    margin-left: calc(100% - #{$width} - 15px);
+    font-size: 13px;
+  }
+}

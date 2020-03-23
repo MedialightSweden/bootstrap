@@ -1,11 +1,30 @@
 .ratings {
 	display: flex;
+	font-size: 12px;
+	color: $gray-500;
+	
+	span {
+		
+		&:last-child {
+			margin-right: 2px;
+		}
+	}
 }
 
-.dashicons-star-filled,
-.dashicons-star-empty,
-.dashicons-star-half {
-	color: $primary;
+.dashicons {
+	line-height: 1rem;
+
+	&::before {
+		width: 1rem;
+		height: 1rem;
+		font-size: 1rem;
+	}
+
+	&-star-filled,
+	&-start-empty,
+	&-star-half {
+		color: $primary;
+	}
 }
 
 .comments-rating {
@@ -27,7 +46,7 @@
 }
 
 .rating-container * {
-	font-size: 1.4rem;
+	font-size: 1rem;
 }
 
 .rating-container > input {
