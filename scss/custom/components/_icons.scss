@@ -1,0 +1,9 @@
+.mdi {
+  font-size: $h5-font-size;
+  &.white {
+    color: $white;
+  }
+  &.primary {
+    color: theme-color('primary');
+  }
+}

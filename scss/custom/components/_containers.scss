@@ -1,6 +1,51 @@
 //*** .row with center position for grid with vary cols
-.page-content {
+.page {
+
+  &-wrapper {
+
+    @extend .container;
+  }
+}
+
+.content {
+  $self: &;
+
   position: relative;
+  padding-top: ($spacer*3);
+  padding-bottom: ($spacer*3);
+  
+  @extend .row;
+
+  &-primary {
+
+    @extend .col-12;
+  }
+
+  &.left {
+
+    #{$self}-primary {
+      @extend .col-md-8;
+      @extend .col-12;
+    }
+
+    #{$self}-aside {
+      @extend .col-md-4;
+      @extend .col-12;
+    }
+  }
+
+  &.right {
+
+    #{$self}-primary {
+      @extend .col-md-9;
+      @extend .col-12;
+    }
+
+    #{$self}-aside {
+      @extend .col-md-3;
+      @extend .col-12;
+    }
+  }
 }
 
 .row-center {
@@ -17,24 +62,6 @@
 
   @include media-breakpoint-up(sm) {
     padding: ($spacer*3) ($grid-gutter-width/2);
-  }
-}
-
-//*** .container with padding for sidebar right side
-.container-sidebar-right {
-  @extend .container;
-
-  @include media-breakpoint-up(md) {
-    padding-right: 235px;
-  }
-}
-
-//*** .container with padding for sidebar left side
-.container-sidebar-left {
-  @extend .container;
-
-  @include media-breakpoint-up(md) {
-    padding-left: 235px;
   }
 }
 

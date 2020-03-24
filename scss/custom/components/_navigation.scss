@@ -117,6 +117,7 @@
       
       display: inherit;
       width: 100%;
+      align-items: center;
 
       &:last-child {
         justify-content: flex-end;
@@ -139,7 +140,7 @@
   }
 
   &-link {
-    display: flex;
+    display: inline-flex;
     padding: 0;
     align-items: center;
     cursor: pointer;
@@ -213,8 +214,9 @@
       }
 
       .toggle-direction {
+        
         display: none;
-
+        
         @include media-breakpoint-down(md) {
           display: block;
           width: 100%;
@@ -293,8 +295,8 @@
   position: fixed;
   top: $nav-container-height;
   height: auto;
+  padding: 0;
   max-height: 0;
-  padding: ($nav-spacing / 2);
   opacity: 0;
   overflow: hidden;
   visibility: hidden;
@@ -313,13 +315,18 @@
   &-item {
     @extend .navigation-item;
 
-    padding: ($nav-spacing/3) ($nav-spacing / 2);
+    
+    &:not(:last-child) {
+      
+      border-bottom: 1px solid rgba($dark, .4);
+    }
   }
 
   &-link {
     cursor: pointer;
     text-decoration: none;
-    color: $submenu-link-color;
+    color: $dark;
+    font-weight: $font-weight-bold;
 
     &:hover {
       text-decoration: none;
