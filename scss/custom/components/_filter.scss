@@ -1,0 +1,121 @@
+.noor-select {
+  $self: &;
+  
+  position: relative;
+  margin: 0 15px 0 0;
+
+  &::after {
+    display: block;
+    position: absolute;
+    top: calc(50% - 2.5px);
+    right: 7.5px;
+    content: '';
+    width: 5px;
+    height: 5px;
+    border-top: 5px solid $black;
+    border-right: 5px solid transparent;
+    border-left: 5px solid transparent;
+    z-index: 9999999;
+  }
+
+  &__value {
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0 ($grid-gutter-width / 2);
+    cursor: default;
+    border: none;
+    background: $white;
+    @include border-radius($border-radius-sm);
+
+    &:-webkit-autofill {
+      -webkit-box-shadow: 0 0 0 1000px $white inset !important;
+    }
+  }
+
+  &__dropdown {
+    display: block;
+    position: absolute;
+    top: 46px;
+    width: 100%;
+    height: auto;
+    max-height: 0;
+    padding: 0;
+    overflow: hidden;
+    box-shadow: 0 6px 10px rgba($black, .2);
+    background: $white;
+    font-size: $font-size-base;
+    @include border-radius(0 0 $border-radius-sm $border-radius-sm);
+    @include transition(max-height .2s linear);
+    z-index: $zindex-popover;
+    
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    &[dataoptions=open] {
+      max-height: 300px;
+    }
+  }
+
+  &__search {
+    width: 100%;
+    height: 40px;
+    padding: 0 ($grid-gutter-width / 2);
+  }
+
+  &__ul {
+    height: auto;
+    max-height: calc(300px - 40px);
+    padding: 0;
+    margin: 0;
+    overflow-y: scroll;
+  }
+
+  &__item {
+    position: relative;
+    display: block;
+    padding: ($grid-gutter-width / 4) ($grid-gutter-width / 2);
+    list-style-type: none;
+    text-align: left;
+    color: $black;
+
+    &:not(:last-child) {
+      border-bottom: .5px solid rgba($dark, .4);
+    }
+
+    &::after {
+      display: none;
+      position: absolute;
+      top: -10px;
+      right: 15px;
+      padding: 2px 5px;
+      content: attr(href);
+      color: $white;
+      background: $dark;
+      font-size: 11px;
+      @include border-radius($border-radius-sm);
+      z-index: 999999999;
+    }
+
+    &:hover {
+      background: #f1f1f7;
+      &::after {
+        display: block;
+      }
+    }
+  }
+}
+
+#filter-form {
+  max-width: 100%;
+  display: flex;
+  justify-content: space-between;
+
+  button {
+    padding: .563rem 3rem;
+  }
+}
