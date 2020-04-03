@@ -1,0 +1,131 @@
+//*** Login
+form[name="custom-login-form"] {
+  @extend .col-md-8;
+  padding: ($spacer * 2) 0;
+  margin: auto;
+
+  h3 {
+    text-align: center;
+    font-weight: $font-weight-bolder;
+    color: $primary;
+  }
+
+  label {
+    display: block;
+  }
+
+  input {
+    @extend .form-control;
+    border: 1px solid $gray-400;
+  }
+
+  .forgot-password {
+    display: block;
+    margin-bottom: 1rem;
+    color: inherit;
+  }
+
+  [type="submit"] {
+    border: none;
+    background: $primary;
+    color: $white;
+  }
+
+  .register {
+    text-align: center;
+  }
+}
+
+//*** Signup
+form[name="custom-signup-form"] {
+  padding: 0 0 ($spacer * 2);
+
+  .form-pop-label {
+    font-size: 12px;
+    left: 18px;
+    margin: 0;
+    position: absolute;
+    top: 12px;
+    text-align: center;
+    line-height: 0;
+    font-weight: $font-weight-bold;
+    color: $primary;
+    z-index: -9;
+    &::after {
+      content: "";
+      position: relative;
+      display: block;
+      top: -2px;
+      width: 100%;
+      height: 4px;
+      background: $white;
+      z-index: -9;
+    }
+  }
+
+  .form-group {
+    position: relative !important;
+    margin-bottom: $spacer * .625;
+
+    input {
+      border: 1px solid $gray-400;
+      &:focus::-webkit-input-placeholder {
+        opacity: 0;
+        transition: opacity 0.3s 0.7s linear;
+      }
+      &:focus {
+        box-shadow: 0 0 3px $primary;
+        border-radius: 5px;
+        & + .form-pop-label {
+          opacity: 1;
+          top: 0;
+          transition: all 0.3s 0.9s linear;
+          z-index: 0;
+        }
+      }
+      &:-webkit-autofill {
+        -webkit-box-shadow: 0 0 0 1000px $white inset !important;
+      }
+    }
+  }
+
+  [name="postal_code"] {
+    width: 100%;
+
+    @include media-breakpoint-up(sm) {
+      width: 50%;
+    }
+  }
+
+  [name="password"] {
+    
+    padding-right: 5rem;
+  }
+
+  .password-show {
+
+    position: absolute;
+    top: 10px;
+    right: .75rem;
+  }
+
+  .password-checker {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: $spacer * .625;
+    small {
+      width: 50%;
+      margin-bottom: .2rem;
+
+      &::before {
+        display: inline-block;
+        width: 9px;
+        height: 9px;
+        margin-right: 5px;
+        @include border-radius($rounded-pill);
+        background: $gray-400;
+        content: '';
+      }
+    }
+  }
+}
