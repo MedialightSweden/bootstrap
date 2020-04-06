@@ -87,13 +87,13 @@ form[name="custom-signup-form"] {
         -webkit-box-shadow: 0 0 0 1000px $white inset !important;
       }
     }
-  }
 
-  [name="postal_code"] {
-    width: 100%;
-
-    @include media-breakpoint-up(sm) {
-      width: 50%;
+    &.half {
+      width: 100%;
+  
+      @include media-breakpoint-up(sm) {
+        width: 50%;
+      }
     }
   }
 
@@ -107,6 +107,9 @@ form[name="custom-signup-form"] {
     position: absolute;
     top: 10px;
     right: .75rem;
+    .dashicons {
+      cursor: pointer;
+    }
   }
 
   .password-checker {
@@ -127,5 +130,60 @@ form[name="custom-signup-form"] {
         content: '';
       }
     }
+
+    &[data-char="true"] {
+      .char {
+        &::before {
+          background: $success;
+        }
+      }
+    }
+
+    &[data-num="true"] {
+      .number {
+        &::before {
+          background: $success;
+        }
+      }
+    }
+
+    &[data-valid="true"] {
+      .length {
+        &::before {
+          background: $success;
+        }
+      }
+    }
   }
 }
+
+  //*** Form checker
+  .checker {
+    .dashicons {
+      opacity: 0;
+      position: absolute;
+      right: 10px;
+      top: 11px;
+      visibility: hidden;
+      &.dashicons-yes {
+        fill: $green;
+      }
+      &.dashicons-no-alt {
+        fill: $red;
+      }
+    }
+    &[valid="true"] {
+      .dashicons-yes {
+        opacity: 1;
+        visibility: visible;
+        transition: all 0.3s linear;
+      }
+    }
+    &[valid="false"] {
+      .dashicons-no-alt {
+        opacity: 1;
+        visibility: visible;
+        transition: all 0.3s linear;
+      }
+    }
+  }
