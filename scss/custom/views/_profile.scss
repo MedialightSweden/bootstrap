@@ -1,0 +1,30 @@
+.profile {
+  &-content {
+
+    @extend .container;
+    margin-bottom: $spacer * 3;
+  }
+
+  .form-group {
+    position: relative;
+    padding: 0;
+  }
+
+  label {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    font-size: 12px;
+    font-weight: $font-weight-bold;
+  }
+
+  .info-value {
+    width: 100%;
+    padding: 34px 8px 17px;
+  }
+
+  [type="submit"] {
+
+    margin-bottom: $spacer * 2;
+  }
+}
