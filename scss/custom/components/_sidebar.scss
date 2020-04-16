@@ -17,6 +17,11 @@
   li {
     font-weight: $font-weight-bold;
     line-height: 27px;
+    &.active {
+      a {
+        color: $primary;
+      }
+    }
   }
 
   a {
