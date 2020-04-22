@@ -1,0 +1,46 @@
+.drop-wrapper {
+  width: 100%;
+  height: auto;
+  padding: $grid-gutter-width / 2;
+  background: $white;
+  @include border-radius($border-radius-lg);
+  z-index: 9;
+}
+.profile-image {
+  padding: $grid-gutter-width / 2;
+  border: 2px dashed $gray-400;
+  text-align: center;
+  cursor: pointer;
+  .dashicons {
+    width: 2.5rem;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    &:before {
+      width: inherit;
+      height: inherit;
+      font-size: 2.5rem;
+    }
+  }
+  p {
+    margin: 0;
+  }
+}
+.template-file {
+  display: flex;
+  padding: $spacer / 2;
+  margin-top: $spacer / 2;
+  border: 1px solid $gray-400;
+  @include border-radius($border-radius-lg);
+  small {
+    margin: 0 ($spacer / 2);
+  }
+  & .actions {
+    align-self: flex-end;
+    .delete {
+      cursor: pointer;
+    }
+    .dashicons-yes-alt {
+      color: $success;
+    }
+  }
+}
