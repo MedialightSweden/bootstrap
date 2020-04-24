@@ -95,6 +95,7 @@ li {
 }
 
 .heading {
+  $self: &;
 
   padding: $spacer;
   margin-bottom: $spacer * 1.4;
@@ -121,5 +122,12 @@ li {
     
     color: $white;
     background: $primary;
+  }
+
+  &.activities {
+
+    display: flex;
+    justify-content: space-between;
+    @extend #{$self}.comments;
   }
 }
