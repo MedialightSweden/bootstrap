@@ -1,4 +1,4 @@
-#user-update {
+#user-general-options {
   .acf {
 
     &-form {
@@ -81,4 +81,13 @@
       }
     }
   }
+}
+
+[data-toggled="false"] {
+  display: none;
+}
+
+[data-toggled="true"] {
+  
+  display: block;
 }
