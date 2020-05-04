@@ -1,93 +1,40 @@
-#user-general-options {
-  .acf {
+.profile {
+  &-heading-small {
 
-    &-form {
+  }
+
+  &-display {
+
+    display: block;
+    width: 100%;
+    height: 49px;
+    padding: 0 ($spacer / 2);
+    margin-bottom: $spacer / 2;
+    background: $white;
+    @include border-radius($border-radius-sm);
+    border-style: solid;
+    border-width: 1px;
+    border-color: $gray-400;
+
+    p {
+      margin: 0;
     }
+  }
 
-    &-fields {
+  &-display-label {
 
-      @extend .row;
-      padding: 0 ($grid-gutter-width / 2);
-
-      & > .acf-field:nth-child(-n+3) {
-        margin-right: calc(100% - 33.3333337%);
-      }
-    }
-
-    &-icon {
-      
-      display: none;
-    }
-
-    &-label {
-
-      position: absolute !important;
-      top: 23px;
-      left: 23px;
-      margin: 0 !important;
-      font-size: 12px;
-      color: $primary;
-      z-index: 9;
-    }
-
-    &-field {
-
-      @extend .form-group;
-
-      input {
-
-        @extend .form-control;
-        border-width: 1px;
-        padding: 34px 8px 17px !important;
-      }
-    }
-
-    &-field-image {
-
-      position: absolute !important;
-      right: 15px;
-      width: calc(100% - 36.3333337%);
-
-      [data-name="add"] {
-        display: none;
-      }
-
-      .acf-label {
-
-        display: none;
-      }
-
-      .acf-image-uploader {
-
-        border: none;
-        background: $white;
-
-        .hide-if-value {
-
-          border: none;
-        }
-      }
-
-      .acf-dropzone-info {
-
-        border: 2px dashed $dark;
-        padding: $grid-gutter-width / 2;
-
-        &::before {
-          font: 400 40px/1 dashicons;
-          display: block;
-          content: '\f128';
-        }
-      }
-    }
+    color: $primary;
+    font-size: 11px;
+    font-weight: $font-weight-bold;
   }
 }
 
-[data-toggled="false"] {
-  display: none;
-}
+.alert-success {
+  &.hide {
 
-[data-toggled="true"] {
-  
-  display: block;
+    height: 0;
+    visibility: hidden;
+    opacity: 0;
+    transition: all .3s linear;
+  }
 }
