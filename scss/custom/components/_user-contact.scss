@@ -1,0 +1,40 @@
+.contact {
+
+  .dashicons {
+    color: $white;
+    width: 1.5rem;
+    height: 1.5rem;
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    &::before {
+      width: inherit;
+      height: inherit;
+      font-size: inherit;
+    }
+  }
+
+  &-info {
+    
+    line-height: 26px;
+    margin: 0;
+
+    & .dashicons {
+
+      color: $black;
+    }
+  }
+
+  &-social {
+    display: inline-flex;
+    width: 40px;
+    height: 40px;
+    background: $black;
+    justify-content: center;
+    align-items: center;
+    margin: $spacer 0;
+
+    & .dashicons {
+
+    }
+  }
+}

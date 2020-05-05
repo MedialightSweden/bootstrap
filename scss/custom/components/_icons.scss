@@ -1,3 +1,17 @@
 .dashicons {
   cursor: pointer;
+  line-height: 1 !important;
+
+  &-plus-alt {
+    color: $success;
+  }
+
+  &-edit,
+  &-trash {
+    color: $white;
+    text-decoration: none;
+    &::before {
+      font-size: 1.2rem !important;
+    }
+  }
 }

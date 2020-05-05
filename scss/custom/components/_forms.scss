@@ -1,3 +1,14 @@
+.acf-field-title {
+  display: block;
+  margin-bottom: 4px;
+}
+
+#user-create {
+  .acf-field-title {
+    font-weight: $font-weight-normal;
+  }
+}
+
 .acf-field {
   $self: &;
 
@@ -5,7 +16,7 @@
 
   .acf-label {
     font-size: 12px;
-    left: 24px;
+    left: .75rem;
     margin: 0;
     position: absolute;
     top: 12px;
@@ -35,7 +46,7 @@
 
   .acf-input {
     @extend .form-group;
-    position: relative !important;
+    position: relative;
     margin-bottom: $spacer * 0.625;
 
     select,
@@ -57,13 +68,24 @@
         -webkit-box-shadow: 0 0 0 1000px $white inset !important;
       }
     }
+
+    .acf-input-append {
+
+      border: 1px solid $gray-400;
+      border-left: none;
+      background: $white;
+      span.dashicons {
+        height: 30px;
+        font-size: 30px;
+      }
+    }
   }
 
   //*** ACF Groups/Repeater
   &.acf-field-group,
   &.acf-field-repeater {
-
-    padding: $grid-gutter-width / 2 !important;
+    @extend .container;
+    padding: 0 !important;
 
     .acf-table,
     .acf-fields {
@@ -73,11 +95,12 @@
 
     .acf-fields {
       @extend .row;
+      width: 100%;
+      margin: 0 auto;
     }
 
     .acf-field {
       @extend .col-md-4;
-      padding-right: $grid-gutter-width / 2 !important;
 
       &:nth-last-child(2) {
         margin: 0;
@@ -161,26 +184,6 @@
   }
 }
 
-//*** Post forms separators
-#post-create {
-  & .acf-form-fields > .acf-field {
-    &:nth-child(2),
-    &:nth-child(3),
-    &:nth-child(5),
-    &:nth-child(6),
-    &:nth-child(7),
-    &:nth-child(9) {
-      &::after {
-        display: block;
-        width: 100%;
-        content: "";
-        padding-top: $spacer / 2;
-        border-bottom: 1px dotted $primary;
-      }
-    }
-  }
-}
-
 #user-create {
   [data-name="acf_user_postal_code"] {
 
@@ -237,5 +240,49 @@
 
   .acf-gallery-toolbar {
     display: none;
+  }
+}
+
+.password-checker {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: $spacer * .625;
+  small {
+    width: 50%;
+    margin-bottom: .2rem;
+
+    &::before {
+      display: inline-block;
+      width: 9px;
+      height: 9px;
+      margin-right: 5px;
+      @include border-radius($rounded-pill);
+      background: $gray-400;
+      content: '';
+    }
+  }
+
+  &[data-char="true"] {
+    .char {
+      &::before {
+        background: $success;
+      }
+    }
+  }
+
+  &[data-num="true"] {
+    .number {
+      &::before {
+        background: $success;
+      }
+    }
+  }
+
+  &[data-length="true"] {
+    .length {
+      &::before {
+        background: $success;
+      }
+    }
   }
 }

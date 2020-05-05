@@ -23,14 +23,25 @@
       &.image {
           // @extend #{$self}-overlay;
           max-width: $banner-image-overlay-max-width;
-          a {
-              color: $white !important;
-          }
       }
 
       &.text {
           // @extend #{$self}-overlay;
           max-width: $banner-text-overlay-max-width;
+      }
+
+      &.profile {
+
+        display: flex;
+        max-width: $banner-profile-overlay-max-width;
+        div {
+            width: calc(100% - 300px);
+            padding: 0 ($grid-gutter-width / 2);
+        }
+      }
+
+      p {
+          font-size: $font-size-base * 1.25;
       }
   }
 

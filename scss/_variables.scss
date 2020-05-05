@@ -278,11 +278,11 @@ $embed-responsive-aspect-ratios: join(
 // Font, line-height, and color for body text, headings, and more.
 
 // stylelint-disable value-keyword-case
-$font-family-sans-serif:      'Ubuntu', sans-serif !default;
+$font-family-sans-serif:      'KoHo', sans-serif !default;
 $font-family-serif:           'Raleway', sans-serif !default;
-$font-family-links:           'Montserrat', sans-serif !default;
+$font-family-links:           'Open Sans', sans-serif !default;
 $font-family-monospace:       SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
-$font-family-base:            $font-family-serif !default;
+$font-family-base:            $font-family-links !default;
 // stylelint-enable value-keyword-case
 
 $font-size-base:              1rem !default; // Assumes the browser default, typically `16px`
@@ -1158,4 +1158,5 @@ $handler-bars-color:                $white;
 $banner-min-height:                 280px;
 $banner-image-height:               400px;
 $banner-image-overlay-max-width:    550px;
+$banner-profile-overlay-max-width:  map-get($container-max-widths, "xl");
 $banner-text-overlay-max-width:     90%;

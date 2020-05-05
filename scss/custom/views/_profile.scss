@@ -8,8 +8,9 @@
     display: block;
     width: 100%;
     height: 49px;
-    padding: 0 ($spacer / 2);
+    padding: 0 ($spacer / 2) 4px;
     margin-bottom: $spacer / 2;
+    overflow: hidden;
     background: $white;
     @include border-radius($border-radius-sm);
     border-style: solid;
@@ -18,6 +19,8 @@
 
     p {
       margin: 0;
+      line-height: 1;
+      font-family: 'Ubuntu', sans-serif;
     }
   }
 

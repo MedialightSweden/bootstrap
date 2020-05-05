@@ -63,6 +63,7 @@
 .section-fluid {
   @include make-container(0);
 
+  max-width: 1700px;
   padding-top: ($spacer*3);
   padding-bottom: ($spacer*3);
 

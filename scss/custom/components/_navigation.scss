@@ -145,6 +145,8 @@
     align-items: center;
     cursor: pointer;
     text-decoration: none;
+    font-family: $font-family-sans-serif;
+    font-weight: $font-weight-bold;
 
     &:hover {
       text-decoration: none;
@@ -314,7 +316,7 @@
 
   &-item {
     @extend .navigation-item;
-
+    padding: ($grid-gutter-width / 4) ($grid-gutter-width / 2);
     
     &:not(:last-child) {
       
@@ -464,6 +466,7 @@
 
   display: inline-flex;
   position: relative;
+  color: $white;
   line-height: $font-size-base;
   z-index: -1;
   @include media-breakpoint-up(lg) {
