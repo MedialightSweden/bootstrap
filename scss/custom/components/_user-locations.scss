@@ -1,0 +1,17 @@
+.locations-body {
+  height: auto;
+  max-height: 0;
+  transition: max-height .3s linear;
+  overflow: hidden;
+  
+  & > div {
+    background: $primary-light;
+  }
+}
+
+header[data-toggle="expanded"] {
+
+  & + .locations-body {
+    max-height: 300px;
+  }
+}

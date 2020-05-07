@@ -1,5 +1,7 @@
 .contact {
 
+  margin-bottom: $spacer;
+
   .dashicons {
     color: $white;
     width: 1.3rem;
@@ -31,6 +33,6 @@
     background: $black;
     justify-content: center;
     align-items: center;
-    margin: $spacer 0;
+    margin: $spacer 0 0;
   }
 }

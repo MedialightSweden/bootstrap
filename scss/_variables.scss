@@ -1157,6 +1157,6 @@ $handler-bars-color:                $white;
 
 $banner-min-height:                 280px;
 $banner-image-height:               400px;
-$banner-image-overlay-max-width:    550px;
+$banner-image-overlay-max-width:    map-get($container-max-widths, "md");
 $banner-profile-overlay-max-width:  map-get($container-max-widths, "xl");
 $banner-text-overlay-max-width:     90%;
