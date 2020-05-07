@@ -1,0 +1,89 @@
+.gallery {
+  overflow: hidden;
+
+  .dashicons {
+    position: absolute;
+    width: 3rem;
+    z-index: $zindex-fixed;
+    top: calc(50% - 20px);
+    color: rgba($white, 0.7);
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s linear;
+
+    &::before {
+      width: 3rem;
+      height: 3rem;
+      font-size: 3rem;
+    }
+
+    &-arrow-left-alt2 {
+      left: 0;
+    }
+
+    &-arrow-right-alt2 {
+      right: 0;
+    }
+  }
+
+  &:hover {
+    .dashicons {
+      visibility: visible;
+      opacity: 1;
+      transition: all 0.3s linear
+    }
+  }
+
+  img {
+    object-fit: cover;
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+  }
+
+  &-slider {
+    position: relative;
+    width: 100%;
+    height: 357px;
+
+    img {
+      position: absolute;
+      visibility: hidden;
+      opacity: 0;
+      transition: all .3s linear;
+
+      &[slide="current"] {
+
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+  }
+
+  &-thumbnail {
+    display: flex;
+    width: calc((100% / 4) - 22.5px);
+    height: auto;
+    max-width: 165px;
+    max-height: 90px;
+    margin: ($grid-gutter-width / 2) 0;
+
+    img {
+      margin: 0 ($grid-gutter-width / 2);
+      height: auto;
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+      
+      &[slide="current"] {
+
+        border: 5px solid $primary;
+      }
+    }
+  }
+}
