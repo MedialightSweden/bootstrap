@@ -63,13 +63,19 @@
 .section-fluid {
   @include make-container(0);
 
-  max-width: 1700px;
   padding-top: ($spacer*3);
   padding-bottom: ($spacer*3);
 
   @include media-breakpoint-up(sm) {
     padding: ($spacer*3) ($grid-gutter-width/2);
   }
+}
+
+//*** Maxwith to adjust for archives sidebar
+.container-archive {
+  @extend .section-fluid;
+
+  max-width: 1700px;
 }
 
 //*** .container with fixed padding = pt-5 & pb-5
