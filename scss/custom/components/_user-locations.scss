@@ -7,11 +7,8 @@
   & > div {
     background: $primary-light;
   }
-}
 
-header[data-toggle="expanded"] {
-
-  & + .locations-body {
+  &[data-toggle="expanded"] {
     max-height: 300px;
   }
 }

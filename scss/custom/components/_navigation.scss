@@ -71,17 +71,20 @@
   left: 0;
   width: 100%;
   height: $nav-container-height;
-  background: $nav-container-background;
   z-index: $zindex-fixed;
 
+  @include media-breakpoint-down(lg) {
+    
+    background: $nav-container-background;
+  }
+
   @include media-breakpoint-up(lg) {
+    
     background: transparent;
-    // border-bottom: 1px solid $nav-container-border-bottom;
     @include transition(background-color 0.4s linear);
 
     &[data-scroll="fill"] {
       background: $nav-container-background;
-      // border-bottom: none;
     }
   }
   //*** Elements
@@ -130,13 +133,6 @@
 
     width: auto;
     margin: 0;
-    // align-self: center;
-
-    // @include media-breakpoint-up(lg) {
-    //   &:nth-child(3) {
-    //     margin-right: calc(100% - 704px);
-    //   }
-    // }
   }
 
   &-link {
@@ -174,7 +170,12 @@
         background: $submenu-background;
         @include transition(right 0.3s ease-in-out);
 
-        &[data-state="open"] {
+        & div {
+
+          display: block;
+        }
+
+        &[data-toggle="expanded"] {
           right: 0;
         }
       }
@@ -205,92 +206,8 @@
       }
     }
   }
-
-  &.loggedin {
-    
-    .loggedin-items {
-
-      @include media-breakpoint-up(lg) {
-        display: inline-flex;
-        border-left: 2px solid $nav-container-border-bottom;
-      }
-
-      .toggle-direction {
-        
-        display: none;
-        
-        @include media-breakpoint-down(md) {
-          display: block;
-          width: 100%;
-          text-align: right;
-        }
-      }
-
-      #{$self}-link {
-        justify-content: left;
-        font-size: inherit;
-
-        @include media-breakpoint-up(lg) {
-          font-size: 0;
-        }
-      }
-    }
-
-    #{$self}-item {
-      margin: 0;
-
-      @include media-breakpoint-up(lg) {
-        &:nth-child(2) {
-          margin-right: calc(100% - 502px);
-        }
-      }
-    }
-
-    #{$self}-link {
-      
-      .mdi-account-circle-outline,
-      .mdi-email-outline {
-        position: relative;
-        margin: 0 $spacer 0 0;
-        line-height: 21px;
-        z-index: -1;
-
-        @include media-breakpoint-up(lg) {
-          margin: 0;
-          font-size: 31px;
-        }
-      }
-
-      .mdi-email-outline {
-        &::after {
-          display: block;
-          position: absolute;
-          top: -14px;
-          right: -12px;
-          width: 24px;
-          height: 24px;
-          background: theme-color("danger");
-          content: "4";
-          border-radius: 50%;
-          font-size: 14px;
-          font-weight: $font-weight-bolder;
-          color: white;
-          text-align: center;
-
-          @include media-breakpoint-down(md) {
-            top: -8px;
-            right: -12px;
-            width: 20px;
-            height: 20px;
-            font-size: 12px;
-          }
-        }
-      }
-    }
-  }
 }
 
-//*** Submenu Component
 .submenu {
   $self: &;
 
@@ -307,12 +224,6 @@
   box-shadow: $dropdown-box-shadow;
   background: $submenu-background;
   @include transition(max-height .4s linear, opacity .4s linear);
-
-  &[data-state="expand"] {
-    max-height: 100vh;
-    opacity: 1;
-    visibility: visible;
-  }
 
   &-item {
     @extend .navigation-item;
@@ -336,39 +247,11 @@
     }
   }
 
-  //*** Modifyers
-  &.sidebar {
-    position: relative;
-    top: initial;
-    padding: 0;
-    @include border-radius(0);
-    box-shadow: none;
-    background: none;
+  &[data-toggle="expanded"] {
 
-    &[data-state="expand"] {
-      border-left: 5px solid $primary;
-
-      @include media-breakpoint-down(sm) {
-        border-left: 5px solid $smooth;
-      }
-    }
-
-    #{$self}-link {
-      @extend %sidebar-font;
-      font-weight: $font-weight-normal;
-
-      &:hover {
-        color: $sidebar-link-hover-color;
-        font-weight: $font-weight-bold;
-      }
-
-      @include media-breakpoint-down(sm) {
-        color: $white;
-        &:hover {
-          color: $smooth;
-        }
-      }
-    }
+    max-height: 100vh;
+    opacity: 1;
+    visibility: visible;
   }
 
   &.handheld {
@@ -379,10 +262,6 @@
       @include border-radius(0);
       box-shadow: none;
 
-      &[data-state="expand"] {
-        background: $submenu-handheld-background;
-      }
-
       #{$self}-item {
         padding: ($nav-spacing / 2);
         border-bottom: none;
@@ -392,98 +271,11 @@
   }
 }
 
-.sidebar-navigation {
-  $self: &;
-  //*** Elements
-  &-list {
-    @extend %sidebar-font;
-    padding: 0;
-    list-style: none;
-    font-weight: $font-weight-bold;
-  }
-
-  &-item {
-    padding: ($nav-spacing / 3) ($nav-spacing / 2);
-  }
-
-  &-link {
-    color: $sidebar-link-color;
-    text-decoration: none;
-
-    &[data-target="expandSecondaryMenu"] {
-      display: none;
-    }
-
-    &:hover,
-    &[data-state="expand"] {
-      color: $sidebar-link-hover-color;
-      text-decoration: none;
-    }
-  }
-
-  //*** Modifyers
-  &.handheld {
-    @include media-breakpoint-down(sm) {
-      position: fixed;
-      top: $nav-container-height;
-      left: 0;
-      width: 100%;
-      overflow: hidden;
-      background: $secondary;
-      z-index: $zindex-popover;
-
-      #{$self}-list {
-        max-height: 38px;
-        padding-bottom: $nav-spacing;
-        @include transition(max-height 0.3s linear);
-
-        &[data-toggle="expanded"] {
-          max-height: 100vh;
-        }
-      }
-
-      #{$self}-link {
-        color: $white;
-
-        &[data-target="expandSecondaryMenu"] {
-          display: flex;
-          margin-top: 6px;
-          color: $white !important; // Override hover color
-        }
-
-        &:hover,
-        &[data-state="expand"] {
-          color: $smooth;
-        }
-      }
-    }
-  }
-}
-
-// class for displaying navigation__link arrows
-.toggle-direction {
-  @include toggle-icon($children: 3, $child: 1);
-
-  display: inline-flex;
-  position: relative;
-  color: $white;
-  line-height: $font-size-base;
-  z-index: -1;
-  @include media-breakpoint-up(lg) {
-    @include toggle-icon($children: 3, $child: 3);
-  }
-
-  .mdi {
-    margin: 0;
-  }
-}
-
-a[data-state="expand"] > .toggle-direction {
-  @include toggle-icon($children: 3, $child: 2);
-}
-
 // Hamburgermenu
 .handler {
+
+  $self: &;
+
   $width: 34px;
   $height: 3px;
 
@@ -513,7 +305,7 @@ a[data-state="expand"] > .toggle-direction {
     height: $height;
     background: $handler-bars-color;
     z-index: -1;
-
+    
     &::before {
       @extend %bars;
       bottom: ($height * 2.4);
@@ -523,15 +315,15 @@ a[data-state="expand"] > .toggle-direction {
       @extend %bars;
       top: ($height * 2.4);
     }
-
-    &[data-state="open"] {
+    
+    [data-toggle="expanded"] + #{$self} > & {
       transform: rotate(-45deg);
       @include transition(all 0.3s linear);
       &::before {
         top: 0;
         transform: rotate(90deg);
       }
-
+    
       &::after {
         display: none;
       }
