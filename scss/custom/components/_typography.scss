@@ -131,6 +131,11 @@ li {
     background: $primary;
   }
 
+  &.primary {
+
+    @extend #{$self}.comments;
+  }
+
   &.activities {
 
     display: flex;

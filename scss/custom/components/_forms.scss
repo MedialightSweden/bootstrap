@@ -9,6 +9,13 @@
   }
 }
 
+#contact {
+  padding: $grid-gutter-width / 2;
+  border-width: $grid-gutter-width / 2;
+  border-color: $primary;
+  border-style: solid;
+}
+
 .acf-field {
   $self: &;
 
