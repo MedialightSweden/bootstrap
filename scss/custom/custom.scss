@@ -2,18 +2,17 @@
 @import "utilities";
 
 @import "root";
+@import "typography";
 
 @import "components/buttons";
 @import "components/icons";
 @import "components/covers";
 @import "components/containers";
-@import "components/navigation";
 @import "components/sidebar";
 @import "components/images";
 @import "components/category-card";
 @import "components/comments";
 @import "components/ratings";
-@import "components/typography";
 @import "components/filter";
 @import "components/forms";
 @import "components/dropzone";
@@ -22,5 +21,6 @@
 @import "components/gallery";
 @import "components/user-locations";
 
+@import "views/navigation";
 @import "views/footer";
 @import "views/profile";

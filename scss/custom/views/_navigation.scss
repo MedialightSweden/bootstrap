@@ -101,10 +101,6 @@
 
     max-height: ($nav-container-height - $nav-spacing);
     margin-right: ($nav-spacing / 2);
-
-    #{$self}-logo {
-      height: 100%;
-    }
   }
 
   &-bar {
