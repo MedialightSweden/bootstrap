@@ -1,14 +1,33 @@
-.locations-body {
-  height: auto;
-  max-height: 0;
-  transition: max-height .3s linear;
-  overflow: hidden;
-  
-  & > div {
-    background: $primary-light;
+.locations {
+
+  &-body {
+
+    @extend .row;
+
+    height: auto;
+    max-height: 0;
+    transition: max-height .3s linear;
+    overflow: hidden;
+
+    &[data-toggle="expanded"] {
+      max-height: 400px;
+    }
   }
 
-  &[data-toggle="expanded"] {
-    max-height: 300px;
+  &-card {
+    
+    @extend .col-md-6;
+    margin-bottom: $grid-gutter-width;
+    padding-bottom: $spacer;
+
+    & .google-map {
+      
+      padding-bottom: 60% !important;
+    }
+  }
+
+  &-info {
+    @extend .col-12;
+    background: $primary-light;
   }
 }

@@ -23,6 +23,10 @@
 
   &-aside {
     top: 0;
+
+    & ~ #{$self} + & {
+      @extend .col-xl-2;
+    }
   }
 
   &.left {
@@ -51,6 +55,15 @@
       @extend .col-12;
       padding: 0;
     }
+  }
+
+  &.wide {
+    display: block;
+    flex-wrap: unset;
+    margin: 0;
+    @extend .col-xl-8;
+    @extend .col-md-9;
+    @extend .col-12;
   }
 }
 
