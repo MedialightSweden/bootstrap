@@ -250,6 +250,7 @@
   }
 }
 
+//*** Password Validate indicator
 .password-checker {
   display: flex;
   flex-wrap: wrap;
@@ -291,5 +292,58 @@
         background: $success;
       }
     }
+  }
+}
+
+//*** Loginform
+#custom-login-form {
+  @extend .col-xl-6;
+  @extend .col-lg-8;
+  @extend .col-md-10;
+  @extend .col-12;
+
+  background: $primary-light;
+  padding-top: ($spacer * 3);
+  padding-bottom: ($spacer * 3);
+  margin: ($spacer * 3) auto ($spacer * 6);
+
+  h3 {
+    text-align: center;
+    color: $primary;
+  }
+
+  p {
+
+    @extend .col-sm-8;
+    @extend .col-12;
+
+    margin: auto;
+  }
+
+  .login-username,
+  .login-password {
+
+    @extend .form-group;
+
+    label {
+      
+      display: block;
+    }
+
+    input {
+
+      @extend .form-control;
+    }
+  }
+
+  [type="submit"] {
+
+    @extend .btn;
+    @extend .btn-primary;
+    @extend .btn-block;
+  }
+
+  .register {
+    text-align: center;
   }
 }
