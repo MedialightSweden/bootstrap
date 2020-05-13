@@ -1,0 +1,24 @@
+.alert {
+
+  max-width: map-get($container-max-widths, "xl");
+  margin: ($spacer * 4) auto 0;
+
+  &.hide {
+
+    transition: opacity .5s;
+    animation: fade-out .5s ease-in-out forwards; // all .5s ease-out;
+    transform-origin: center;
+  }
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  } 50% {
+    transform: scale3d(1, 1, 1);
+    margin-top: $spacer * 4;
+  } 100% {
+    transform: scale3d(.8, .8, .8);
+    opacity: 0;
+  }
+}

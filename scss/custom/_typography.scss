@@ -129,21 +129,26 @@ li {
     color: $primary;
   }
 
-  &.comments {
+  &.profile,
+  &.primary,
+  &.comments,
+  &.activities {
     
     color: $white;
     background: $primary;
   }
 
-  &.primary {
-
-    @extend #{$self}.comments;
-  }
-
-  &.activities {
+  &.activities,
+  &.profile {
 
     display: flex;
     justify-content: space-between;
-    @extend #{$self}.comments;
+  }
+
+  &.profile {
+    a {
+      @extend .btn;
+      @extend .btn-outline-light;
+    }
   }
 }
