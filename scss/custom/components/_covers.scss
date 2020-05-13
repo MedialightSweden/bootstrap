@@ -9,62 +9,58 @@
   min-height: $banner-min-height;
 
   &-overlay {
-      position: absolute;
-      top: calc(100% / 2);
-      left: (100% / 2);
-      width: 100%;
-      padding: ($h1-font-size*2) ($grid-gutter-width / 2) 0;
-      transform: translate(-50%, -50%);
-      text-align: center;
-      color: $white;
-      z-index: $zindex-sticky;
+    position: absolute;
+    top: calc(100% / 2);
+    left: (100% / 2);
+    width: 100%;
+    padding: ($h1-font-size * 2) ($grid-gutter-width / 2) 0;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: $white;
+    z-index: $zindex-sticky;
 
-      //*** Element -overlay modifyers
-      &.image {
-          // @extend #{$self}-overlay;
-          max-width: $banner-image-overlay-max-width;
+    //*** Element -overlay modifyers
+    &.image {
+      max-width: $banner-image-overlay-max-width;
+    }
+
+    &.text {
+      max-width: $banner-text-overlay-max-width;
+    }
+
+    &.profile {
+      display: flex;
+      max-width: $banner-profile-overlay-max-width;
+      div {
+        width: calc(100% - 300px);
+        padding: 0 ($grid-gutter-width / 2);
       }
+    }
 
-      &.text {
-          // @extend #{$self}-overlay;
-          max-width: $banner-text-overlay-max-width;
-      }
-
-      &.profile {
-
-        display: flex;
-        max-width: $banner-profile-overlay-max-width;
-        div {
-            width: calc(100% - 300px);
-            padding: 0 ($grid-gutter-width / 2);
-        }
-      }
-
-      p {
-          font-size: $font-size-base * 1.25;
-      }
+    p {
+      font-size: $font-size-base * 1.25;
+    }
   }
 
   &-image {
-      width: 100%;
-      min-height: $banner-min-height;
-      max-height: $banner-image-height;
-      object-fit: cover;
-      object-position: 50% 50%;
-      opacity: .5;
-      @include border-radius(0);
+    width: 100%;
+    min-height: $banner-min-height;
+    max-height: $banner-image-height;
+    object-fit: cover;
+    object-position: 50% 50%;
+    opacity: 0.5;
+    @include border-radius(0);
 
-      &.small {
-          // @extend #{$self}-image;
-          width: 100%;
-          height: $banner-min-height;
-      }
+    &.small {
+      width: 100%;
+      height: $banner-min-height;
+    }
   }
 
   //*** Block modifyers use -themeColor
   @each $name, $color in $theme-colors {
-      &-#{$name} {
-          background: #{$color};
-      }
+    &-#{$name} {
+      background: #{$color};
+    }
   }
 }

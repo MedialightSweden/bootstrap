@@ -1,69 +1,80 @@
 //*** .row with center position for grid with vary cols
-.page {
-
-  &-wrapper {
-
-    @extend .container;
-  }
+.site {
 }
 
-.content {
+.page {
   $self: &;
 
-  position: relative;
-  padding-top: ($spacer*3);
-  padding-bottom: ($spacer*3);
-  
-  @extend .row;
+  padding-top: $spacer * 2;
 
-  &-primary {
+  &-wrapper {
+    position: relative;
+    margin: 0 auto;
+    // padding-top: ($spacer * 3);
+    padding-bottom: ($spacer * 3);
+  }
 
+  &-content-primary {
     @extend .col-12;
   }
 
-  &-aside {
+  &-content-aside {
     top: 0;
-
-    & ~ #{$self} + & {
-      @extend .col-xl-2;
-    }
   }
 
   &.left {
+    max-width: map-get($container-max-widths, "xl");
 
-    #{$self}-primary {
+    #{$self}-content-primary {
       @extend .col-md-8;
       @extend .col-12;
     }
 
-    #{$self}-aside {
+    #{$self}-content-aside {
       @extend .col-md-4;
       @extend .col-12;
-      padding: 0;
+
+      @include media-breakpoint-up(md) {
+        padding-left: 0;
+      }
     }
   }
 
   &.right {
-
-    #{$self}-primary {
+    #{$self}-content-primary {
       @extend .col-md-9;
       @extend .col-12;
     }
 
-    #{$self}-aside {
+    #{$self}-content-aside {
       @extend .col-md-3;
       @extend .col-12;
-      padding: 0;
+
+      @include media-breakpoint-up(md) {
+        padding-right: 0;
+      }
     }
   }
 
   &.wide {
-    display: block;
-    flex-wrap: unset;
-    margin: 0;
-    @extend .col-xl-8;
-    @extend .col-md-9;
-    @extend .col-12;
+    max-width: 1600px;
+
+    #{$self}-content-primary {
+
+      @extend .col-xl-8;
+      @extend .col-md-10;
+      @extend .col-12;
+    }
+
+    #{$self}-content-aside {
+
+      @extend .col-md-2;
+      @extend .col-12;
+
+      @include media-breakpoint-up(md) {
+        padding-right: 0;
+      }
+    }
   }
 }
 
@@ -76,11 +87,15 @@
 .section-fluid {
   @include make-container(0);
 
-  padding-top: ($spacer*3);
-  padding-bottom: ($spacer*3);
+  padding-top: ($spacer * 3);
+  padding-bottom: ($spacer * 3);
+
+  &.first {
+    padding-top: 0;
+  }
 
   @include media-breakpoint-up(sm) {
-    padding: ($spacer*3) ($grid-gutter-width/2);
+    padding: ($spacer * 3) ($grid-gutter-width/2);
   }
 }
 
@@ -95,6 +110,6 @@
 .container-spacer {
   @extend .container;
 
-  padding-top: ($spacer*3);
-  padding-bottom: ($spacer*3);
+  padding-top: ($spacer * 3);
+  padding-bottom: ($spacer * 3);
 }
