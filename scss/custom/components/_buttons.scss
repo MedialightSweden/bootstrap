@@ -18,13 +18,25 @@
     padding: .188rem .75rem;
     margin-bottom: $grid-gutter-width / 2;
     margin-left: calc(100% - #{$width} - 15px);
-    font-size: $font-size-base * .875;
+    font-size: $font-size-base * .8125;
   }
 
   &.icon {
 
     font-size: $font-size-base * .875;
   }
+}
+
+.btn-dark,
+input.btn-dark,
+.btn-outline-dark,
+input.btn-outline-dark {
+  font-size: $font-size-base * .875;
+}
+
+.btn-dark,
+input.btn-dark {
+  padding: ($spacer / 1.5) $spacer * 1.5;
 }
 
 .wp-block-button {

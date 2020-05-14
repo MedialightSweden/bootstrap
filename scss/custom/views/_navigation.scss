@@ -101,6 +101,7 @@
 
     max-height: ($nav-container-height - $nav-spacing);
     margin-right: ($nav-spacing / 2);
+    margin-bottom: .4rem;
   }
 
   &-bar {
@@ -132,6 +133,7 @@
   }
 
   &-link {
+    position: relative;
     display: inline-flex;
     padding: 0;
     align-items: center;
@@ -139,6 +141,18 @@
     text-decoration: none;
     font-family: $font-family-sans-serif;
     font-weight: $font-weight-bold;
+
+    &:first-child {
+      padding-right: 20px;
+
+      .dashicons {
+        position: absolute;
+        top: .1rem;
+        left: 0;
+        width: 100%;
+        text-align: right;
+      }
+    }
 
     &:hover {
       text-decoration: none;
