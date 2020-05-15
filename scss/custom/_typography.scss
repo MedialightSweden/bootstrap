@@ -128,7 +128,7 @@ li {
 
     color: $primary;
   }
-
+  
   &.profile,
   &.primary,
   &.comments,
@@ -136,6 +136,12 @@ li {
     
     color: $white;
     background: $primary;
+  }
+
+  &.dark {
+    
+    color: $white;
+    background: $dark;
   }
 
   &.activities,

@@ -1,3 +1,8 @@
+form textarea {
+  @extend .form-control;
+  border-width: 1px;
+}
+
 .acf-field-title {
   display: block;
   margin-bottom: 4px;

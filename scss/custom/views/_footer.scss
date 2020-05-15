@@ -35,6 +35,19 @@
       width: initial;
       padding-top: 0;
     }
+
+    a {
+      font-size: $font-size-base * .875;
+    }
+
+    .dashicons {
+      
+      &:before {
+        width: .8rem;
+        height: .8rem;
+        font-size: .8rem;
+      }
+    }
   }
 
   &-info {

@@ -43,9 +43,16 @@
   }
 
   &-title {
-    font-size: 18px;
-    font-weight: $font-weight-bold;
+    display: flex;
     margin: ($spacer / 2) 0;
+
+    p {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-weight: $font-weight-bold;
+      margin-bottom: 0;
+    }
   }
 
   &-excerpt {
