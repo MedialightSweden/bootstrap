@@ -17,19 +17,34 @@
   }
 
   div {
-    width: 55%;
+    width: 100%;
     padding: ($grid-gutter_width / 8) ($grid-gutter_width / 4);
     background: $primary-light;
+
     &:nth-child(2n) {
-      width: 45%;
-    }
-    &:last-child {
       width: 100%;
+
+      @include media-breakpoint-down(sm) {
+        background: theme-color-level("primary", -8);
+      }
     }
-    &:nth-child(3),
-    &:nth-child(4),
-    &:nth-child(7) {
-      background: theme-color-level("primary", -8);
+
+    @include media-breakpoint-up(md) {
+      width: 55%;
+
+      &:nth-child(2n) {
+
+        width: 45%;
+      }
+  
+      &:last-child {
+        width: 100%;
+      }
+      &:nth-child(3),
+      &:nth-child(4),
+      &:nth-child(7) {
+        background: theme-color-level("primary", -8);
+      }
     }
 
     span {
