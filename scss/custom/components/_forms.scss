@@ -364,3 +364,15 @@ form textarea {
     text-align: center;
   }
 }
+
+//*** Forms agreement text
+.agree {
+  font-size: 12px;
+  line-height: 13px;
+  & p {
+    margin-top: $spacer / 2;
+  }
+  & a {
+    color: $primary;
+  }
+}
