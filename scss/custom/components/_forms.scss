@@ -81,11 +81,16 @@ form textarea {
       }
     }
 
+    & i.acf-icon {
+      line-height: 30px;
+    }
+
     & .acf-input-append {
 
       border: 1px solid $gray-400;
       border-left: none;
       background: $white;
+      line-height: 30px;
       span.dashicons {
         display: block;
         height: 30px;
