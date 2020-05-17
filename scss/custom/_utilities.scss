@@ -45,12 +45,13 @@
   .wp-block-column {
 
     figure {
+      height: 100%;
       margin: 0;
     }
 
     &:last-child {
 
-      margin: $grid-gutter-width;
+      padding: $grid-gutter-width;
     }
   }
 }
