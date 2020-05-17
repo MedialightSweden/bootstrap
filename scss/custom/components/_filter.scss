@@ -1,6 +1,18 @@
 form#noor-filter {
-  max-width: 550px;
+  display: flex;
+  justify-content: space-between;
+  // max-width: 550px;
   margin: 0 auto;
+  max-width: 100%;
+
+  [type="submit"] {
+    margin: 0;
+    padding: .563rem 2rem;
+  }
+
+  @include media-breakpoint-down(xs) {
+    flex-wrap: wrap;
+  }
 }
 
 .noor-select {
@@ -14,6 +26,17 @@ form#noor-filter {
   width: 100%;
   position: relative;
   margin: 0 15px 0 0;
+
+  @include media-breakpoint-down(xs) {
+    &:first-child {
+      height: 46px;
+      margin: 0 0 ($spacer/2);
+    }
+    &:nth-child(2) {
+
+      width: calc(100% - 113px);
+    }
+  }
 
   &::after {
     display: block;
@@ -121,16 +144,5 @@ form#noor-filter {
       //   display: block;
       // }
     }
-  }
-}
-
-#noor-filter {
-  max-width: 100%;
-  display: flex;
-  justify-content: space-between;
-
-  [type="submit"] {
-    margin: 0;
-    padding: .563rem 2rem;
   }
 }
