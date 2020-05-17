@@ -81,14 +81,20 @@ form textarea {
       }
     }
 
-    .acf-input-append {
+    & .acf-input-append {
 
       border: 1px solid $gray-400;
       border-left: none;
       background: $white;
       span.dashicons {
-        height: 30px;
-        font-size: 30px;
+        display: block;
+        padding: 6px 0;
+        &::before {
+          display: block;
+          width: 1.2rem;
+          height: 1.2rem;
+          font-size: 1.2rem;
+        }
       }
     }
   }
