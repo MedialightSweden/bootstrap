@@ -26,15 +26,15 @@
   figure {
     
     display: block;
-    height: 137px;
-    max-height: 137px;
+    padding-bottom: 54%;
+    max-height: 0;
     margin: 0;
     background: $gray-200;
     overflow: hidden;
 
     img {
       width: 100%;
-      height: inherit;
+      height: 137px;
       object-fit: cover;
       opacity: 1;
       transform: scale3d(1, 1, 1);
