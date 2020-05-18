@@ -376,3 +376,40 @@ form textarea {
     color: $primary;
   }
 }
+
+//*** Form hints
+.acf-fields {
+
+  .form-hints {
+    display: block;
+    position: relative;
+
+    p {
+      position: absolute;
+      top: -4px;
+      left: 8px;
+      max-width: map-get($container-max-widths, "sm") / 2;
+      padding: $grid-gutter-width / 2;
+      opacity: 0;
+      visibility: hidden;
+      border-width: 1px;
+      border-color: $gray-400;
+      border-style: solid;
+      font-size: 12px;
+      background: $light;
+      z-index: 0;
+    }
+  }
+
+  .dashicons-editor-help {
+
+    &:hover {
+
+      + .form-hints > p {
+        opacity: 1;
+        visibility: visible;
+        z-index: $zindex-popover;
+      }
+    }
+  }
+}
