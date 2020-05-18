@@ -35,6 +35,22 @@
         width: calc(100% - 300px);
         padding: 0 ($grid-gutter-width / 2);
       }
+
+      @include media-breakpoint-down(sm) {
+        flex-direction: column;
+        
+        div {
+          width: 100%;
+          margin-top: $spacer;
+          p {
+            font-size: 1rem;
+          }
+        }
+
+        span {
+          margin: 0 auto;
+        }
+      }
     }
 
     p {
