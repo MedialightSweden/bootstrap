@@ -115,5 +115,10 @@
     &:hover {
       background: $gray-400;
     }
+
+    &.active {
+      background: $info;
+      color: $white;
+    }
   }
 }
