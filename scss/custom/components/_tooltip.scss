@@ -1,0 +1,21 @@
+.tooltip {
+  position: absolute;
+  width: 200px;
+  top: $grid-gutter-width * 1.2;
+  right: $grid-gutter-width / 2;
+  background: $dark;
+  z-index: $zindex-popover;
+  box-shadow: 2px 1px 6px rgba($black, .5);
+  transition: all .2s ease-in-out;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.mdi {
+  &:hover {
+    & + .tooltip {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+}

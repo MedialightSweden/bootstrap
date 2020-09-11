@@ -1,0 +1,21 @@
+.notification {
+  cursor: pointer;
+  top: $grid-gutter-width / 2;
+  right: $grid-gutter-width;
+  i {
+    font-size: 20px;
+  }
+  span {
+    position: absolute;
+    display: block;
+    width: $spacer * 1.2;
+    height: $spacer * 1.2;
+    top: 14px;
+    right: 20px;
+    line-height: $spacer * 1.2;
+    font-size: $spacer * .65;
+    text-align: center;
+    border-radius: 50%;
+    background: $danger;
+  }
+}
