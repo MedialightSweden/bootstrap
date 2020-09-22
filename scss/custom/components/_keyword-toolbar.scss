@@ -1,0 +1,11 @@
+.keyword-toolbar {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  height: 50px;
+  top: 50px;
+  right: $grid-gutter-width / 2;
+  background: $dark;
+  @include border-radius( 0 0 $border-radius-lg $border-radius-lg );
+  box-shadow: $box-shadow;
+}
