@@ -57,6 +57,10 @@
       border-left: $border-width solid $border-color;
     }
 
+    .border#{$infix}-0 {
+      border: 0;
+    }
+
     .border#{$infix}-top-0 {
       border-top: 0;
     }
@@ -211,8 +215,12 @@
 }
 
 .job-page-title {
+  font-size: 26px;
+  line-height: 32px;
+
   @include media-breakpoint-down(md) {
-    font-size: 1.5rem;
+    font-size: 17px;
+    line-height: 18px;
   }
 }
 
@@ -310,6 +318,17 @@
 }
 
 .company_info_container1 {
+  .company-profile-logotyp-container {
+    display: flex;
+    justify-items: center;
+
+    .company-profile-logotyp {
+        width: 150px;
+        height: 150px;
+        object-fit: contain;
+    }
+  }
+
   @include media-breakpoint-up(md) {
     display: flex;
     flex-flow: row;
@@ -320,6 +339,9 @@
       display: flex;
       flex-flow: column;
 
+      &> div {
+        max-width: 150px;
+      }
     }
   }
 
@@ -336,8 +358,6 @@
       flex-flow: column;
     }
   }
-
-  
 }
 
 
@@ -348,11 +368,11 @@
   white-space: nowrap;
   border-radius: 25px;
   display: inline-block;
-  color: #f26522;
+  color: #F8902B;
   box-shadow: unset;
   outline: unset;
   padding: 1px 2px 0 3px;
-  border: solid 1px #f26522;
+  border: solid 1px #F8902B;
   user-select: none;
 
   &.active {
@@ -373,13 +393,66 @@
   }
 
   .without-cv-tag-icon {
-    color: #f26522;
+    color: #F8902B;
     line-height: 1;
     display: inline-block;
     box-shadow: unset;
     outline: unset;
   }
+
+  @include media-breakpoint-down(md) {
+    display: none !important;
+  }
 }
+
+.without-cv-tag-md {
+  display: none;
+
+  @include media-breakpoint-down(md) {
+    overflow: hidden;
+    background: white;
+    list-style: none;
+    white-space: nowrap;
+    border-bottom-right-radius: 14.4px;
+    display: inline-block !important;
+    color: #F8902B;
+    box-shadow: unset;
+    outline: unset;
+    padding: 1px 2px 0 3px;
+    border: solid 1px #F8902B;
+    user-select: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+
+    &.active {
+      .without-cv-tag-content {
+        opacity: 1;
+        max-width: 150px;
+        transition: all .3s linear;
+        margin: 0 3px;
+      }
+    }
+
+    .without-cv-tag-content {
+      opacity: 0;
+      max-width: 0;
+      display: inline-block;
+      text-decoration: none;
+      transition: all .3s linear;
+    }
+
+    .without-cv-tag-icon {
+      color: #F8902B;
+      line-height: 1;
+      display: inline-block;
+      box-shadow: unset;
+      outline: unset;
+    }
+  }
+}
+
 
 /*
 .sponsored banned from adblock
@@ -388,11 +461,211 @@
   @extend .border;
   @extend .font-weight-bold;
 
-  color: #f26522;
-  border-color: #f26522 !important;
-  border-top-right-radius: 5px;
-  font-size: 13px;
-  padding: 0 8px;
+  color: #6C757D;
+  border: solid 1.2px;
+  border-color: #6C757D !important;
+  font-size: 14.4px;
+  line-height: 17px;
+  height: 29px;
+  padding: 0 !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  p {
+    margin: 0;
+  }
+
+  border-radius: 14.4px;
+  height: 28.8px;
+  width: 85.2px;
+  margin-top: -4px;
+
+  @include media-breakpoint-down(md) {
+    display: none !important;
+  }
+}
+
+.spons-tag-md {
+  display: none;
+  @extend .border;
+  @extend .font-weight-bold;
+  color: #6C757D;
+  border: solid 1.2px;
+  border-color: #6C757D !important;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+
+  p {
+    margin: 0;
+  }
+
+  @include media-breakpoint-down(sm) {
+    font-size: 12px;
+    line-height: 15px;
+    border-top-right-radius: 12px;
+    height: 24px;
+    width: 71px;
+  }
+
+  @include media-breakpoint-down(md) {
+    font-size: 14.4px;
+    line-height: 17px;
+    border-top-right-radius: 14.4px;
+    height: 28.8px;
+    width: 85.2px;
+    display: inline-flex !important;
+  }
+}
+
+.posting-info {
+  font-size: 1.04rem;
+  font-weight: 500;
+
+  @include media-breakpoint-down(sm) {
+    margin-left: -88px;
+    padding-top: 10px;
+  }
+}
+
+.search-item-days-left {
+    @include media-breakpoint-down(md) {
+        display: none;
+    }
+}
+
+.posting-data {
+  width: calc(100% - 3rem - 85px);
+
+  @include media-breakpoint-down(sm) {
+    width: calc(100% - 3rem - 55px);
+  }
+}
+
+.posting-other-info {
+    @include media-breakpoint-down(sm) {
+      margin-left: -88px;
+
+      &.spons {
+        margin-left: unset;
+      }
+    }
+}
+
+.company_logo {
+  width: 80px;
+  height: 80px;
+  margin: auto 1rem;
+
+  @include media-breakpoint-down(sm) {
+    width: 53px;
+    height: 53px;
+  }
+
+  .img-thumbnail {
+    border-color: #979797;
+  }
+
+  .no_logo {
+    color: #6C757D;
+    background-color: #D8D8D8;
+    background-clip: content-box;
+    padding: 4px;
+    line-height: 17px;
+  }
+
+  img {
+    object-fit: contain;
+  }
+
+  @include media-breakpoint-down(md) {
+      margin: 1.3rem;
+  }
+}
+
+.mdi-16px {
+  &::before{
+    font-size: 16px;
+  }
+}
+
+
+.text-decoration-underline {
+  text-decoration: underline;
+}
+
+.posting-title {
+    color: $primary;
+    margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-inline-box;
+    -webkit-line-clamp: 2;
+    /* autoprefixer: ignore next */
+    -webkit-box-orient: vertical;
+    width: calc(100% - 40px);
+    margin-top: -3px;
+
+    @include media-breakpoint-down(sm) {
+      width: auto;
+    }
+
+    a {
+      font-size: 1.3rem !important;
+    }
+}
+
+.save-icon {
+    @include media-breakpoint-down(md) {
+        border: 0 !important;
+
+        &.btn-primary, &:active, &:focus {
+          color: $primary !important;
+          background-color: unset !important;
+          border-color: unset !important;
+          outline: none !important;
+          box-shadow: none !important;
+        }
+    }
+}
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+    .mdi#{$infix}-16px {
+      &::before{
+        font-size: 16px !important;
+      }
+    }
+
+    .mdi#{$infix}-18px {
+      &::before{
+        font-size: 18px !important;
+      }
+    }
+
+    .mdi#{$infix}-24px {
+      &::before{
+        font-size: 24px !important;
+      }
+    }
+
+    .mdi#{$infix}-36px {
+      &::before{
+        font-size: 36px !important;
+      }
+    }
+
+    .mdi#{$infix}-48px {
+      &::before{
+        font-size: 48px !important;
+      }
+    }
+  }
 }
 
 /* stylelint-enable */
